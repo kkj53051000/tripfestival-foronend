@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
 
-    const onClickBtn = (e) => {
-        e.preventDefault();
-    }
+    // const onClickBtn = (e) => {
+    //     e.preventDefault();
+    // }
 
 
     return (
@@ -17,14 +17,17 @@ const Header = () => {
                         <option value="orange">USA</option>
                         <option value="grape">Japan</option>
                         <option value="melon">China</option>
-                    </select>
+                    </select>                    
             </div>
             <Link to="/" className="header-main-logo">
-                header-main-logo
+                TripFestival
             </Link>
             <div className="header-login-join">
-                <button href="#" class="btn-gradient green small" onClick={onClickBtn}>로그인</button>
-                <button href="#" class="btn-gradient red small" onClick={onClickBtn}>회원가입</button>
+                {/* <button href="#" class="btn-gradient green small" onClick={onClickBtn}>로그인</button>
+                <button href="#" class="btn-gradient red small" onClick={onClickBtn}>회원가입</button> */}
+
+                <Link to="/" className="header-login-btn">로그인</Link>
+                <Link to="/" className="header-join-btn">회원가입</Link>
             </div>
         </div>
     );

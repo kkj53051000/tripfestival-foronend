@@ -1,6 +1,8 @@
 import React, { useState } from "react";
-import "../css/Main.css";
+import "../../css/Main.css";
 import { Link } from "react-router-dom";
+import MainTrip from "./MainTrip";
+import MainFestival from "./MainFestival";
 
 const Main = () => {
 
@@ -19,31 +21,18 @@ const Main = () => {
         <div className="main-wrap">
             <div className="main-select">
                 <div className="main-selct-trip" onClick={onClickTrip}>
-
+                    <span className="main-select-span">여행</span>
                 </div>
 
                 <div className="main-select-festival" onClick={onClickFestival}>
-
+                    <span className="main-select-span">축제</span>
                 </div>
             </div>
 
             {isTrip ?
-            <>
-                <div className="main-region">
-                    
-                </div>
-    
-                <div className="main-nature-hotspot">
-    
-                </div>
-    
-                <div className="main-hotspot">
-    
-                </div>
-            </>
+            <MainTrip />
             :
-            <div>
-            </div>
+            <MainFestival />
             }
         </div>
     );
