@@ -1,7 +1,7 @@
 import React from "react";
 import "../css/Region.css";
 
-const Region = () => {
+const TripArea = () => {
     return (
         <div className="region-wrap">
             <div className="region-select">
@@ -38,4 +38,4 @@ const Region = () => {
     );
 };
 
-export default Region;
+export default TripArea;

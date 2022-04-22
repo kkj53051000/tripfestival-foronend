@@ -3,6 +3,7 @@ import "../../css/Main.css";
 import { Link } from "react-router-dom";
 import MainTrip from "./MainTrip";
 import MainFestival from "./MainFestival";
+import MainTopic from "./MainTopic";
 
 const Main = () => {
 
@@ -19,6 +20,9 @@ const Main = () => {
 
     return (
         <div className="main-wrap">
+
+            <MainTopic />
+
             <div className="main-select">
                 <div className="main-selct-trip" onClick={onClickTrip}>
                     <span className="main-select-span">여행</span>

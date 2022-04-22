@@ -1,0 +1,11 @@
+.login_wrap{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-self: center;
+
+    height: auto;
+}
+.login_img{
+    margin: 130px;
+}

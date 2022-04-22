@@ -1,4 +1,9 @@
 .main-category{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
     width: 50%;
     min-width: 768px;
     height: 250px;
@@ -6,8 +11,14 @@
     margin: 10px;
 
     border: 1px solid black;
+    text-decoration: none;
 }
-.main-festival-area{
+.main-area{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
     width: 50%;
     min-width: 768px;
     height: 250px;
@@ -15,8 +26,14 @@
     margin: 10px;
 
     border: 1px solid black;
+    text-decoration: none;
 }
 .main-month{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
     width: 50%;
     min-width: 768px;
     height: 250px;
@@ -24,4 +41,20 @@
     margin: 10px;
 
     border: 1px solid black;
+    text-decoration: none;
+}
+.main-category-span{
+    color: #000;
+    font-size: 40px;
+    font-weight: bold;
+}
+.main-festival-area{
+    color: #000;
+    font-size: 40px;
+    font-weight: bold;
+}
+.main-month-month{
+    color: #000;
+    font-size: 40px;
+    font-weight: bold;
 }

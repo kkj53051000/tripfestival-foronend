@@ -26,7 +26,7 @@ const Header = () => {
                 {/* <button href="#" class="btn-gradient green small" onClick={onClickBtn}>로그인</button>
                 <button href="#" class="btn-gradient red small" onClick={onClickBtn}>회원가입</button> */}
 
-                <Link to="/" className="header-login-btn">로그인</Link>
+                <Link to="/login" className="header-login-btn">로그인</Link>
                 <Link to="/" className="header-join-btn">회원가입</Link>
             </div>
         </div>

@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const MainTrip = () => {
     return(
         <>
-            <Link to="/" className="main-region">
+            <Link to="/triparea" className="main-region">
                 <span className="main-region-span">지역</span>
             </Link>
 

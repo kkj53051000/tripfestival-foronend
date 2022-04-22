@@ -1,13 +1,13 @@
 import React from "react";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
-import Region from "../components/Region";
+import TripArea from "../components/TripArea";
 
 const RegionPage = () => {
     return (
         <div>
             <Header />
-            <Region />
+            <TripArea />
             <Footer />
         </div>
     );

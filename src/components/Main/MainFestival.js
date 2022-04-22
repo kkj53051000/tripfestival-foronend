@@ -9,12 +9,12 @@ const MainFestival = () => {
                 <span className="main-category-span">카테고리</span>
             </Link>
 
-            <Link to="/" className="main-festival-area">
+            <Link to="/" className="main-area">
                 <span className="main-festival-area">지역</span>
             </Link>
     
             <Link to="/" className="main-month">
-                <span className="main-month">지역</span>
+                <span className="main-month-month">월별</span>
             </Link>
         </>
     );
