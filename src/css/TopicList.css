@@ -1,0 +1,27 @@
+.topic-list-wrap{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 100%;
+    height: auto;
+}
+.topic-list{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 50%;
+    min-width: 768px;
+    height: auto;
+
+    border: 1px solid black;
+}
+.topic-list-item{
+    width: 100%;
+    height: 200px;
+
+    margin-top: 20px;
+
+    border: 1px solid black;
+}

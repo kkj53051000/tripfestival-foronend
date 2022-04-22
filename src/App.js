@@ -5,6 +5,7 @@ import MainPage from './pages/MainPage';
 import RegionPage from "./pages/TripAreaPage";
 import NatureHotspotPage from "./pages/NatureHotspotPage";
 import LoginPage from './pages/LoginPage';
+import TopicListPage from './pages/TopicListPage';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/triparea" element={<RegionPage />} exact={true} />
         <Route path="/nh" element={<NatureHotspotPage />} exact={true} />
         <Route path="/login" element={<LoginPage />} exact={true} />
+        <Route path="/topiclist" element={<TopicListPage />} exact={true} />
       </Routes>
     </BrowserRouter>
   );
