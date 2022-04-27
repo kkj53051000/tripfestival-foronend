@@ -1,6 +1,6 @@
 .header-wrap{
     width: 100%;
-    height: 150px;
+    height: 100px;
 
     display: flex;
     flex-direction: row;
@@ -8,8 +8,9 @@
     justify-content: space-between;
 
     border-bottom: 1px solid gainsboro;
-    background-color: #41B7E5;
+    background-color: #60d2ff;
 }
+/* #41B7E5 */
 .header-select-country{
     margin: 20px;
 

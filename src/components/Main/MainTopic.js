@@ -4,7 +4,7 @@ import "../../css/MainTopic.css";
 
 const MainTopic = () => {
     return (
-        <div className="main-topic">
+        <div className="main-topic-wrap">
             <Link to="/topiclist" className="main-special">
                 <span className="main-special-span">스페셜 토픽</span>
             </Link>
@@ -14,6 +14,12 @@ const MainTopic = () => {
                 </div>
 
                 <div className="main-topic-two">
+
+                </div>
+                <div className="main-topic-three">
+
+                </div>
+                <div className="main-topic-four">
 
                 </div>
             </div>

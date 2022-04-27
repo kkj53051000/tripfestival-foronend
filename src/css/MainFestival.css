@@ -10,7 +10,8 @@
 
     margin: 10px;
 
-    border: 1px solid black;
+    border: 3px solid black;
+    border-radius: 35px;
     text-decoration: none;
 }
 .main-area{
@@ -25,7 +26,8 @@
 
     margin: 10px;
 
-    border: 1px solid black;
+    border: 3px solid black;
+    border-radius: 35px;
     text-decoration: none;
 }
 .main-month{
@@ -40,7 +42,8 @@
 
     margin: 10px;
 
-    border: 1px solid black;
+    border: 3px solid black;
+    border-radius: 35px;
     text-decoration: none;
 }
 .main-category-span{

@@ -1,0 +1,25 @@
+.main-special-wrap{
+    width: 100%;
+    height: auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.main-special-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    width: 50%;
+    min-width: 768px;
+    height: 200px;
+
+    border: 1px solid black;
+}
+.main-special-item img {
+    height: 150px;
+    width: auto;
+
+    margin-left: 20px;
+}
