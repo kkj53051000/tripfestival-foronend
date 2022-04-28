@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
-import TripArea from "../components/TripArea";
+import TripAreaList from "../components/Trip/TripAreaList";
 
-const RegionPage = () => {
+const TripAreaListPage = () => {
 
     useEffect(() => {
         window.scrollTo(0, 0)
@@ -12,10 +12,10 @@ const RegionPage = () => {
     return (
         <div>
             <Header />
-            <TripArea />
+            <TripAreaList />
             <Footer />
         </div>
     );
 };
 
-export default RegionPage;
+export default TripAreaListPage;

@@ -1,12 +1,16 @@
 import React from "react";
-import "../css/Region.css";
+import "../../css/TripArea.css";
 
-const TripArea = () => {
+const TripAreaList = () => {
     
     return (
-        <div className="region-wrap">
-            <div className="region-select">
-                <div className="region-select-one">
+        <div className="trip-area-wrap">
+            <div className="trip-area-select">
+                <div className="title">
+                    지역
+                </div>
+
+                <div className="one">
                     <div class="style">
                         <select>
                             <option>전체</option>
@@ -18,7 +22,7 @@ const TripArea = () => {
                     </div>
                 </div>
 
-                <div className="region-select-two">
+                <div className="two">
                     <div class="style">
                         <select>
                             <option>전체</option>
@@ -29,13 +33,13 @@ const TripArea = () => {
                         </select>
                     </div>
                 </div>
-                <div className="region-select-three">
-
+                <div className="btn">
+                    <button>검색</button>
                 </div>
             </div>
 
-            <div className="region-regionList">
-                <div className="region-regionList-region">
+            <div className="trip-area-list">
+                <div className="trip-area">
                     <img src="https://www.busan.go.kr/resource/img/geopark/sub/busantour/busantour1.jpg" />
 
                     <div>
@@ -54,4 +58,4 @@ const TripArea = () => {
     );
 };
 
-export default TripArea;
+export default TripAreaList;
