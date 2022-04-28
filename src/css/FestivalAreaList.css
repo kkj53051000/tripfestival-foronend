@@ -1,4 +1,4 @@
-.trip-area-wrap {
+.festival-area-wrap {
     width: 100%;
     height: auto;
 
@@ -9,7 +9,7 @@
     flex-direction: column;
     align-items: center;
 }
-.trip-area-select {
+.festival-area-select {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -20,7 +20,7 @@
 
     /* border: 1px solid black; */
 }
-.trip-area-select .title {
+.festival-area-select .title {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -31,7 +31,7 @@
     font-size: 38px;
     font-weight: bold;
 }
-.trip-area-select .one {
+.festival-area-select .one {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -42,7 +42,7 @@
 
     /* border: 1px solid black; */
 }
-.trip-area-select .two {
+.festival-area-select .two {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -54,7 +54,7 @@
 
     /* border: 1px solid black; */
 }
-.trip-area-select .btn {
+.festival-area-select .btn {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -62,12 +62,12 @@
 
     flex: 1;
 }
-.trip-area-select button {
+.festival-area-select button {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
 
-    background-color: #86E8F7;
+    background-color: #FB8686;
     color: white;
 
     margin: 0;
@@ -90,7 +90,7 @@
 
     transition: 0.5s;
 }
-.trip-area-list {
+.festival-area-list {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -102,7 +102,7 @@
 
     border: 1px solid black;
 }
-.trip-area{
+.festival-area{
     display: flex;
     flex-direction: row;
     /* align-items: center; */
@@ -114,14 +114,14 @@
 
     border: 1px solid black;
 }
-.trip-area img {
+.festival-area img {
     height: 150px;
     width: auto;
 
     margin-left: 20px;
     margin-top: 25px;
 }
-.trip-area div {
+.festival-area div {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -130,16 +130,16 @@
     margin-top: 25px;
     margin-bottom: 25px;
 }
-.trip-area .title {
+.festival-area .title {
     font-size: 30px;
     font-weight: bold;
 }
-.trip-area .hashtag-wrap {
+.festival-area .hashtag-wrap {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
 }
-.trip-area .hashtag {
+.festival-area .hashtag {
     font-size: 18px;
     font-weight: bold;
     margin: 3px;

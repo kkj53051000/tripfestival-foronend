@@ -8,7 +8,8 @@
     justify-content: space-between;
 
     border-bottom: 1px solid gainsboro;
-    background-color: #60d2ff;
+    /* background-color: #60d2ff; */
+    background-color: #FBFBFD;
 }
 /* #41B7E5 */
 .header-select-country{
@@ -21,7 +22,7 @@
 
     text-decoration: none;
 
-    color: white;
+    color: #60d2ff;
 }
 .header-login-join{
 	display: flex;

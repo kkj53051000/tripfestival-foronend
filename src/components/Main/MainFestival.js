@@ -23,12 +23,12 @@ const MainFestival = () => {
                         <span className="main-select-span">스페셜</span>
                     </Link>
             </div>
-                <Link to="/" className="main-category">
-                    <span className="main-category-span">카테고리</span>
+                <Link to="/festivalarea" className="main-area">
+                    <span className="main-festival-area">지역</span>
                 </Link>
 
-                <Link to="/" className="main-area">
-                    <span className="main-festival-area">지역</span>
+                <Link to="/" className="main-category">
+                    <span className="main-category-span">카테고리</span>
                 </Link>
         
                 <Link to="/" className="main-month">

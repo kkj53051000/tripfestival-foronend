@@ -1,16 +1,16 @@
 import React from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import TopicList from "../components/TopicList";
+import SpecialList from "../components/Special/SpecialList";
 
-const TopicListPage  = () => {
+const SpecialListPage  = () => {
     return(
         <div>
             <Header />
-            <TopicList />
+            <SpecialList />
             <Footer />
         </div>
     );
 };
 
-export default TopicListPage;
+export default SpecialListPage;

@@ -1,7 +1,7 @@
 import React from "react";
-import "../css/TopicList.css";
+import "../../css/TopicList.css";
 
-const TopicList = () => {
+const SpecialList = () => {
     return(
         <div className="topic-list-wrap">
             <div className="topic-list">
@@ -17,4 +17,4 @@ const TopicList = () => {
     );
 };
 
-export default TopicList;
+export default SpecialList;

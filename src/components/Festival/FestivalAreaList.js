@@ -1,11 +1,10 @@
 import React from "react";
-import "../../css/TripAreaList.css";
+import "../../css/FestivalAreaList.css";
 
-const TripAreaList = () => {
-    
-    return (
-        <div className="trip-area-wrap">
-            <div className="trip-area-select">
+const FestivalAreaList = () => {
+    return(
+        <div className="festival-area-wrap">
+            <div className="festival-area-select">
                 <div className="title">
                     지역
                 </div>
@@ -38,21 +37,22 @@ const TripAreaList = () => {
                 </div>
             </div>
 
-            <div className="trip-area-list">
-                <div className="trip-area">
-                    <img src="https://www.busan.go.kr/resource/img/geopark/sub/busantour/busantour1.jpg" />
+            <div className="festival-area-list">
+                <div className="festival-area">
+                    <img src="https://minio.nculture.org/amsweb-opt/multimedia_assets/134/30188/17055/c/080_-2019-%ED%95%A8%ED%8F%89%EB%82%98%EB%B9%84%EC%B6%95%EC%A0%9C-full-size.jpg" />
 
                     <div>
-                        <span className="title">해운대</span>
+                        <span className="title">함평 나비 대축제</span>
                         <div className="hashtag-wrap">
-                            <span className="hashtag">#부산</span>
-                            <span className="hashtag">#해수욕장</span>
+                            <span className="hashtag">#함평</span>
+                            <span className="hashtag">#나비</span>
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     );
 };
 
-export default TripAreaList;
+export default FestivalAreaList;
