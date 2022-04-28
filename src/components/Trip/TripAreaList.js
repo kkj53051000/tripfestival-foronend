@@ -1,5 +1,5 @@
 import React from "react";
-import "../../css/TripArea.css";
+import "../../css/TripAreaList.css";
 
 const TripAreaList = () => {
     

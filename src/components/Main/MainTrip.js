@@ -28,7 +28,7 @@ const MainTrip = () => {
                 <span className="main-region-span">지역</span>
             </Link>
 
-            <Link to="/" className="main-nature-hotspot">
+            <Link to="/tripnature" className="main-nature-hotspot">
                 <span className="main-nature-hotspot-span">자연관광지</span>
             </Link>
     
