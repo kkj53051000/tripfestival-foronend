@@ -12,6 +12,8 @@ import MainSpecialPage from "./pages/MainSpecialPage";
 import TripNatureListPage from './pages/TripNatureListPage';
 import TripArtificialListPage from "./pages/TripArtificialListPage";
 import FestivalAreaListPage from './pages/FestivalAreaListPage';
+import FestivalCategoryListPage from "./pages/FestivalCategoryListPage";
+import FestivalMonthListPage from './pages/FestivalMonthListPage';
 
 function App() {
   return (
@@ -29,6 +31,8 @@ function App() {
         
         {/* Festival List */}
         <Route path="/festivalarea" element={<FestivalAreaListPage />} exact={true} />
+        <Route path="/festivalcategory" element={<FestivalCategoryListPage />} exact={true} />
+        <Route path="/festivalmonth" element={<FestivalMonthListPage />} exact={true} />
 
         <Route path="/nh" element={<NatureHotspotPage />} exact={true} />
         <Route path="/login" element={<LoginPage />} exact={true} />

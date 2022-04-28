@@ -4,9 +4,9 @@ import "../../css/MainView.css";
 const MainView = () => {
     return (
         <div className="main-view-wrap">
-            <div className="main-view-top">
+            {/* <div className="main-view-top">
                 <span>어디 놀러가요?</span>
-            </div>
+            </div> */}
 
             <div className="main-trip-title">
                 <span>추천 관광지</span>

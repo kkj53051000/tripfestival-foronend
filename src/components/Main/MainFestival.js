@@ -27,11 +27,11 @@ const MainFestival = () => {
                     <span className="main-festival-area">지역</span>
                 </Link>
 
-                <Link to="/" className="main-category">
+                <Link to="/festivalcategory" className="main-category">
                     <span className="main-category-span">카테고리</span>
                 </Link>
         
-                <Link to="/" className="main-month">
+                <Link to="/festivalmonth" className="main-month">
                     <span className="main-month-month">월별</span>
                 </Link>
         </div>
