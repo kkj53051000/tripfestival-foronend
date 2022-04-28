@@ -1,0 +1,126 @@
+.trip-artificial-list-wrap {
+    width: 100%;
+    height: auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.trip-artificial-list-search {
+    display: flex;
+    flex-direction: row;
+
+    width: 50%;
+    min-width: 768px;
+    height: 100px;
+
+    border: 1px solid black;
+}
+.trip-artificial-list-search .title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    flex: 1;
+
+    font-size: 38px;
+    font-weight: bold;
+}
+.trip-artificial-list-search .search-one {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    flex: 1;
+}
+.trip-artificial-list-search .search-two {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    flex: 1;
+}
+.trip-artificial-list-search .btn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    flex: 1;
+}
+.trip-artificial-list-search button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    background-color: #86E8F7;
+    color: white;
+
+    margin: 0;
+    padding: 0.5rem 1rem;
+
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+
+    display: inline-block;
+    width: auto;
+
+    border: none;
+    border-radius: 4px;
+
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+
+    cursor: pointer;
+
+    transition: 0.5s;
+}
+.trip-artificial-list-area-search {
+    display: flex;
+    flex-direction: row;
+
+    width: 50%;
+    min-width: 768px;
+    height: 70px;
+
+    display: flex;
+    flex-direction: row;
+
+    border: 1px solid black;
+}
+.trip-artificial-list-area-search .title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    flex: 1;
+
+    font-size: 24px;
+    font-weight: bold;
+}
+.trip-artificial-list-area-search .search-one {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    flex: 1;
+}
+.trip-artificial-list-area-search .search-two {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    flex: 1;
+}
+.trip-artificial-list-area-search .null {
+
+    flex: 1;
+}

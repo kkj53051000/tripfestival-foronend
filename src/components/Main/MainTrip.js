@@ -32,7 +32,7 @@ const MainTrip = () => {
                 <span className="main-nature-hotspot-span">자연관광지</span>
             </Link>
     
-            <Link to="/" className="main-hotspot">
+            <Link to="/tripartificial" className="main-hotspot">
                 <span className="main-hotspot-span">인공관광지</span>
             </Link>
 

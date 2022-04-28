@@ -10,6 +10,7 @@ import TopicListPage from './pages/TopicListPage';
 import MainPage from './pages/MainPage';
 import MainSpecialPage from "./pages/MainSpecialPage";
 import TripNatureListPage from './pages/TripNatureListPage';
+import TripArtificialListPage from "./pages/TripArtificialListPage";
 
 function App() {
   return (
@@ -21,6 +22,8 @@ function App() {
         <Route path="/s" element={<MainSpecialPage />} exact={true} />
         <Route path="/triparea" element={<TripAreaListPage />} exact={true} />
         <Route path="tripnature" element={<TripNatureListPage />} exact={true} />
+        <Route path="tripartificial" element={<TripArtificialListPage />} exact={true} />
+        
         <Route path="/nh" element={<NatureHotspotPage />} exact={true} />
         <Route path="/login" element={<LoginPage />} exact={true} />
         <Route path="/topiclist" element={<TopicListPage />} exact={true} />
