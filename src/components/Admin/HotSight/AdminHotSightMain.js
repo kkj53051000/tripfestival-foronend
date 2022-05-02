@@ -8,6 +8,10 @@ const AdminHotSightMain = () => {
             <Link to="/admin/hotsight/one">
                 <h1>HotSightOne</h1>
             </Link>
+
+            <Link to="/admin/hotsight/two">
+                <h1>HotSightTwo</h1>
+            </Link>
         </div>
     );
 };

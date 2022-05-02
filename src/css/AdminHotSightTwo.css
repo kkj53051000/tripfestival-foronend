@@ -1,0 +1,12 @@
+.admin-hot-sight-two-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.admin-hot-sight-two-upload {
+
+}
+.admin-hot-sight-two-list {
+    width: 50%;
+    height: auto;
+}
