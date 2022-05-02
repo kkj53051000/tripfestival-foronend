@@ -23,6 +23,7 @@ import AdminLandmarkReviewPage from './pages/AdminLandmarkReviewPage';
 import AdminLandmarkTimePage from './pages/AdminLandmarkTimePage';
 import AdminMainPage from './pages/AdminMainPage';
 import AdminEventMainPage from './pages/AdminEventMainPage';
+import AdminEventPage from './pages/AdminEventPage';
 
 function App() {
   return (
@@ -47,6 +48,7 @@ function App() {
 
         {/* Admin Event */}
         <Route path="/admin/event" element={<AdminEventMainPage />} exact={true} />
+        <Route path="/admin/event/event" element={<AdminEventPage />} exact={true} />
         
         {/* Trip List */}
         <Route path="/triparea" element={<TripAreaListPage />} exact={true} />
