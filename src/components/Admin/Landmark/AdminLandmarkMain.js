@@ -20,6 +20,10 @@ const AdminLandmarkMain = () => {
             <Link to="/admin/landmark/hashtag">
                 <h1>랜드마크 해시태그</h1>
             </Link>
+
+            <Link to="/admin/landmark/review">
+                <h1>랜드마크 리뷰</h1>
+            </Link>
         </div>
     );
 };
