@@ -14,7 +14,7 @@ const AdminMain = () => {
                 <h1>인공관광지</h1>
             </Link>
 
-            <Link to="/admin">
+            <Link to="/admin/naturehotspot">
                 <h1>자연관광지</h1>
             </Link>
 

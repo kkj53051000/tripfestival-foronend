@@ -39,6 +39,7 @@ import AdminHotSpotMainPage from './pages/AdminHotSpotMainPage';
 import AdminHotSpotTypePage from './pages/AdminHotSpotTypePage';
 import AdminHotSpotPage from './pages/AdminHotSpotPage';
 import AdminNatureHotSpotTypePage from './pages/AdminNatureHotSpotTypePage';
+import AdminNatureHotSpotMainPage from './pages/AdminNatureHotSpotMainPage';
 
 function App() {
   return (
@@ -85,7 +86,9 @@ function App() {
 
         {/* Admin NatureHotSpot */}
         <Route path="/admin/naturehotspot/type" element={<AdminNatureHotSpotTypePage />} exact={true} />
-        
+        <Route path="/admin/naturehotspot" element={<AdminNatureHotSpotMainPage />} exact={true} />
+
+
         {/* Trip List */}
         <Route path="/triparea" element={<TripAreaListPage />} exact={true} />
         <Route path="/tripnature" element={<TripNatureListPage />} exact={true} />

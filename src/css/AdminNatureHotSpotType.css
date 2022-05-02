@@ -1,0 +1,9 @@
+.admin-nature-hot-spot-type-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.admin-nature-hot-spot-type-list {
+    display: flex;
+    flex-direction: column;
+}
