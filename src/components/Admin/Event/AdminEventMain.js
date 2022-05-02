@@ -20,6 +20,10 @@ const AdminEventMain = () => {
             <Link to="/admin/event/hashtag">
                 <h1>이벤트 해시태그</h1>
             </Link>
+
+            <Link to="/admin/event/img">
+                <h1>이벤트 이미지</h1>
+            </Link>
         </div>
     );
 };
