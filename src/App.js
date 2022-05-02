@@ -30,6 +30,7 @@ import AdminEventHashTagPage from './pages/AdminEventHashTagPage';
 import AdminEventImgPage from './pages/AdminEventImgPage';
 import AdminEventReviewPage from './pages/AdminEventReviewPage';
 import AdminEventSeasonPage from './pages/AdminEventSeasonPage';
+import AdminEventTimePage from './pages/AdminEventTimePage';
 
 function App() {
   return (
@@ -61,6 +62,7 @@ function App() {
         <Route path="/admin/event/img" element={<AdminEventImgPage />} exact={true} />
         <Route path="/admin/event/review" element={<AdminEventReviewPage />} exact={true} />
         <Route path="/admin/event/season" element={<AdminEventSeasonPage />} exact={true} />
+        <Route path="/admin/event/time" element={<AdminEventTimePage />} exact={true} />
         
         {/* Trip List */}
         <Route path="/triparea" element={<TripAreaListPage />} exact={true} />

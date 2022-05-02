@@ -32,6 +32,10 @@ const AdminEventMain = () => {
             <Link to="/admin/event/season">
                 <h1>이벤트 시즌</h1>
             </Link>
+
+            <Link to="/admin/event/time">
+                <h1>이벤트 시간</h1>
+            </Link>
         </div>
     );
 };
