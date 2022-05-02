@@ -1,0 +1,23 @@
+.admin-landmark-hash-tag-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.admin-landmark-hash-tag-list {
+    width: 50%;
+    height: auto;
+}
+.admin-landmark-hash-tag-item {
+
+    width: 100%;
+    height: auto;
+    min-height: 140px;
+
+    padding: 6px;
+
+    border: 1px solid black;
+}
+.admin-landmark-hash-tag-item .title {
+    font-size: 24px;
+    font-weight: bold;
+}
