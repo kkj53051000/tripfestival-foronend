@@ -15,6 +15,7 @@ import FestivalAreaListPage from './pages/FestivalAreaListPage';
 import FestivalCategoryListPage from "./pages/FestivalCategoryListPage";
 import FestivalMonthListPage from './pages/FestivalMonthListPage';
 import AdminLandmarkMainPage from './pages/AdminLandmarkMainPage';
+import AdminLandmarkPage from './pages/AdminLandmarkPage';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
 
         {/* Admin Landmark */}
         <Route path="/admin/landmark" element={<AdminLandmarkMainPage />} exact={true} />
+        <Route path="/admin/landmark/landmark" element={<AdminLandmarkPage />} exact={true} />
         
         {/* Trip List */}
         <Route path="/triparea" element={<TripAreaListPage />} exact={true} />
