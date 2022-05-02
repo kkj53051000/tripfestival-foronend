@@ -5,8 +5,8 @@ import '../../../css/AdminHotSightMain.css';
 const AdminHotSightMain = () => {
     return (
         <div className="admin-hot-sight-main-wrap">
-            <Link to="/">
-                <h1>Something</h1>
+            <Link to="/admin/hotsight/one">
+                <h1>HotSightOne</h1>
             </Link>
         </div>
     );

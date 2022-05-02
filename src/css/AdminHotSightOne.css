@@ -1,0 +1,12 @@
+.admin-hot-sight-one-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.admin-hot-sight-one-upload {
+
+}
+.admin-hot-sight-one-list {
+    width: 50%;
+    height: auto;
+}

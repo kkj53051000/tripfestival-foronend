@@ -32,6 +32,7 @@ import AdminEventReviewPage from './pages/AdminEventReviewPage';
 import AdminEventSeasonPage from './pages/AdminEventSeasonPage';
 import AdminEventTimePage from './pages/AdminEventTimePage';
 import AdminHotSightMainPage from './pages/AdminHotSightMainPage';
+import AdminHotSightOnePage from './pages/AdminHotSightOnePage';
 
 function App() {
   return (
@@ -67,6 +68,7 @@ function App() {
 
         {/* Admin HotSight */}
         <Route path="/admin/hotsight" element={<AdminHotSightMainPage />} exact={true} />
+        <Route path="/admin/hotsight/one" element={<AdminHotSightOnePage />} exact={true} />
         
         {/* Trip List */}
         <Route path="/triparea" element={<TripAreaListPage />} exact={true} />
