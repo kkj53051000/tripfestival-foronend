@@ -1,0 +1,23 @@
+.admin-landmark-img-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.admin-landmark-img-list {
+    width: 50%;
+    height: auto;
+}
+.admin-landmark-img-item {
+
+    width: 100%;
+    height: auto;
+    min-height: 140px;
+
+    padding: 6px;
+
+    border: 1px solid black;
+}
+.admin-landmark-img-item .title {
+    font-size: 24px;
+    font-weight: bold;
+}
