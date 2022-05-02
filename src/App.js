@@ -36,6 +36,7 @@ import AdminHotSightOnePage from './pages/AdminHotSightOnePage';
 import AdminHotSightTwoPage from './pages/AdminHotSightTwoPage';
 import AdminHotSightLandmarkPage from './pages/AdminHotSightLandmarkPage';
 import AdminHotSpotMainPage from './pages/AdminHotSpotMainPage';
+import AdminHotSpotTypePage from './pages/AdminHotSpotTypePage';
 
 function App() {
   return (
@@ -77,6 +78,7 @@ function App() {
 
         {/* Admin HotSpot */}
         <Route path="/admin/hotspot" element={<AdminHotSpotMainPage />} exact={true} />
+        <Route path="/admin/hotspot/type" element={<AdminHotSpotTypePage />} exact={true} />
         
         {/* Trip List */}
         <Route path="/triparea" element={<TripAreaListPage />} exact={true} />

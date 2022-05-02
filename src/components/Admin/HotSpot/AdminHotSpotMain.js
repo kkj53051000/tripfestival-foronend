@@ -5,8 +5,8 @@ import '../../../css/AdminHotSpotMain.css';
 const AdminHotSpotMain = () => {
     return (
         <div className="admin-hot-spot-main-wrap">
-            <Link to="/">
-                <h1>Something</h1>
+            <Link to="/admin/hotspot/type">
+                <h1>인공관광지 타입</h1>
             </Link>
         </div>
     );
