@@ -8,6 +8,10 @@ const AdminEventMain = () => {
             <Link to="/admin/event/event">
                 <h1>이벤트</h1>
             </Link>
+
+            <Link to="/admin/event/category">
+                <h1>이벤트 카테고리</h1>
+            </Link>
         </div>
     );
 };

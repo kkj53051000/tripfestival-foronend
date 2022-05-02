@@ -1,0 +1,9 @@
+.admin-event-catgory-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.admin-event-category-list {
+    display: flex;
+    flex-direction: column;
+}
