@@ -1,0 +1,9 @@
+.admin-event-season-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.admin-event-season-list {
+    display: flex;
+    flex-direction: column;
+}
