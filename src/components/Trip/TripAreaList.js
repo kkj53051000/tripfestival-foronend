@@ -40,16 +40,50 @@ const TripAreaList = () => {
 
             <div className="trip-area-list">
                 <div className="trip-area">
-                    <img src="https://www.busan.go.kr/resource/img/geopark/sub/busantour/busantour1.jpg" />
+                    <img src="http://tong.visitkorea.or.kr/cms/resource/67/2612467_image2_1.jpg" />
 
                     <div>
-                        <span className="title">해운대</span>
+                        <span className="title">해운대해수욕장</span>
                         <div className="hashtag-wrap">
                             <span className="hashtag">#부산</span>
-                            <span className="hashtag">#해수욕장</span>
+                            <span className="hashtag">#센텀시티</span>
+                            <span className="hashtag">#영화관</span>
+                            <span className="hashtag">#기네스북</span>
+                            <span className="hashtag">#싸이</span>
                         </div>
                     </div>
                 </div>
+
+                <div className="trip-area">
+                    <img src="http://tong.visitkorea.or.kr/cms/resource/35/2716235_image2_1.jpg" />
+
+                    <div>
+                        <span className="title">부산 영화의 전당</span>
+                        <div className="hashtag-wrap">
+                            <span className="hashtag">#부산</span>
+                            <span className="hashtag">#대마도가보인다</span>
+                            <span className="hashtag">#일출</span>
+                            <span className="hashtag">#절경</span>
+                            <span className="hashtag">#수상법당</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="trip-area">
+                    <img src="http://tong.visitkorea.or.kr/cms/resource/31/1571031_image2_1.jpg" />
+
+                    <div>
+                        <span className="title">해동 용궁사(부산)</span>
+                        <div className="hashtag-wrap">
+                            <span className="hashtag">#부산</span>
+                            <span className="hashtag">#관광열차</span>
+                            <span className="hashtag">#유료주차</span>
+                            <span className="hashtag">#광안대교근처</span>
+                        </div>
+                    </div>
+                </div>
+
+
             </div>
         </div>
     );

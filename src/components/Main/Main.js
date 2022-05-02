@@ -2,14 +2,13 @@ import React, { useState } from "react";
 import "../../css/Main.css";
 import { Link } from "react-router-dom";
 import MainView from "./MainView";
-import MainMenuList from "./MainMenuList";
 
 const Main = () => {
 
     return(
         <div className="main-wrap">
             <div className="main-select">
-                <Link to="/" className="main-select-main" style={{backgroundColor: "#FF9933", color : "white"}}>
+                <Link to="/" className="main-select-main" style={{border: "3px solid #FF9933", color : "black"}}>
                     <span className="main-select-span">메인</span>
                 </Link>
                 

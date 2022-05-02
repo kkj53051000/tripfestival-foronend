@@ -4,16 +4,109 @@
     align-items: center;
     justify-content: center;
 
+
     width: 50%;
     min-width:768px;
 }
+.main-view-input{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+
+
+    width:100%;
+    height: 500px;
+
+    background-color: burlywood;
+    background-image: url("https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1b/df/b5/6f/caption.jpg?w=900&h=600&s=1");
+}
+.main-view-input .input {
+    background-color: white;
+    
+    margin-top: 200px;
+
+    border-radius: 20px 20px 20px 20px;
+}
+.main-view-input .input-div {
+    width: 600px;
+    height: 300px;
+
+    border-top: 3px solid black;
+
+    background-color: white;
+}
+.main-view-input .input-content {
+    display: flex;
+    flex-direction: column;
+
+    padding: 3px;
+
+    width: 100%;
+    height: 70px;
+
+    border-bottom: 1px solid #F1F1F1;
+}
+.main-view-input input {
+    width: 600px;
+    height: 60px;
+
+    border: none;
+    border-radius: 30px;
+
+    font-size: 20px;
+}
+.main-view-input input:focus {
+    outline: none;
+}
+.input-content-name{
+    font-size: 30px;
+
+    margin-left: 10px;
+}
+.input-content-adress {
+    margin-left: 10px;
+}
+
+
 .main-trip-title{
     width: 100%;
 
     font-size: 30px;
     font-weight: bold;
 
-    margin-top: 50px;
+    margin-top: 70px;
+
+    position: relative;
+}
+.main-topic {
+    margin-top: 80px;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 150px;
+
+    box-shadow: 6px 6px 6px grey;
+    
+    /* border: 1px solid black; */
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(50, 50);
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    margin: auto;
+    background-image: url("https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1b/df/b5/6f/caption.jpg?w=900&h=600&s=1");
+    /* opacity: 0; */
+}
+.main-topic span {
+    font-size: 68px;
+    font-weight: bold;
 }
 .main-view-top{
     display: flex;
@@ -34,9 +127,10 @@
     justify-content: center;
 
     width: 100%;
-    height: 200px;
+    height: 180px;
 
     margin-top: 20px;
+    margin-bottom: 60px;
 }
 .main-view-trip-item{
     width: 300px;
@@ -44,10 +138,12 @@
 
     margin: 5px;
 
-    border: 1px solid black;
+    /* border: 1px solid black; */
     border-radius: 5px;
 
     position: relative;
+
+    box-shadow: 2px 2px 2px grey;
 }
 .main-view-trip-item span {
     font-size: 20px;
@@ -55,13 +151,14 @@
 
 }
 .main-view-trip-img{
-    width: 300px;
+    width: 270px;
     height: 100%;
 
     position: relative;
 
     margin-bottom: 20px;
 }
+
 .main-view-trip-item img {
     position: absolute;
     top: 0;
@@ -78,4 +175,63 @@
 
     width: auto;
     height: auto;
+}
+
+.main-view-festival{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 350px;
+
+    margin-top: 20px;
+}
+.main-view-festival-img{
+    width: auto;
+    height: 300px;
+
+    position: relative;
+
+    margin-bottom: 20px;
+
+    
+}
+.main-view-festival-item{
+    width: 300px;
+    height: 100%;
+
+    margin: 5px;
+
+    /* border: 1px solid black; */
+    border-radius: 5px;
+
+    position: relative;
+
+    box-shadow: 2px 2px 2px grey;
+}
+.main-view-festival-item span {
+    font-size: 20px;
+    font-weight: bold;
+
+}
+.main-view-festival-img{
+    width: 270px;
+    height: 100%;
+
+    position: relative;
+
+    margin-bottom: 20px;
+}
+
+.main-view-festival-item img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(50, 50);
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    margin: auto;
 }

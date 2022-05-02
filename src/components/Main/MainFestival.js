@@ -15,7 +15,7 @@ const MainFestival = () => {
                         <span className="main-select-span">여행</span>
                     </Link>
 
-                    <Link to="/f" className="main-select-festival" style={{backgroundColor: "#FA8686", color : "white"}}>
+                    <Link to="/f" className="main-select-festival" style={{border: "3px solid #FA8686", color : "black"}}>
                         <span className="main-select-span">축제</span>
                     </Link>
 

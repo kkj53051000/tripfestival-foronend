@@ -13,7 +13,7 @@ const TripAreaListPage = () => {
         <div>
             <Header />
             <TripAreaList />
-            <Footer />
+            {/* <Footer /> */}
         </div>
     );
 };

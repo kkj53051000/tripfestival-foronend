@@ -11,7 +11,7 @@ const MainTrip = () => {
                     <span className="main-select-span">메인</span>
                 </Link>
                 
-                <Link to="/t" className="main-selct-trip"  style={{backgroundColor: "#86E8F8", color : "white"}}>
+                <Link to="/t" className="main-selct-trip"  style={{border: "3px solid #86E8F8", color : "black"}}>
                     <span className="main-select-span">여행</span>
                 </Link>
 
