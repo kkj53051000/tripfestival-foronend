@@ -8,6 +8,10 @@ const AdminHotSpotMain = () => {
             <Link to="/admin/hotspot/type">
                 <h1>인공관광지 타입</h1>
             </Link>
+
+            <Link to='/admin/hotspot/hotspot'>
+                <h1>인공관광지</h1>
+            </Link>
         </div>
     );
 };
