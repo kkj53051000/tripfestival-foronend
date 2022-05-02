@@ -1,0 +1,27 @@
+.admin-event-review-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.admin-event-review-list {
+    width: 50%;
+    min-width: 768px;
+    height: auto;
+
+    display: flex;
+    flex-direction: column;
+}
+.admin-event-review-item {
+    width: 100%;
+    height: auto;
+
+    border: 1px solid black;
+}
+.admin-event-review-item .landmark-title {
+    font-size: 24px;
+    font-weight: bold;
+}
+.admin-event-review-item .review-title {
+    font-size: 20px;
+    font-weight: bold;
+}

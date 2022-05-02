@@ -24,6 +24,10 @@ const AdminEventMain = () => {
             <Link to="/admin/event/img">
                 <h1>이벤트 이미지</h1>
             </Link>
+
+            <Link to="/admin/event/review">
+                <h1>이벤트 리뷰</h1>
+            </Link>
         </div>
     );
 };
