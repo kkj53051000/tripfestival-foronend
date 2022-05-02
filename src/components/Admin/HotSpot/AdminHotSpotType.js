@@ -3,12 +3,12 @@ import '../../../css/AdminHotSpotType.css';
 
 const AdminHotSpotType = () => {
     return (
-        <div className="admin-hot-sight-type-wrap">
+        <div className="admin-hot-spot-type-wrap">
             <h2>인공관광지 타입</h2>
 
             <h2>업로드</h2>
 
-            <div className="admin-hot-sight-type-upload">
+            <div className="admin-hot-spot-type-upload">
                 <span>이름</span>
                 <input name="name" />
                 <br/><br/>
@@ -22,7 +22,7 @@ const AdminHotSpotType = () => {
 
             <h2>리스트</h2>
             
-            <div className="admin-hot-sight-type-list">
+            <div className="admin-hot-spot-type-list">
                 <div className="item">
                     <input placeholder="인공관광지 이름" />
                     <button>수정</button>

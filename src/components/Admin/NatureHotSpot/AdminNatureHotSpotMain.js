@@ -8,6 +8,10 @@ const AdminNatureHotSpotMain = () => {
             <Link to="/admin/naturehotspot/type">
                 <h1>자연광광지 타입</h1>
             </Link>
+
+            <Link to="/admin/naturehotspot/naturehotspot">
+                <h1>자연광광지</h1>
+            </Link>
         </div>
     );
 };

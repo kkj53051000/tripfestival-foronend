@@ -1,9 +1,9 @@
-.admin-hot-sight-type-wrap {
+.admin-hot-spot-type-wrap {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.admin-hot-sight-type-list {
+.admin-hot-spot-type-list {
     display: flex;
     flex-direction: column;
 }
