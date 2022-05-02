@@ -8,7 +8,14 @@ const AdminLandmarkHashTag = () => {
                 <div className="admin-landmark-hash-tag-item">
                     <span className="title">PK + 관광지 이름</span>
                     <br/><br/>
-                    <span>img link</span><button>삭제</button>
+
+                    <span>해시태그</span>
+                    <input name="name" />
+                    <button>추가</button>
+                    <br/><br/>
+                    
+
+                    <span>#해시태그</span><button>삭제</button>
                 </div>
             </div>
         </div>
