@@ -10,6 +10,12 @@ const AdminLandmarkImg = () => {
                 <div className="admin-landmark-img-item">
                     <span className="title">PK + 관광지 이름</span>
                     <br/><br/>
+
+                    <span>이미지</span>
+                    <input type="file" multiple />
+                    <button>업로드</button>
+                    <br/><br/>
+
                     <span>img link</span><button>삭제</button>
                 </div>
             </div>
