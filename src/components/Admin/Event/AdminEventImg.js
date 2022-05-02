@@ -10,6 +10,11 @@ const AdminEventImg = () => {
                 <div className="admin-event-img-item">
                     <span className="title">PK + 이벤트 이름</span>
                     <br/><br/>
+
+                    <input type="file" />
+                    <button>추가</button>
+                    <br/><br/><br/>
+
                     <span>img link</span><button>삭제</button>
                 </div>
             </div>
