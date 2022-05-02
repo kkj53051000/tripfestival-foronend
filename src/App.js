@@ -26,6 +26,7 @@ import AdminEventMainPage from './pages/AdminEventMainPage';
 import AdminEventPage from './pages/AdminEventPage';
 import AdminEventCateogryPage from './pages/AdminEventCateogryPage';
 import AdminEventFeePage from './pages/AdminEventFeePage';
+import AdminEventHashTagPage from './pages/AdminEventHashTagPage';
 
 function App() {
   return (
@@ -53,6 +54,7 @@ function App() {
         <Route path="/admin/event/event" element={<AdminEventPage />} exact={true} />
         <Route path="/admin/event/category" element={<AdminEventCateogryPage />} exact={true} />
         <Route path="/admin/event/fee" element={<AdminEventFeePage />} exact={true} />
+        <Route path="/admin/event/hashtag" element={<AdminEventHashTagPage />} exact={true} />
         
         {/* Trip List */}
         <Route path="/triparea" element={<TripAreaListPage />} exact={true} />

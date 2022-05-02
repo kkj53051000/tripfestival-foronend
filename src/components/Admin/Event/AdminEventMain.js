@@ -16,6 +16,10 @@ const AdminEventMain = () => {
             <Link to="/admin/event/fee">
                 <h1>이벤트 가격</h1>
             </Link>
+
+            <Link to="/admin/event/hashtag">
+                <h1>이벤트 해시태그</h1>
+            </Link>
         </div>
     );
 };
