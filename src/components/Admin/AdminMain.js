@@ -10,7 +10,7 @@ const AdminMain = () => {
                 <h1>랜드마크(관광지)</h1>
             </Link>
 
-            <Link to="/admin">
+            <Link to="/admin/hotspot">
                 <h1>인공관광지</h1>
             </Link>
 
