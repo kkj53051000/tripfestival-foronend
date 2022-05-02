@@ -21,6 +21,8 @@ import AdminLandmarkFeePage from './pages/AdminLandmarkFeePage';
 import AdminLandmarkHashTagPage from './pages/AdminLandmarkHashTagPage';
 import AdminLandmarkReviewPage from './pages/AdminLandmarkReviewPage';
 import AdminLandmarkTimePage from './pages/AdminLandmarkTimePage';
+import AdminMainPage from './pages/AdminMainPage';
+import AdminEventMainPage from './pages/AdminEventMainPage';
 
 function App() {
   return (
@@ -31,6 +33,9 @@ function App() {
         <Route path="/f" element={<MainFestivalPage />} exact={true} />
         <Route path="/s" element={<MainSpecialPage />} exact={true} />
 
+        {/* Admin Main */}
+        <Route path="/admin" element={<AdminMainPage />} exact={true} />
+
         {/* Admin Landmark */}
         <Route path="/admin/landmark" element={<AdminLandmarkMainPage />} exact={true} />
         <Route path="/admin/landmark/landmark" element={<AdminLandmarkPage />} exact={true} />
@@ -39,6 +44,9 @@ function App() {
         <Route path="/admin/landmark/hashtag" element={<AdminLandmarkHashTagPage />} exact={true} />
         <Route path="/admin/landmark/review" element={<AdminLandmarkReviewPage />} exact={true} />
         <Route path="/admin/landmark/time" element={<AdminLandmarkTimePage />} exact={true} />
+
+        {/* Admin Event */}
+        <Route path="/admin/event" element={<AdminEventMainPage />} exact={true} />
         
         {/* Trip List */}
         <Route path="/triparea" element={<TripAreaListPage />} exact={true} />
