@@ -24,6 +24,10 @@ const AdminLandmarkMain = () => {
             <Link to="/admin/landmark/review">
                 <h1>랜드마크 리뷰</h1>
             </Link>
+
+            <Link to="/admin/landmark/time">
+                <h1>랜드마크 시간</h1>
+            </Link>
         </div>
     );
 };

@@ -20,6 +20,7 @@ import AdminLandmarkImgPage from './pages/AdminLandmarkImgPage';
 import AdminLandmarkFeePage from './pages/AdminLandmarkFeePage';
 import AdminLandmarkHashTagPage from './pages/AdminLandmarkHashTagPage';
 import AdminLandmarkReviewPage from './pages/AdminLandmarkReviewPage';
+import AdminLandmarkTimePage from './pages/AdminLandmarkTimePage';
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
         <Route path="/admin/landmark/fee" element={<AdminLandmarkFeePage />} exact={true} />
         <Route path="/admin/landmark/hashtag" element={<AdminLandmarkHashTagPage />} exact={true} />
         <Route path="/admin/landmark/review" element={<AdminLandmarkReviewPage />} exact={true} />
+        <Route path="/admin/landmark/time" element={<AdminLandmarkTimePage />} exact={true} />
         
         {/* Trip List */}
         <Route path="/triparea" element={<TripAreaListPage />} exact={true} />
