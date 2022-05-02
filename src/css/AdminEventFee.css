@@ -1,0 +1,23 @@
+.admin-event-fee-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.admin-event-fee-list {
+    width: 50%;
+    height: auto;
+}
+.admin-event-fee-item {
+
+    width: 100%;
+    height: auto;
+    min-height: 140px;
+
+    padding: 6px;
+
+    border: 1px solid black;
+}
+.admin-event-fee-item .title {
+    font-size: 24px;
+    font-weight: bold;
+}
