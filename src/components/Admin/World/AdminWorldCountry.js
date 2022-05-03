@@ -77,36 +77,36 @@ const AdminWorldCountry = () => {
     // Modify
 
     // Name
-    const [namee, setNamee] = useState(null);
-    const onChangeNamee = e => {
-        setNamee(e.target.value);
+    const [changeName, setChangeName] = useState(null);
+    const onChangeName = e => {
+        setChangeName(e.target.value);
     }
 
     // Currency
-    const [currencyy, setCurrencyy] = useState(null);
-    const onChangeCurrencyy = e => {
-        setCurrencyy(e.target.value);
+    const [changeCurrency, setChangeCurrency] = useState(null);
+    const onChangeCurrency = e => {
+        setChangeCurrency(e.target.value);
     }
 
     // Capital
-    const [capitall, setCapitall] = useState(null);
-    const onChangeCapitall = e => {
-        setCapitall(e.target.value);
+    const [changeCapital, setChangeCapital] = useState(null);
+    const onChangeCapital = e => {
+        setChangeCapital(e.target.value);
     }
 
 
     // ExchangeRatio
-    const [exchangeRatioo, setExchangeRatioo] = useState(null);
-    const onChangeExchangeRatioo = e => {
-        setExchangeRatioo(e.target.value);
+    const [changeExchangeRatio, setChangeExchangeRatio] = useState(null);
+    const onChangeExchangeRatio = e => {
+        setChangeExchangeRatio(e.target.value);
     }
 
 
     const changeValue = {
-        name: namee,
-        currency: currencyy,
-        capital: capitall,
-        exchangeRatio: exchangeRatioo
+        name: changeName,
+        currency: changeCurrency,
+        capital: changeCapital,
+        exchangeRatio: changeExchangeRatio
     }
 
 
@@ -169,10 +169,10 @@ const AdminWorldCountry = () => {
                     {worldCountryList.data.items.map(country => (
                         <div className="item" key={country.id}>
                             <h3>{country.name}</h3>
-                            이름 : <input name="name" placeholder={country.name} onChange={onChangeNamee} /><br/>
-                            통화 : <input name="currency" placeholder={country.currency} onChange={onChangeCurrencyy} /><br/>
-                            수도 : <input name="capital" placeholder={country.capital} onChange={onChangeCapitall} /><br/>
-                            환율 : <input name="exchangeRatio" placeholder={country.exchangeRatio} onChange={onChangeExchangeRatioo} /><br/><br/>
+                            이름 : <input name="name" placeholder={country.name} onChange={onChangeName} /><br/>
+                            통화 : <input name="currency" placeholder={country.currency} onChange={onChangeCurrency} /><br/>
+                            수도 : <input name="capital" placeholder={country.capital} onChange={onChangeCapital} /><br/>
+                            환율 : <input name="exchangeRatio" placeholder={country.exchangeRatio} onChange={onChangeExchangeRatio} /><br/><br/>
                             <button value={country.id}  onClick={onClickModify}>수정</button>
                             <button value={country.id} onClick={onClickRemove} >삭제</button>
                             <br/><br/><br/><br/>
