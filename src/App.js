@@ -43,6 +43,7 @@ import AdminNatureHotSpotMainPage from './pages/AdminNatureHotSpotMainPage';
 import AdminNatureHotSpotPage from './pages/AdminNatureHotSpotPage';
 import AdminUserMainPage from './pages/AdminUserMainPage';
 import AdminUserPage from './pages/AdminUserPage';
+import AdminWorldMainPage from './pages/AdminWorldMainPage';
 
 function App() {
   return (
@@ -59,6 +60,9 @@ function App() {
         {/* Admin User */}
         <Route path="/admin/user" element={<AdminUserMainPage />} exact={true} />
         <Route path="/admin/user/user" element={<AdminUserPage />} exact={true} />
+
+        {/* Admin World */}
+        <Route path="/admin/world" element={<AdminWorldMainPage />} exact={true} />
 
         {/* Admin Landmark */}
         <Route path="/admin/landmark" element={<AdminLandmarkMainPage />} exact={true} />

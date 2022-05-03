@@ -10,6 +10,11 @@ const AdminMain = () => {
                 <h1>유저</h1>
             </Link>
 
+            <h1>세계</h1>
+            <Link to="/admin/world">
+                <h1>세계</h1>
+            </Link>
+
             <h1>관광지</h1>
             <Link to="/admin/landmark">
                 <h1>랜드마크(관광지)</h1>
