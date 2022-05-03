@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import '../../../css/world/AdminWorldCountry.css';
 import axios from "axios";
+import useApiGet from "../../../lib/useApiGet";
 
 const AdminWorldCountry = () => {
 
@@ -64,6 +65,24 @@ const AdminWorldCountry = () => {
         }
     }
 
+    // useEffect(() => {
+    //     const getWorldCountryNameList = async() => {
+    //         try {
+    //             const response = await axios.get("/api/worldCountryNameList");
+
+    //             console.log(response)
+    //         } catch(e) {
+    //             console.log(e);
+    //         }
+    //     };
+
+    //     getWorldCountryNameList()
+    // }, []);
+
+    const [worldCountryNameListLoading, worldCountryNameList, worldCountryNameListError] = useApiGet(() => {
+        return axios.get("/api/worldCountryNameList");
+    }, []);
+
     return (
         <div className="admin-world-country-wrap">
             <h2>세계 나라</h2>
@@ -97,11 +116,19 @@ const AdminWorldCountry = () => {
             <h2>리스트</h2>
             
             <div className="admin-world-country-list">
-                <div className="item">
-                    <input placeholder="나라 이름" />
-                    <button>수정</button>
-                    <button>삭제</button><br/>
-                </div>
+                {!worldCountryNameListLoading ?
+                <>
+                    {worldCountryNameList.data.items.map(country => (
+                        <div className="item">
+                            <input placeholder={country.name} />
+                            <button>수정</button>
+                            <button>삭제</button><br/>
+                        </div>
+                    ))}
+                </>
+                :
+                <></>
+                }
             </div>
         </div>
     );
