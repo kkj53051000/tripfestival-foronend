@@ -46,6 +46,7 @@ import AdminUserPage from './pages/AdminUserPage';
 import AdminWorldMainPage from './pages/AdminWorldMainPage';
 import AdminWorldCountryPage from './pages/AdminWorldCountryPage';
 import AdminWorldCountryCityPage from './pages/AdminWorldCountryCityPage';
+import AdminWorldCountryCityRegionPage from './pages/AdminWorldCountryCityRegionPage';
 
 function App() {
   return (
@@ -67,6 +68,7 @@ function App() {
         <Route path="/admin/world" element={<AdminWorldMainPage />} exact={true} />
         <Route path="/admin/world/country" element={<AdminWorldCountryPage />} exact={true} />
         <Route path="/admin/world/country/city" element={<AdminWorldCountryCityPage />} exact={true} />
+        <Route path="/admin/world/country/city/region" element={<AdminWorldCountryCityRegionPage />} exact={true} />
  
         {/* Admin Landmark */}
         <Route path="/admin/landmark" element={<AdminLandmarkMainPage />} exact={true} />

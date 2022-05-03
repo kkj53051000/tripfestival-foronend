@@ -1,0 +1,9 @@
+.admin-world-country-city-region-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.admin-world-country-city-region-list {
+    display: flex;
+    flex-direction: column;
+}

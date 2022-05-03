@@ -12,6 +12,10 @@ const AdminWorldMain = () => {
             <Link to='/admin/world/country/city'>
                 <h1>WorldCountryCity (도시 1)</h1>
             </Link>
+
+            <Link to='/admin/world/country/city/region'>
+                <h1>WorldCountryCityRegion (도시 2)</h1>
+            </Link>
         </div>
     );
 };
