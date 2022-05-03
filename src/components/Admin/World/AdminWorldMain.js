@@ -8,6 +8,10 @@ const AdminWorldMain = () => {
             <Link to='/admin/world/country'>
                 <h1>WorldCountry (나라)</h1>
             </Link>
+
+            <Link to='/admin/world/country/city'>
+                <h1>WorldCountryCity (도시 1)</h1>
+            </Link>
         </div>
     );
 };
