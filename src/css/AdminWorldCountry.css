@@ -1,0 +1,9 @@
+.admin-world-country-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.admin-world-country-list {
+    display: flex;
+    flex-direction: column;
+}
