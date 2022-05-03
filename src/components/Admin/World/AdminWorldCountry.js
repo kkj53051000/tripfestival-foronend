@@ -65,20 +65,6 @@ const AdminWorldCountry = () => {
         }
     }
 
-    // useEffect(() => {
-    //     const getWorldCountryNameList = async() => {
-    //         try {
-    //             const response = await axios.get("/api/worldCountryNameList");
-
-    //             console.log(response)
-    //         } catch(e) {
-    //             console.log(e);
-    //         }
-    //     };
-
-    //     getWorldCountryNameList()
-    // }, []);
-
     const [worldCountryNameListLoading, worldCountryNameList, worldCountryNameListError] = useApiGet(() => {
         return axios.get("/api/worldCountryNameList");
     }, []);
