@@ -5,6 +5,8 @@ import useApiGet from "../../../lib/useApiGet";
 
 const AdminWorldCountryCityRegion = () => {
 
+    const url = "/admin/world/country/city/region";
+
     // Name
     const [name, setName] = useState(null);
     const handleName = e => {
@@ -42,7 +44,10 @@ const AdminWorldCountryCityRegion = () => {
                 }
             });
 
-            console.log(response)
+            if(response.data.status === 'SUCCESS') {
+                alert("업로드 성공");
+                window.location.replace(url);
+            }
         } catch(e) {
             console.log(e);
         }
@@ -55,6 +60,39 @@ const AdminWorldCountryCityRegion = () => {
     const [worldCountryCityRegionListLoading, worldCountryCityRegionList, worldCountryCityRegionListError] = useApiGet(() => {
         return axios.get("/api/worldCountryCityRegionList");
     }, []);
+
+
+    // Modify
+    const [modifyName, setModifyName] = useState(null);
+    
+    const onChagngeModifyName = e => {
+        setModifyName(e.target.value)
+    }
+
+    const changeValue = {
+        name: modifyName
+    }
+
+    const onClickModify = async (e) => {
+        const response = await axios.post("/api/admin/worldCountryCityRegionNameModify/" + e.target.value, changeValue)
+
+        if(response.data.status === 'SUCCESS') {
+            alert("수정 성공");
+            window.location.replace(url)
+        }
+    }
+
+
+    // Remove
+
+    const onClickRemove = async (e) => {
+        const response = await axios.post("/api/admin/worldCountryCityRegionRemove/" + e.target.value)
+
+        if(response.data.status === 'SUCCESS') {
+            alert("삭제 성공");
+            window.location.replace(url)
+        }
+    }
 
 
     return (
@@ -103,9 +141,9 @@ const AdminWorldCountryCityRegion = () => {
                 <>
                     {worldCountryCityRegionList.data.items.map(region => (
                         <div className="item" key={region.id}>
-                            <input placeholder={region.name} />
-                            <button>수정</button>
-                            <button>삭제</button><br/>
+                            <input placeholder={region.name} onChange={onChagngeModifyName} />
+                            <button value={region.id} onClick={onClickModify} >수정</button>
+                            <button value={region.id} onClick={onClickRemove} >삭제</button><br/>
                         </div>
                     ))}
                 </>
