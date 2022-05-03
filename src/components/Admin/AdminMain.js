@@ -5,6 +5,11 @@ import "../../css/AdminMain.css";
 const AdminMain = () => {
     return (
         <div className="admin-main-wrap">
+            <h1>유저</h1>
+            <Link to='/admin/user'>
+                <h1>유저</h1>
+            </Link>
+
             <h1>관광지</h1>
             <Link to="/admin/landmark">
                 <h1>랜드마크(관광지)</h1>
