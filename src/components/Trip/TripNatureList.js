@@ -1,5 +1,5 @@
 import React from "react";
-import "../../css/TripNatureList.css";
+import "../../css/trip/TripNatureList.css";
 
 const TripNatureList = () => {
     return(

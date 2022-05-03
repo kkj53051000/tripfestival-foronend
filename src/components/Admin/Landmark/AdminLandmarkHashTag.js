@@ -1,5 +1,5 @@
 import React from "react";
-import "../../../css/AdminLandmarkHashTag.css";
+import "../../../css/landmark/AdminLandmarkHashTag.css";
 
 const AdminLandmarkHashTag = () => {
     return(

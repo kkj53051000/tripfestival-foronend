@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import '../../../css/AdminHotSightMain.css';
+import '../../../css/hotsight/AdminHotSightMain.css';
 
 const AdminHotSightMain = () => {
     return (

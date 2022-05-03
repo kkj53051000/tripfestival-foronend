@@ -1,5 +1,5 @@
 import React from "react";
-import "../../../css/AdminLandmarkImg.css";
+import "../../../css/landmark/AdminLandmarkImg.css";
 
 const AdminLandmarkImg = () => {
     return (

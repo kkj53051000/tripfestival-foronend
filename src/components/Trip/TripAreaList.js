@@ -1,5 +1,5 @@
 import React from "react";
-import "../../css/TripAreaList.css";
+import "../../css/trip/TripAreaList.css";
 
 const TripAreaList = () => {
     
@@ -40,7 +40,7 @@ const TripAreaList = () => {
 
             <div className="trip-area-list">
                 <div className="trip-area">
-                    <img src="http://tong.visitkorea.or.kr/cms/resource/67/2612467_image2_1.jpg" />
+                    <img src="http://tong.visitkorea.or.kr/cms/resource/67/2612467_image2_1.jpg" alt="" />
 
                     <div>
                         <span className="title">해운대해수욕장</span>
@@ -55,7 +55,7 @@ const TripAreaList = () => {
                 </div>
 
                 <div className="trip-area">
-                    <img src="http://tong.visitkorea.or.kr/cms/resource/35/2716235_image2_1.jpg" />
+                    <img src="http://tong.visitkorea.or.kr/cms/resource/35/2716235_image2_1.jpg" alt="" />
 
                     <div>
                         <span className="title">부산 영화의 전당</span>
@@ -70,7 +70,7 @@ const TripAreaList = () => {
                 </div>
 
                 <div className="trip-area">
-                    <img src="http://tong.visitkorea.or.kr/cms/resource/31/1571031_image2_1.jpg" />
+                    <img src="http://tong.visitkorea.or.kr/cms/resource/31/1571031_image2_1.jpg" alt="" />
 
                     <div>
                         <span className="title">해동 용궁사(부산)</span>

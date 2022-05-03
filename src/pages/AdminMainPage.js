@@ -1,6 +1,6 @@
 import React from "react";
-import AdminMain from "../components/Admin/AdminMain";
-import AdminHeader from "../components/Admin/AdminHeader";
+import AdminMain from "../components/admin/AdminMain";
+import AdminHeader from "../components/admin/AdminHeader";
 
 const AdminMainPage = () => {
     return (

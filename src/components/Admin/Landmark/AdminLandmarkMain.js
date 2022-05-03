@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "../../../css/AdminLandmarkMain.css";
+import "../../../css/landmark/AdminLandmarkMain.css";
 
 const AdminLandmarkMain = () => {
     return(

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "../../css/Main.css";
 import { Link } from "react-router-dom";
 import MainView from "./MainView";

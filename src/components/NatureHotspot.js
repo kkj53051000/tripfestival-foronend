@@ -1,5 +1,5 @@
 import React from "react";
-import "../css/NatureHotspot.css";
+import "../css/naturehotspot/NatureHotspot.css";
 
 const NatureHotspot = () => {
     return (

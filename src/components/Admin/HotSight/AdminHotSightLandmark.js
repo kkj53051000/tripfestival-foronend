@@ -1,5 +1,5 @@
 import React from "react";
-import '../../../css/HotSightLandmark.css';
+import '../../../css/hotsight/HotSightLandmark.css';
 
 const AdminHotSightLandmark = () => {
     return (

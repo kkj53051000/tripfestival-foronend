@@ -1,5 +1,5 @@
 import React from "react";
-import '../../../css/AdminEventTime.css';
+import '../../../css/event/AdminEventTime.css';
 
 const AdminEventTime = () => {
     return (

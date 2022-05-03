@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import '../../../css/AdminHotSpotMain.css';
+import '../../../css/hotspot/AdminHotSpotMain.css';
 
 const AdminHotSpotMain = () => {
     return (

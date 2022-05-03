@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../../css/MainView.css";
+import "../../css/main/MainView.css";
 import { Link } from "react-router-dom";
 
 const MainView = () => {

@@ -1,5 +1,5 @@
 import React from "react";
-import "../../css/TripArtificialList.css";
+import "../../css/trip/TripArtificialList.css";
 
 const TripArtificialList = () => {
     return (
@@ -72,7 +72,7 @@ const TripArtificialList = () => {
             {/* Temp */}
             <div className="trip-area-list">
                 <div className="trip-area">
-                    <img src="https://www.busan.go.kr/resource/img/geopark/sub/busantour/busantour1.jpg" />
+                    <img src="https://www.busan.go.kr/resource/img/geopark/sub/busantour/busantour1.jpg" alt="test" />
 
                     <div>
                         <span className="title">해운대</span>

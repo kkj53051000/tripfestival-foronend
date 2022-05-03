@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import '../../../css/AdminWorldCountry.css';
+import '../../../css/world/AdminWorldCountry.css';
 import axios from "axios";
 
 const AdminWorldCountry = () => {
@@ -49,9 +49,10 @@ const AdminWorldCountry = () => {
 
     formData.append("value", new Blob([JSON.stringify(value)], {type: "application/json"}));
 
+    // Axios Upload
     const onClickUpload = async () => {
         try {
-            const response = await axios.post("/api/worldCountryProcess", formData, {
+            const response = await axios.post("/api/admin/worldCountryProcess", formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 }

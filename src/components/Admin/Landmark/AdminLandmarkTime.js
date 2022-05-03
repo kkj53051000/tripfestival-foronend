@@ -1,5 +1,5 @@
 import React from "react";
-import "../../../css/AdminLandmarkTime.css";
+import "../../../css/landmark/AdminLandmarkTime.css";
 
 const AdminLandmarkTime = () => {
     return (

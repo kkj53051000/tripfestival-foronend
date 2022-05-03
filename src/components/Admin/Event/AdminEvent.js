@@ -1,5 +1,5 @@
 import React from "react";
-import "../../../css/AdminEvent.css";
+import "../../../css/event/AdminEvent.css";
 
 const AdminEvent = () => {
     return (

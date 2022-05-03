@@ -1,5 +1,5 @@
 import React from "react";
-import "../../css/FestivalCategoryList.css";
+import "../../css/festival/FestivalCategoryList.css";
 
 const FestivalCategoryList = () => {
     return (
@@ -60,7 +60,7 @@ const FestivalCategoryList = () => {
             {/* Temp */}
             <div className="festival-area-list">
                 <div className="festival-area">
-                    <img src="https://minio.nculture.org/amsweb-opt/multimedia_assets/134/30188/17055/c/080_-2019-%ED%95%A8%ED%8F%89%EB%82%98%EB%B9%84%EC%B6%95%EC%A0%9C-full-size.jpg" />
+                    <img src="https://minio.nculture.org/amsweb-opt/multimedia_assets/134/30188/17055/c/080_-2019-%ED%95%A8%ED%8F%89%EB%82%98%EB%B9%84%EC%B6%95%EC%A0%9C-full-size.jpg" alt="test" />
 
                     <div>
                         <span className="title">함평 나비 대축제</span>

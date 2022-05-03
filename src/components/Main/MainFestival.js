@@ -1,5 +1,5 @@
 import React from "react";
-import "../../css/MainFestival.css";
+import "../../css/main/MainFestival.css";
 import { Link } from "react-router-dom";
 
 const MainFestival = () => {

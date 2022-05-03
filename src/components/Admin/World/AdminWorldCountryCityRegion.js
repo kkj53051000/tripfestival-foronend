@@ -1,5 +1,5 @@
 import React from "react";
-import '../../../css/AdminWorldCountryCityRegion.css';
+import '../../../css/world/AdminWorldCountryCityRegion.css';
 
 const AdminWorldCountryCityRegion = () => {
     return (

@@ -1,5 +1,5 @@
 import React from "react";
-import '../../../css/AdminHotSightTwo.css';
+import '../../../css/hotsight/AdminHotSightTwo.css';
 
 const AdminHotSightTwo = () => {
     return (

@@ -1,5 +1,5 @@
 import React from "react";
-import "../../css/MainTrip.css";
+import "../../css/main/MainTrip.css";
 import { Link } from "react-router-dom";
 
 const MainTrip = () => {

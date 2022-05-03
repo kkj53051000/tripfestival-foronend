@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "../../../css/AdminEventMain.css";
+import "../../../css/event/AdminEventMain.css";
 
 const AdminEventMain = () => {
     return (

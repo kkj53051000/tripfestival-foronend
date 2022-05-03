@@ -1,5 +1,5 @@
 import React from "react";
-import '../../../css/AdminEventHashTag.css';
+import '../../../css/event/AdminEventHashTag.css';
 
 const AdminEventHashTag = () => {
     return (

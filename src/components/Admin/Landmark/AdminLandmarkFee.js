@@ -1,5 +1,5 @@
 import React from "react";
-import "../../../css/AdminLandmarkFee.css";
+import "../../../css/landmark/AdminLandmarkFee.css";
 
 const AdminLandmarkFee = () => {
     return (
