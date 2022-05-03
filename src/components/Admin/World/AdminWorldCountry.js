@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import '../../../css/world/AdminWorldCountry.css';
 import axios from "axios";
 import useApiGet from "../../../lib/useApiGet";
+// import history from '../../../history';
 
 const AdminWorldCountry = () => {
-
 
     // Name
     const [name, setName] = useState(null);
@@ -58,16 +58,78 @@ const AdminWorldCountry = () => {
                     'Content-Type': 'multipart/form-data'
                 }
             });
+            
+            if(response.data.status === 'SUCCESS') {
+                alert("업로드 성공");
+                window.location.replace("/admin/world/country")
+            }
 
-            console.log(response)
         } catch(e) {
             console.log(e);
         }
     }
 
-    const [worldCountryNameListLoading, worldCountryNameList, worldCountryNameListError] = useApiGet(() => {
+    const [worldCountryListLoading, worldCountryList, worldCountryListError] = useApiGet(() => {
         return axios.get("/api/worldCountryNameList");
     }, []);
+
+
+    // Modify
+
+    // Name
+    const [namee, setNamee] = useState(null);
+    const onChangeNamee = e => {
+        setNamee(e.target.value);
+    }
+
+    // Currency
+    const [currencyy, setCurrencyy] = useState(null);
+    const onChangeCurrencyy = e => {
+        setCurrencyy(e.target.value);
+    }
+
+    // Capital
+    const [capitall, setCapitall] = useState(null);
+    const onChangeCapitall = e => {
+        setCapitall(e.target.value);
+    }
+
+
+    // ExchangeRatio
+    const [exchangeRatioo, setExchangeRatioo] = useState(null);
+    const onChangeExchangeRatioo = e => {
+        setExchangeRatioo(e.target.value);
+    }
+
+
+    const changeValue = {
+        name: namee,
+        currency: currencyy,
+        capital: capitall,
+        exchangeRatio: exchangeRatioo
+    }
+
+
+
+    const onClickModify = async (e) => {
+        const response = await axios.post("/api/admin/worldCountryModify/" + e.target.value, changeValue)
+
+        if(response.data.status === 'SUCCESS') {
+            alert("수정 성공");
+            window.location.replace("/admin/world/country")
+        }
+    }
+
+
+    // Remove
+    const onClickRemove = async (e) => {
+        const response = await axios.post("/api/admin/worldCountryRemove/" + e.target.value)
+
+        if(response.data.status === 'SUCCESS') {
+            alert("삭제 성공");
+            window.location.replace("/admin/world/country")
+        }
+    }
 
     return (
         <div className="admin-world-country-wrap">
@@ -93,7 +155,7 @@ const AdminWorldCountry = () => {
                 <br/><br/>
 
                 <span>환율</span>
-                <input name="exchangeRatio" onChange={handleExchangeRatio} />
+                <input name="exchangeRatio" placeholder="숫자만" onChange={handleExchangeRatio} />
                 <br/><br/>
 
                 <button onClick={onClickUpload}>업로드</button>
@@ -102,13 +164,18 @@ const AdminWorldCountry = () => {
             <h2>리스트</h2>
             
             <div className="admin-world-country-list">
-                {!worldCountryNameListLoading ?
+                {worldCountryList != null && !worldCountryListLoading ?
                 <>
-                    {worldCountryNameList.data.items.map(country => (
-                        <div className="item">
-                            <input placeholder={country.name} />
-                            <button>수정</button>
-                            <button>삭제</button><br/>
+                    {worldCountryList.data.items.map(country => (
+                        <div className="item" key={country.id}>
+                            <h3>{country.name}</h3>
+                            이름 : <input name="name" placeholder={country.name} onChange={onChangeNamee} /><br/>
+                            통화 : <input name="currency" placeholder={country.currency} onChange={onChangeCurrencyy} /><br/>
+                            수도 : <input name="capital" placeholder={country.capital} onChange={onChangeCapitall} /><br/>
+                            환율 : <input name="exchangeRatio" placeholder={country.exchangeRatio} onChange={onChangeExchangeRatioo} /><br/><br/>
+                            <button value={country.id}  onClick={onClickModify}>수정</button>
+                            <button value={country.id} onClick={onClickRemove} >삭제</button>
+                            <br/><br/><br/><br/>
                         </div>
                     ))}
                 </>

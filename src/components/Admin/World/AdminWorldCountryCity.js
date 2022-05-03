@@ -76,7 +76,7 @@ const AdminWorldCountryCity = () => {
 
                 <span>나라</span>
                 <select onChange={handleWorldCoutryId}>
-                    {!worldCountryListLoading ?
+                    {worldCountryList != null && !worldCountryListLoading ?
                     <>
                         <option selected disabled>
                             선택하시오
@@ -99,7 +99,7 @@ const AdminWorldCountryCity = () => {
             <h2>리스트</h2>
             
             <div className="admin-world-country-city-list">
-                {!worldCountryCityListLoading ?
+                {worldCountryCityList != null && !worldCountryCityListLoading ?
                 <>
                     {worldCountryCityList.data.items.map(city => (
                         <div className="item">
