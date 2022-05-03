@@ -5,6 +5,8 @@ import useApiGet from "../../../lib/useApiGet";
 
 const AdminWorldCountryCity = () => {
 
+    const url = "/admin/world/country/city";
+
     // Name
     const [name, setName] = useState(null);
     const handleName = e => {
@@ -44,7 +46,10 @@ const AdminWorldCountryCity = () => {
                 }
             });
 
-            console.log(response)
+            if(response.data.status === 'SUCCESS') {
+                alert("업로드 성공");
+                window.location.replace(url)
+            }
         } catch(e) {
             console.log(e);
         }
@@ -57,6 +62,40 @@ const AdminWorldCountryCity = () => {
     const [worldCountryCityListLoading, worldCountryCityList, worldCountryCityListError] = useApiGet(() => {
         return axios.get("/api/worldCountryCityNameList");
     }, []);
+
+
+    // Modify
+    const [modifyName, setModifyName] = useState(null);
+    
+    const onChagngeModifyName = e => {
+        setModifyName(e.target.value)
+    }
+
+    const changeValue = {
+        name: modifyName
+    }
+
+    const onClickModify = async (e) => {
+        const response = await axios.post("/api/admin/worldCountryCityNameModify/" + e.target.value, changeValue)
+
+        if(response.data.status === 'SUCCESS') {
+            alert("수정 성공");
+            window.location.replace(url)
+        }
+    }
+
+
+    // Remove
+
+    const onClickRemove = async (e) => {
+        const response = await axios.post("/api/admin/worldCountryCityRemove/" + e.target.value)
+
+        if(response.data.status === 'SUCCESS') {
+            alert("삭제 성공");
+            window.location.replace(url)
+        }
+    }
+
 
 
     return (
@@ -103,9 +142,9 @@ const AdminWorldCountryCity = () => {
                 <>
                     {worldCountryCityList.data.items.map(city => (
                         <div className="item">
-                            <input placeholder={city.name}/>
-                            <button>수정</button>
-                            <button>삭제</button><br/>
+                            <input placeholder={city.name} onChange={onChagngeModifyName} />
+                            <button value={city.id} onClick={onClickModify} >수정</button>
+                            <button value={city.id} onClick={onClickRemove}>삭제</button><br/>
                         </div>
                     ))}
                 </>
