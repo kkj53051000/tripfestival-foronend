@@ -4,8 +4,7 @@
     align-items: center;
 }
 .admin-event-time-list {
-    width: 50%;
-    height: auto;
+
 }
 .admin-event-time-item {
 
@@ -14,8 +13,6 @@
     min-height: 140px;
 
     padding: 6px;
-
-    border: 1px solid black;
 }
 .admin-event-time-item .title {
     font-size: 24px;
