@@ -56,6 +56,16 @@ const AdminEvent = () => {
         setEventSeasonId(e.target.value);
     }
 
+    // File
+    const [file, setFile] = useState(null);
+
+    const handleFile = e => {
+        setFile(e.target.files[0])
+    }
+
+    var formData = new FormData();
+    formData.append("file", file);
+
     const value = {
         name: name,
         description: description,
@@ -67,10 +77,16 @@ const AdminEvent = () => {
         eventSeasonId : eventSeasonId
     }
 
+    formData.append("value", new Blob([JSON.stringify(value)], {type: "application/json"}));
+
     // Axios Upload
     const onClickUpload = async () => {
         try {
-            const response = await axios.post("/api/admin/eventProcess", value);
+            const response = await axios.post("/api/admin/eventProcess", formData, {
+                headers: {
+                    'Content-Type': 'multipart/form-data'
+                }
+            });
 
             if(response.data.status === 'SUCCESS') {
                 alert("업로드 성공");
@@ -160,7 +176,9 @@ const AdminEvent = () => {
 
                 <span>시즌</span>
                 <select onChange={handleEventSeason}>
-                    <option>1월</option>
+                    <option disabled selected>
+                        선택하시오
+                    </option>
                     {eventSeasonList != null && !eventSeasonListLoading ?
                     <>
                         {eventSeasonList.data.items.map(season => (
@@ -176,6 +194,10 @@ const AdminEvent = () => {
                 <br/><br/>
 
 
+                <span>축제 메인 이미지 </span>
+                <input name="file" type="file" onChange={handleFile} />
+                <br/><br/>
+
 
                 <button onClick={onClickUpload}>업로드</button>
             </div>
@@ -187,7 +209,7 @@ const AdminEvent = () => {
                 <>
                     {eventList.data.items.map(event => (
                         <>
-                        <span className="title">{event.id} {event.name}</span>
+                        <span className="title">{event.id} - {event.name}</span>
 
                         <br/>
 
