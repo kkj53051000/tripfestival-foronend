@@ -22,7 +22,7 @@ const AdminEventHashTag = () => {
 
     const value = {
         name: name,
-        eventId, eventId
+        eventId: eventId
     }
 
 

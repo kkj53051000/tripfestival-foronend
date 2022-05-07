@@ -1,44 +1,161 @@
-import React from "react";
+import React, { useState } from "react";
 import "../../../css/landmark/AdminLandmark.css";
+import axios from "axios";
+import useApiGet from "../../../lib/useApiGet";
 
 const AdminLandmark = () => {
+
+    const url = "/admin/landmark/landmark";
+
+    // Name
+    const [name, setName] = useState(null);
+    const handleName = e => {
+        setName(e.target.value);
+    }
+
+    // File
+    const [file, setFile] = useState(null);
+    const handleFile = e => {
+        setFile(e.target.files[0]);
+    }
+
+    // Description
+    const [description, setDescription] = useState(null);
+    const handleDescription = e => {
+        setDescription(e.target.value);
+    }
+
+    // Adress
+    const [address, setAddress] = useState(null);
+    const handleAdress = e => {
+        setAddress(e.target.value)
+    }
+
+    // Homepage
+    const [homepage, setHomepage] = useState(null);
+    const handleHomepage = e => {
+        setHomepage(e.target.value);
+    }
+
+    // World Country City Region Id
+    const [worldCountryCityRegionId, setWorldCountryCityRegionId] = useState(null);
+    const handleWorldCountryCityRegionId = e => {
+        setWorldCountryCityRegionId(e.target.value);
+    }
+
+    var formData = new FormData();
+    
+
+    const value = {
+        name: name,
+        description: description,
+        address: address,
+        homepage: homepage,
+        worldCountryCityRegionId: worldCountryCityRegionId,
+    }
+
+    // Axios Upload
+    const onClickUpload = async () => {
+        try {
+            formData.append("file", file);
+            formData.append("value", new Blob([JSON.stringify(value)], {type: "application/json"}));
+
+            const response = await axios.post("/api/admin/landmarkProcess", formData, {
+                headers: {
+                    'Content-Type': 'multipart/form-data'
+                }
+            });
+
+            if(response.data.status === 'SUCCESS') {
+                alert("업로드 성공");
+                window.location.replace(url)
+            }
+        } catch(e) {
+            console.log(e);
+        }
+    }
+
+    // WorldCountryCityRegion List
+    const [worldCountryCityRegionListLoading, worldCountryCityRegionList, worldCountryCityRegionListError] = useApiGet(() => {
+        return axios.get("/api/worldCountryCityRegionList");
+    }, []);
+
+    const [landmarkListLoading, landmarkList, landmarkListError] = useApiGet(() => {
+        return axios.get("/api/landmarkAllList");
+    }, [])
+
     return(
         <div className="admin-landmark-upload-wrap">
             <h2>랜드마크 업로드</h2>
 
             <div className="admin-landmark-upload">
                 <span>이름</span>
-                <input /><br/><br/>
-                <span>설명</span>
-                <textarea /><br/><br/>
-                <span>주소</span>
-                <input /><br/><br/>
-                <span>홈페이지</span>
-                <input /><br/><br/>
+                <input name="name" onChange={handleName} /><br/><br/>
 
-                <button>업로드</button>
+                <span>이미지</span>
+                <input name="file" type="file" onChange={handleFile} /><br/><br/>
+                
+                <span>설명</span>
+                <textarea name="description" onChange={handleDescription} /><br/><br/>
+
+                <span>주소</span>
+                <input name="address" onChange={handleAdress} /><br/><br/>
+
+                <span>홈페이지</span>
+                <input name="homepage" onChange={handleHomepage} /><br/><br/>
+
+                <span>지역</span>
+                <select onChange={handleWorldCountryCityRegionId}>
+                    <option selected disabled>
+                        선택하시오
+                    </option>
+                    {worldCountryCityRegionList != null && !worldCountryCityRegionListLoading ?
+                    <>
+                        {worldCountryCityRegionList.data.items.map(region => (
+                            <option value={region.id}>
+                                {region.name}
+                            </option>
+                        ))}
+                    </>
+                    :
+                    <></>
+                    }
+                </select><br/><br/>
+
+                <button onClick={onClickUpload}>업로드</button>
             </div>
 
             <h2>랜드마크 리스트</h2>
 
             <div className="admin-landmark-list">
-                <span className="title">PK + 관광지 이름</span>
+                {landmarkList != null && !landmarkListLoading ?
+                <>
+                    {landmarkList.data.items.map(landmark => (
+                        <div>
+                            <span className="title" >{landmark.id} - {landmark.name}</span>
 
-                <br/>
+                            <br/>
 
-                <input className="name" placeholder="관광지 이름" />
+                            <input className="name" placeholder={landmark.name} />
 
-                <textarea className="description" placeholder="설명 내용" />
+                            <textarea className="description" placeholder={landmark.description} />
 
-                <input className="adress" placeholder="주소 내용" />
+                            <input className="adress" placeholder={landmark.address} />
 
-                <input className="homepage" placeholder="홈페이지 내용" />
+                            <input className="homepage" placeholder={landmark.homepage} />
 
-                <input className="worldcountrycityregion" placeholder="리전Id" />
+                            <input className="worldcountrycityregion" placeholder={landmark.worldCountryCityRegionId} />
 
-                <br/><br/>
+                            <br/><br/>
 
-                <button>수정</button>
+                            <button>수정</button>
+                        </div>
+                    ))}
+                </>
+                :
+                <></>
+                }
+                
             </div>
         </div>
     );
