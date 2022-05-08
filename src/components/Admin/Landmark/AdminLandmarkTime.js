@@ -125,7 +125,7 @@ const AdminLandmarkTime = () => {
                 <>
                     {landmarkTimeList.data.items.map(time => (
                         <div className="admin-landmark-time-item">
-                            <span className="title">PK + 관광지 이름</span>
+                            <span className="title">{time.landmarkId} - {time.landmarkName}</span>
                             <br/><br/>
                             
                             <input placeholder={time.title} />

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import '../../../css/event/AdminEventTime.css';
 import axios from "axios";
+import useApiGet from "../../../lib/useApiGet";
 
 const AdminEventTime = () => {
 
@@ -8,30 +9,35 @@ const AdminEventTime = () => {
 
     // Title
     const [title, setTitle] = useState(null);
-
     const handleTitle = e => {
         setTitle(e.target.value);
     }
 
     // Start Time
     const [startTime, setStartTime] = useState(null);
-
     const handleStartTime = e => {
         setStartTime(e.target.value);
     }
 
     // End Time
     const [endTime, setEndTime] = useState(null);
-
     const handleEndTime = e => {
         setEndTime(e.target.value);
     }
 
+    // Event Id
+    const [eventId, setEventId] = useState(null);
+    const handleEventId = e => {
+        setEventId(e.target.value);
+    }
+ 
     const value = {
         title : title,
         startTime : startTime,
-        endTime : endTime
+        endTime : endTime,
+        eventId: eventId
     }
+
     // Axios Upload
     const onClickUpload = async () => {
         try {
@@ -46,10 +52,29 @@ const AdminEventTime = () => {
         }
     }
 
+    // Axios Remove
+    const onClickRemove = async ( e ) => {
+        try {
+            const response = await axios.post("/api/admin/eventTimeRemove/" + e.target.value)
+
+            if(response.data.status === 'SUCCESS') {
+                alert("삭제 성공");
+                window.location.replace(url)
+            }
+        } catch(e) {
+            console.log(e);
+        }
+    }
+
     // Event List
-    // const [eventListLoading, eventList, eventListError] = useApiGet(() => {
-    //     return axios.get("");
-    // }, []);
+    const [eventListLoading, eventList, eventListError] = useApiGet(() => {
+        return axios.get("/api/eventAllList");
+    }, [])
+
+    // Event Time List
+    const [eventTimeListLoading, eventTimeList, eventTimeListError] = useApiGet(() => {
+        return axios.get("/api/eventTimeAllList");
+    }, [])
 
 
     return (
@@ -73,8 +98,21 @@ const AdminEventTime = () => {
                 <br/><br/>
 
                 <span>축제</span>
-                <select>
-
+                <select onChange={handleEventId}>
+                    <option selected disabled>
+                        선택하시오
+                    </option>
+                    {eventList != null && !eventListLoading ?
+                    <>
+                        {eventList.data.items.map(event => (
+                            <option value={event.id}>
+                                {event.name}
+                            </option>
+                        ))}
+                    </>
+                    :
+                    <></>
+                    }
                 </select>
                 <br/><br/>
 
@@ -83,12 +121,27 @@ const AdminEventTime = () => {
             </div>
 
             <div className="admin-event-time-list">
-                <div className="admin-event-time-item">
-                    <input placeholder="이벤트 시간" />
-                    <button>수정</button>
-                    <button>삭제</button>
-                    <br />
-                </div>
+                
+                {eventTimeList != null && !eventTimeListLoading ?
+                <>
+                    {eventTimeList.data.items.map(eventTime => (
+                        <div className="admin-event-time-item">
+                            <h2>{eventTime.eventId} - {eventTime.eventName}</h2>
+                            <input placeholder={eventTime.title}/>
+                            <input placeholder={eventTime.startTime}/>
+                            <input placeholder={eventTime.endTime}/>
+                            <br/><br/>
+
+
+                            <button value={eventTime.id} onClick={onClickRemove} >삭제</button>
+                            <br />
+                        </div>
+                    ))}
+                </>
+                :
+                <>
+                </>
+                }
             </div>
         </div>
     );

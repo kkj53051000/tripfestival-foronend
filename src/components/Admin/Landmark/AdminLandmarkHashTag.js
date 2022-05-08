@@ -105,7 +105,7 @@ const AdminLandmarkHashTag = () => {
                     <>
                         {landmarkHashTagList.data.items.map(hashTag => (
                             <>
-                                <span className="title">PK - 관광지 이름</span>
+                                <span className="title">{hashTag.landmarkId} - {hashTag.landmarkName}</span>
                                 <br/><br/>
                             
                                 <span>{hashTag.name} </span>
