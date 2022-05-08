@@ -75,11 +75,12 @@ const AdminLandmark = () => {
         }
     }
 
-    // WorldCountryCityRegion List
+    // World Country City Region List
     const [worldCountryCityRegionListLoading, worldCountryCityRegionList, worldCountryCityRegionListError] = useApiGet(() => {
         return axios.get("/api/worldCountryCityRegionList");
     }, []);
 
+    // Landmark List
     const [landmarkListLoading, landmarkList, landmarkListError] = useApiGet(() => {
         return axios.get("/api/landmarkAllList");
     }, [])
