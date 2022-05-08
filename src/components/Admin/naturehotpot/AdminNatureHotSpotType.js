@@ -59,7 +59,7 @@ const AdminNatureHotSpotType = () => {
         }
     }
 
-    // Landmark List
+    // Nature Hotspot Type List
     const [natureHotspotTypeListLoading, natureHotspotTypeList, natureHotspotTypeListError] = useApiGet(() => {
         return axios.get("/api/natureHotspotTypeAllList");
     }, [])
