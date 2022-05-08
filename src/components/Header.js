@@ -20,7 +20,7 @@ const Header = () => {
                     </select>                    
             </div>
             <Link to="/" className="header-main-logo">
-                내일은여행
+                아무튼, 여행
             </Link>
             <div className="header-login-join">
                 {/* <button href="#" class="btn-gradient green small" onClick={onClickBtn}>로그인</button>

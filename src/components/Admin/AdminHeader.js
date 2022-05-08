@@ -5,7 +5,7 @@ import "../../css/AdminHeader.css";
 const AdminHeader = () => {
     return(
         <div className="admin-header-wrap">
-            <Link to="/admin" className="admin-header-title">내일은여행 관리자 페이지</Link>
+            <Link to="/admin" className="admin-header-title">아무튼, 여행 관리자 페이지</Link>
         </div>
     );
 };
