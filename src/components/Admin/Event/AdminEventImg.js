@@ -13,8 +13,6 @@ const AdminEventImg = () => {
         setEventId(e.target.value);
     }
 
-    
-    
 
     // File
     const [files, setFiles] = useState(null);
