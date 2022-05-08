@@ -1,12 +1,22 @@
+.main-festival-menu-list {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    width: 50%;
+    min-width: 768px;
+    height: auto;
+}
 .main-category{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     
-    width: 50%;
-    min-width: 768px;
-    height: 250px;
+    width: 45%;
+    height: 200px;
 
     margin: 10px;
 
@@ -20,9 +30,8 @@
     align-items: center;
     justify-content: center;
     
-    width: 50%;
-    min-width: 768px;
-    height: 250px;
+    width: 45%;
+    height: 200px;
 
     margin: 10px;
 
@@ -36,9 +45,8 @@
     align-items: center;
     justify-content: center;
 
-    width: 50%;
-    min-width: 768px;
-    height: 250px;
+    width: 94%;
+    height: 200px;
 
     margin: 10px;
 

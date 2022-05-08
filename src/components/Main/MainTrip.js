@@ -6,11 +6,7 @@ const MainTrip = () => {
 
     return (
         <div className="main-wrap">
-            <div className="main-select">
-                <Link to="/" className="main-select-main">
-                    <span className="main-select-span">메인</span>
-                </Link>
-                
+            <div className="main-select">                
                 <Link to="/t" className="main-selct-trip"  style={{border: "3px solid #86E8F8", color : "black"}}>
                     <span className="main-select-span">여행</span>
                 </Link>
@@ -18,13 +14,9 @@ const MainTrip = () => {
                 <Link to="/f" className="main-select-festival">
                     <span className="main-select-span">축제</span>
                 </Link>
-
-                <Link to="/s" className="main-select-special">
-                    <span className="main-select-span">스페셜</span>
-                </Link>
             </div>
 
-            <div className="main-trip-menu">
+            <div className="main-trip-menu-list">
                 <Link to="/triparea" className="main-region">
                     <span className="main-region-span">지역</span>
                 </Link>
