@@ -13,7 +13,7 @@ const AdminHotSightOne = () => {
         setName(e.target.value);
     }
 
-    // Fiel
+    // File
     const [file, setFile] = useState(null);
     const handleFile = e => {
         setFile(e.target.files[0])
@@ -63,7 +63,7 @@ const AdminHotSightOne = () => {
 
 
 
-    // Hot Sight One
+    // Hot Sight One List
     const [hotSightOneListLoading, hotSightOneList, hotSightOneListError] = useApiGet(() => {
         return axios.get("/api/hotSightOneAllList")
     }, [])
