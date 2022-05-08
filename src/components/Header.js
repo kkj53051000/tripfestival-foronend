@@ -12,12 +12,12 @@ const Header = () => {
     return (
         <div className="header-wrap">
             <div className="header-select-country">
-                    <select name="fruits" class="select">
+                    {/* <select name="fruits" class="select">
                         <option value="apple" selected>Korea 🇰🇷</option>
                         <option value="orange">USA</option>
                         <option value="grape">Japan</option>
                         <option value="melon">China</option>
-                    </select>                    
+                    </select>                     */}
             </div>
             <Link to="/" className="header-main-logo">
                 아무튼, 여행

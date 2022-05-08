@@ -13,8 +13,7 @@
 }
 /* #41B7E5 */
 .header-select-country{
-    margin: 20px;
-
+    width: 141px;
 }
 .header-main-logo{
     font-size: 50px;
@@ -33,7 +32,7 @@
 }
 .header-login-btn{
     color: #000;
-    font-size: 25px;
+    font-size: 20px;
     font-weight: bold;
 
     margin: 5px;
@@ -42,7 +41,7 @@
 }
 .header-join-btn{
     color: gray;
-    font-size: 25px;
+    font-size: 20px;
     font-weight: bold;
 
     margin: 5px;

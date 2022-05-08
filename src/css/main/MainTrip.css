@@ -1,12 +1,20 @@
+.main-trip-menu{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    width: 50%;
+    min-width: 768px;
+    height: auto;
+}
 .main-region{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     
-    width: 50%;
-    min-width: 768px;
-    height: 250px;
+    width: 45%;
+    height: 200px;
 
     margin: 10px;
 
@@ -21,9 +29,8 @@
     align-items: center;
     justify-content: center;
 
-    width: 50%;
-    min-width: 768px;
-    height: 250px;
+    width: 45%;
+    height: 200px;
 
     margin: 10px;
 
@@ -38,9 +45,24 @@
     align-items: center;
     justify-content: center;
 
-    width: 50%;
-    min-width: 768px;
-    height: 250px;
+    width: 45%;
+    height: 200px;
+
+    margin: 10px;
+
+    border: 3px solid black;
+    border-radius: 35px;
+
+    text-decoration: none;
+}
+.main-hotsight {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 45%;
+    height: 200px;
 
     margin: 10px;
 
