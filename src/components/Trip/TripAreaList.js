@@ -1,7 +1,59 @@
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 import "../../css/trip/TripAreaList.css";
+import useApiGet from "../../lib/useApiGet";
 
 const TripAreaList = () => {
+
+    // City
+    const [cityId, setCityId] = useState(0);
+    const handleCityId = e => {
+        setCityId(e.target.value);
+    }
+
+    // Region
+    const [regionId, setRegionId] = useState(0);
+    const handleRegionId = e => {
+        setRegionId(e.target.value);
+    }
+
+    const [landmarkList, setLandmarkList] = useState(null);
+
+    // Axios Upload
+    const onClickBtn = async () => {
+        try {
+
+            const response = await axios.get("/api/landmarkList", {
+                params: {
+                    worldCountryCityRegionId: regionId,
+                    worldCountryCityId: cityId
+                }
+            })
+
+            setLandmarkList(response.data.items)
+
+        } catch(e) {
+            console.log(e);
+        }
+    }
+
+    // City List
+    const [cityListLoading, cityList, cityListError] = useApiGet(() => {
+        return axios.get("/api/worldCountryCityNameList");
+    }, [])
+
+    // Region List
+    const [regionListLoading, regionList, regionListError] = useApiGet(() => {
+        return axios.get("/api/worldCountryCityRegion", {
+            params: {
+                worldCountryId: cityId,
+            }
+        })
+    }, [cityId])
+
+    useEffect(() => {
+        setRegionId(0)
+    }, [cityId])
     
     return (
         <div className="trip-area-wrap">
@@ -10,66 +62,73 @@ const TripAreaList = () => {
                     지역
                 </div>
 
+                {/* City */}
                 <div className="one">
                     <div class="style">
-                        <select>
-                            <option>전체</option>
-                            <option> 선택 2 </option>
-                            <option> 선택 3 </option>
-                            <option> 선택 4 </option>
-                            <option> 선택 5 </option>
+                        <select onChange={handleCityId}>
+                            <option value="0" disabled selected>선택하세요</option>
+                            {cityList != null && !cityListLoading ?
+                            <>
+                                {cityList.data.items.map(city => (
+                                    <option value={city.id} key={city.id}>
+                                        {city.name}
+                                    </option>
+                                ))}
+                            </>
+                            :
+                            <></>
+                            }
                         </select>
                     </div>
                 </div>
 
+                {/* Region */}
                 <div className="two">
                     <div class="style">
-                        <select>
-                            <option>전체</option>
-                            <option> 선택 2 </option>
-                            <option> 선택 3 </option>
-                            <option> 선택 4 </option>
-                            <option> 선택 5 </option>
+                        <select onChange={handleRegionId}>
+                            <option value="0" disabled selected>전체</option>
+                            {regionList != null && !regionListLoading ?
+                            <>
+                                {regionList.data.items.map(region => (
+                                    <option value={region.id} key={region.id}>
+                                        {region.name}
+                                    </option>
+                                ))}
+                            </>
+                            :
+                            <></>
+                            }
                         </select>
                     </div>
                 </div>
                 <div className="btn">
-                    <button>검색</button>
+                    <button onClick={onClickBtn}>검색</button>
                 </div>
             </div>
 
             <div className="trip-area-list">
-                <div className="trip-area">
-                    <img src="http://tong.visitkorea.or.kr/cms/resource/67/2612467_image2_1.jpg" alt="" />
+                {landmarkList != null ?
+                <>
+                    {landmarkList.map(landamrk => (
+                    <div className="trip-area">
+                        <img src={landamrk.img} alt="img" />
 
-                    <div>
-                        <span className="title">해운대해수욕장</span>
-                        <div className="hashtag-wrap">
-                            <span className="hashtag">#부산</span>
-                            <span className="hashtag">#센텀시티</span>
-                            <span className="hashtag">#영화관</span>
-                            <span className="hashtag">#기네스북</span>
-                            <span className="hashtag">#싸이</span>
+                        <div>
+                            <span className="title">{landamrk.name}</span>
+                            <div className="hashtag-wrap">
+                                
+                            </div>
                         </div>
                     </div>
-                </div>
+                    ))}
+                </>
+                :
+                <></>    
+                }
+                
 
-                <div className="trip-area">
-                    <img src="http://tong.visitkorea.or.kr/cms/resource/35/2716235_image2_1.jpg" alt="" />
 
-                    <div>
-                        <span className="title">부산 영화의 전당</span>
-                        <div className="hashtag-wrap">
-                            <span className="hashtag">#부산</span>
-                            <span className="hashtag">#대마도가보인다</span>
-                            <span className="hashtag">#일출</span>
-                            <span className="hashtag">#절경</span>
-                            <span className="hashtag">#수상법당</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div className="trip-area">
+                {/* <div className="trip-area">
                     <img src="http://tong.visitkorea.or.kr/cms/resource/31/1571031_image2_1.jpg" alt="" />
 
                     <div>
@@ -81,7 +140,7 @@ const TripAreaList = () => {
                             <span className="hashtag">#광안대교근처</span>
                         </div>
                     </div>
-                </div>
+                </div> */}
 
 
             </div>

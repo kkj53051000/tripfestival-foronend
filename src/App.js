@@ -47,6 +47,8 @@ import AdminWorldMainPage from './pages/world/AdminWorldMainPage';
 import AdminWorldCountryPage from './pages/world/AdminWorldCountryPage';
 import AdminWorldCountryCityPage from './pages/world/AdminWorldCountryCityPage';
 import AdminWorldCountryCityRegionPage from './pages/world/AdminWorldCountryCityRegionPage';
+import LandmarkPage from './pages/landmark/LandmarkPage';
+import TripSpecialPage from './pages/trip/TripSpecialPage';
 
 function App() {
   return (
@@ -111,11 +113,15 @@ function App() {
         <Route path="/triparea" element={<TripAreaListPage />} exact={true} />
         <Route path="/tripnature" element={<TripNatureListPage />} exact={true} />
         <Route path="/tripartificial" element={<TripArtificialListPage />} exact={true} />
+        <Route path="/tripspecial" element={<TripSpecialPage />} exact={true} />
         
         {/* Festival List */}
         <Route path="/festivalarea" element={<FestivalAreaListPage />} exact={true} />
         <Route path="/festivalcategory" element={<FestivalCategoryListPage />} exact={true} />
         <Route path="/festivalmonth" element={<FestivalMonthListPage />} exact={true} />
+
+        {/* Landmark */}
+        <Route path="/landmark" element={<LandmarkPage />} exact={true} />
 
         <Route path="/nh" element={<NatureHotspotPage />} exact={true} />
         <Route path="/login" element={<LoginPage />} exact={true} />

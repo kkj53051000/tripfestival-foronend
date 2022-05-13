@@ -1,7 +1,69 @@
-import React from "react";
+import React, { useState } from "react";
 import "../../css/trip/TripArtificialList.css";
+import axios from "axios";
+import useApiGet from "../../lib/useApiGet";
 
 const TripArtificialList = () => {
+
+    // Artificial Type
+    const [artificialTypeId, setArtificialTypeId] = useState(0);
+    const handleArtificialTypeId = e => {
+        setArtificialTypeId(e.target.value);
+    }
+
+    // City
+    const [cityId, setCityId] = useState(0);
+    const handleCityId = e => {
+        setCityId(e.target.value);
+    }
+
+    // Region
+    const [regionId, setRegionId] = useState(0);
+    const handleRegionId = e => {
+        setRegionId(e.target.value);
+    }
+
+    const [hotspotkList, setHotspotList] = useState(null);
+
+
+    // Axios Upload
+    const onClickBtn = async () => {
+        try {
+            const response = await axios.get("/api/hotspotList", {
+                params: {
+                    hotspotTypeId: artificialTypeId,
+                    worldCountryCityId: cityId,
+                    worldCountryCityRegionId: regionId
+                }
+            })
+            console.log(response.data.items)
+            setHotspotList(response.data.items)
+
+        } catch(e) {
+            console.log(e);
+        }
+    }
+
+
+    // Artificial Type List
+    const [artificialTypeListLoading, artificialTypeList, artificialTypeListError] = useApiGet(() => {
+        return axios.get("/api/hotspotTypeAllList");
+    }, [])
+
+    // City List
+    const [cityListLoading, cityList, cityListError] = useApiGet(() => {
+        return axios.get("/api/worldCountryCityNameList");
+    }, [])
+
+    // Region List
+    const [regionListLoading, regionList, regionListError] = useApiGet(() => {
+        return axios.get("/api/worldCountryCityRegion", {
+            params: {
+                worldCountryId: cityId,
+            }
+        })
+    }, [cityId])
+
     return (
         <div className="trip-artificial-list-wrap">
             <div className="trip-artificial-list-search">
@@ -11,30 +73,25 @@ const TripArtificialList = () => {
 
                 <div className="search-one">
                     <div class="style">
-                        <select>
-                            <option>전체</option>
-                            <option> 선택 2 </option>
-                            <option> 선택 3 </option>
-                            <option> 선택 4 </option>
-                            <option> 선택 5 </option>
-                        </select>
-                    </div>
-                </div>
-
-                <div className="search-two">
-                    <div class="style">
-                        <select>
-                            <option>전체</option>
-                            <option> 선택 2 </option>
-                            <option> 선택 3 </option>
-                            <option> 선택 4 </option>
-                            <option> 선택 5 </option>
+                        <select onChange={handleArtificialTypeId}>
+                            <option selected disabled>선택하시오</option>
+                                {artificialTypeList != null && !artificialTypeListLoading ?
+                                <>
+                                    {artificialTypeList.data.items.map(type => (
+                                        <option value={type.id} key={type.id}>
+                                            {type.name}
+                                        </option>
+                                    ))}
+                                </>
+                                :
+                                <></>
+                                }
                         </select>
                     </div>
                 </div>
 
                 <div className="btn">
-                    <button>검색</button>
+                    <button onClick={onClickBtn}>검색</button>
                 </div>
             </div>
 
@@ -44,23 +101,37 @@ const TripArtificialList = () => {
                 </div>
                 <div className="search-one">
                     <div class="style">
-                        <select>
+                        <select onChange={handleCityId}>
                             <option>전체</option>
-                            <option> 선택 2 </option>
-                            <option> 선택 3 </option>
-                            <option> 선택 4 </option>
-                            <option> 선택 5 </option>
+                            {cityList != null && !cityListLoading ?
+                            <>
+                                {cityList.data.items.map(city => (
+                                    <option value={city.id} key={city.id}>
+                                        {city.name}
+                                    </option>
+                                ))}
+                            </>
+                            :
+                            <></>
+                            }
                         </select>
                     </div>
                 </div>
                 <div className="search-two">
                     <div class="style">
-                        <select>
-                            <option>전체</option>
-                            <option> 선택 2 </option>
-                            <option> 선택 3 </option>
-                            <option> 선택 4 </option>
-                            <option> 선택 5 </option>
+                        <select onChange={handleRegionId}>
+                            <option selected value="0">전체</option>
+                            {regionList != null && !regionListLoading ?
+                            <>
+                                {regionList.data.items.map(region => (
+                                    <option value={region.id} key={region.id}>
+                                        {region.name}
+                                    </option>
+                                ))}
+                            </>
+                            :
+                            <></>
+                            }
                         </select>
                     </div>
                 </div>
@@ -71,20 +142,24 @@ const TripArtificialList = () => {
 
             {/* Temp */}
             <div className="trip-area-list">
-                <div className="trip-area">
-                    <img src="https://www.busan.go.kr/resource/img/geopark/sub/busantour/busantour1.jpg" alt="test" />
+                {hotspotkList != null ?
+                <>
+                    {hotspotkList.map(hotspot => (
+                    <div className="trip-area">
+                        <img src={hotspot.img} alt="img" />
 
-                    <div>
-                        <span className="title">해운대</span>
-                        <div className="hashtag-wrap">
-                            <span className="hashtag">#부산</span>
-                            <span className="hashtag">#해수욕장</span>
+                        <div>
+                            <span className="title">{hotspot.landmarkName}</span>
+                            <div className="hashtag-wrap">
+                                
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div className="region-regionList-region">
-
-                </div>
+                    ))}
+                </>
+                :
+                <></>    
+                }
             </div>
         </div>
     );

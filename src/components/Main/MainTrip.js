@@ -29,7 +29,7 @@ const MainTrip = () => {
                     <span className="main-hotspot-span">인공관광지</span>
                 </Link>
 
-                <Link to="/" className="main-hotsight">
+                <Link to="/tripspecial" className="main-hotsight">
                     <span className="main-hotspot-span">스페셜</span>
                 </Link>
             </div>

@@ -21,7 +21,8 @@
 
     text-decoration: none;
 
-    color: #60d2ff;
+    /* color: #60d2ff; */
+    color: black;
 }
 .header-login-join{
 	display: flex;
