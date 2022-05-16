@@ -1,7 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../../css/landmark/Landmark.css";
+import { FaArrowAltCircleRight,  FaArrowAltCircleLeft } from 'react-icons/fa'; 
+import MapContainer from "../../container/MapContainer";
+import KakaoMapScript from "../../container/KakaoMapScript";
+
+const { kakao } = window;
 
 const Landmark = () => {
+
+
+   
 
     const [openModal, setOpenModal] = useState(false);
 
@@ -15,8 +23,67 @@ const Landmark = () => {
 
     const imgList = [
         "http://tong.visitkorea.or.kr/cms/resource/19/2662619_image2_1.bmp",
-        "https://upload.wikimedia.org/wikipedia/commons/e/e7/Everest_North_Face_toward_Base_Camp_Tibet_Luca_Galuzzi_2006.jpg"
+        "https://cdn.pixabay.com/photo/2018/08/14/13/23/ocean-3605547__340.jpg"
     ]
+
+    const [current, setCurrent] = useState(0)
+    const length = imgList.length
+
+    const nextSlide = () => {
+        setCurrent(current === length -1 ? 0 : current + 1)
+    }
+
+    const prevSlide = () => {
+        setCurrent(current === 0 ? length - 1 : current - 1)
+    }
+
+    console.log(current)
+
+    useEffect(()=>{
+        var container = document.getElementById('map');
+        var options = {
+          center: new kakao.maps.LatLng(37.365264512305174, 127.10676860117488),
+          level: 3
+        };
+        var map = new kakao.maps.Map(container, options);
+
+        var geocoder = new kakao.maps.services.Geocoder();
+
+
+        geocoder.addressSearch('제주특별자치도 제주시 첨단로 242', function(result, status) {
+
+            // 정상적으로 검색이 완료됐으면 
+             if (status === kakao.maps.services.Status.OK) {
+        
+                var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
+        
+                // 결과값으로 받은 위치를 마커로 표시합니다
+                var marker = new kakao.maps.Marker({
+                    map: map,
+                    position: coords
+                });
+        
+                // 인포윈도우로 장소에 대한 설명을 표시합니다
+                // var infowindow = new kakao.maps.InfoWindow({
+                //     content: null
+                // });
+                // infowindow.open(map, marker);
+        
+                // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
+                map.setCenter(coords);
+            } 
+        });   
+        }, [])
+
+        
+        
+
+    if(!Array.isArray(imgList) || imgList.length <= 0) {
+        return null
+    }
+
+    
+
 
     return (
         <div className="landmark-wrap">
@@ -40,27 +107,40 @@ const Landmark = () => {
                     <div className="landmark-fee">
                         입장료 - 무료
                     </div>
-                </div>
 
-                <div class="landmark-img-list">
-                    <img onClick={handleOpenModalTrue} src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Everest_North_Face_toward_Base_Camp_Tibet_Luca_Galuzzi_2006.jpg" alt="" />
-                    <div id="modal-class" className={`modal ${openModal ? null : 'hidden'}`}>
-                        <div className="modal_overlay" onClick={handleOpenModalFalse}>
-
-                        </div>
-                        <div className="modal_content">
-                            <button>&#60;</button>
-                            <div className="img">
-                                {/* {imgList.map(img => (
-                                    <img src={img} alt="img" />
-                                ))} */}
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Everest_North_Face_toward_Base_Camp_Tibet_Luca_Galuzzi_2006.jpg" alt="img" />
-                            </div>
-                            
-                            <button>&#62;</button>
-                        </div>
+                    <div className="landmark-img-wrap">
+                        <FaArrowAltCircleLeft className="left-arrow" onClick={prevSlide} />
+                        <FaArrowAltCircleRight className="right-arrow" onClick={nextSlide} />
+                       {imgList.map((img, index) => (
+                           <div className={index === current ? 'slide  active' : 'slide'}>
+                              {index === current && (
+                                   <img src={img} alt="img" className="image" />
+                              )}
+                           </div>
+                       ))}
                     </div>
+
+                    {/* <div className="landmark-review-wrap">
+                        <div className="landmark-review">
+
+                        </div>
+                        <div className="landmark-review">
+
+                        </div>
+                        <div className="landmark-review-more">
+
+                        </div>
+                    </div> */}
+
+                    <div id='map' style={{
+                                width: '400px', 
+                                height: '400px'
+                            }}></div>
+                    
                 </div>
+                
+
+                
             </div>
         </div>
     );
