@@ -8,9 +8,6 @@ const { kakao } = window;
 
 const Landmark = () => {
 
-
-   
-
     const [openModal, setOpenModal] = useState(false);
 
     const handleOpenModalTrue = () => {

@@ -123,7 +123,7 @@ function App() {
         <Route path="/festivalmonth" element={<FestivalMonthListPage />} exact={true} />
 
         {/* Landmark */}
-        <Route path="/landmark" element={<LandmarkPage />} exact={true} />
+        <Route path="/landmark/:id" element={<LandmarkPage />} exact={true} />
 
         <Route path="/nh" element={<NatureHotspotPage />} exact={true} />
         <Route path="/login" element={<LoginPage />} exact={true} />

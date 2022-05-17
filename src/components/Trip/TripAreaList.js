@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import "../../css/trip/TripAreaList.css";
 import useApiGet from "../../lib/useApiGet";
 
@@ -31,7 +32,8 @@ const TripAreaList = () => {
             })
 
             setLandmarkList(response.data.items)
-
+            console.log(response)
+            
         } catch(e) {
             console.log(e);
         }
@@ -109,14 +111,19 @@ const TripAreaList = () => {
             <div className="trip-area-list">
                 {landmarkList != null ?
                 <>
-                    {landmarkList.map(landamrk => (
+                    {landmarkList.map(landmark => (
                     <div className="trip-area">
-                        <img src={landamrk.img} alt="img" />
+                        <img src={landmark.img} alt="img" />
 
                         <div>
-                            <span className="title">{landamrk.name}</span>
+                            <Link to={`landmark/${landmark.id}`}>
+                                <span className="title">{landmark.name}</span>
+                            </Link>
+        
                             <div className="hashtag-wrap">
-                                
+                                {landmark.items.map(hashTag => (
+                                    <span className="hashtag">#{hashTag.name}</span>
+                                ))}
                             </div>
                         </div>
                     </div>

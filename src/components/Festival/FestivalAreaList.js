@@ -32,6 +32,8 @@ const FestivalAreaList = () => {
 
             setLandmarkList(response.data.items)
 
+            console.log(response)
+
         } catch(e) {
             console.log(e);
         }
@@ -115,8 +117,13 @@ const FestivalAreaList = () => {
                             <img src={landmark.img} alt="test" />
 
                             <div>
+                                
                                 <span className="title">{landmark.name}</span>
+                                
                                 <div className="hashtag-wrap">
+                                    {landmark.items.map(hashTag => (
+                                        <span className="hashtag">#{hashTag.name}</span>
+                                    ))}
                                     {/* <span className="hashtag">#함평</span>
                                     <span className="hashtag">#나비</span> */}
                                 </div>
