@@ -88,7 +88,7 @@ const TripAreaList = () => {
                 <div className="two">
                     <div class="style">
                         <select onChange={handleRegionId}>
-                            <option value="0" disabled selected>전체</option>
+                            <option value="0" selected>전체</option>
                             {regionList != null && !regionListLoading ?
                             <>
                                 {regionList.data.items.map(region => (
@@ -116,7 +116,7 @@ const TripAreaList = () => {
                         <img src={landmark.img} alt="img" />
 
                         <div>
-                            <Link to={`landmark/${landmark.id}`}>
+                            <Link className="title" to={`/landmark/${landmark.id}`}>
                                 <span className="title">{landmark.name}</span>
                             </Link>
         

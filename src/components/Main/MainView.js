@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../../css/main/MainView.css";
 import { Link } from "react-router-dom";
 import axios from "axios";
@@ -55,10 +55,21 @@ const MainView = () => {
         })
     }, [cityId])
 
+
+    // Search Result List
+    useEffect(() => {
+        var lang_ck = /[가-힣]/;
+
+        if (lang_ck.test(inputValue)) {
+            console.log("한글자 완성됨.")
+        }
+    }, [inputValue])
+
     return (
         <div className="main-view-wrap">
-            
-            {/* <div className="main-view-input">
+            <h1>11,730개 관광지</h1>
+            <h1>16개의 축제가 진행중이에요.</h1>
+            <div className="main-view-input">
                 <div className="input">
                     <input
                     className="main-input"
@@ -78,9 +89,9 @@ const MainView = () => {
                 :
                 <div></div>
                 }
-            </div> */}
+            </div>
 
-            <div className="main-view-select">
+            {/* <div className="main-view-select">
                 <div className="select-wrap">
                     <select>
                         <option>선택하시오</option>
@@ -91,7 +102,7 @@ const MainView = () => {
 
                     <button>검색</button>
                 </div>
-            </div>
+            </div> */}
         
         </div>
     );

@@ -115,10 +115,15 @@
     height: 200px;
 
     /* background-color: #F6F3F3; */
-    box-shadow: 3px 3px 3px grey;
+    box-shadow: rgb(176, 174, 179) 2px 2px 5px inset;
     margin: 10px;
 
-    /* border: 1px solid black; */
+    border-radius: 8px 8px 8px 36px;
+}
+.trip-area .title {
+    font-size: 24px;
+    text-decoration: none;
+    color: black;
 }
 .trip-area img {
     height: 150px;

@@ -17,19 +17,19 @@ const MainTrip = () => {
             </div>
 
             <div className="main-trip-menu-list">
-                <Link to="/triparea" className="main-region">
+                <Link to="/triparea" className="main-menu">
                     <span className="main-region-span">지역</span>
                 </Link>
 
-                <Link to="/tripnature" className="main-nature-hotspot">
+                <Link to="/tripnature" className="main-menu">
                     <span className="main-nature-hotspot-span">자연관광지</span>
                 </Link>
         
-                <Link to="/tripartificial" className="main-hotspot">
+                <Link to="/tripartificial" className="main-menu">
                     <span className="main-hotspot-span">인공관광지</span>
                 </Link>
 
-                <Link to="/tripspecial" className="main-hotsight">
+                <Link to="/tripspecial" className="main-menu">
                     <span className="main-hotspot-span">스페셜</span>
                 </Link>
             </div>
