@@ -28,18 +28,17 @@ const MainView = () => {
     const onInputDivBlur = () => setInputDivFocus(false)
 
 
+    // City
+    const [cityId, setCityId] = useState(0);
+    const handleCityId = e => {
+        setCityId(e.target.value);
+    }
 
-     // City
-     const [cityId, setCityId] = useState(0);
-     const handleCityId = e => {
-         setCityId(e.target.value);
-     }
- 
-     // Region
-     const [regionId, setRegionId] = useState(0);
-     const handleRegionId = e => {
-         setRegionId(e.target.value);
-     }
+    // Region
+    const [regionId, setRegionId] = useState(0);
+    const handleRegionId = e => {
+        setRegionId(e.target.value);
+    }
 
     // City List
     const [cityListLoading, cityList, cityListError] = useApiGet(() => {

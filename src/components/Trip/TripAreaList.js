@@ -103,9 +103,12 @@ const TripAreaList = () => {
                         </select>
                     </div>
                 </div>
-                <div className="btn">
+                {/* <div className="btn">
                     <button onClick={onClickBtn}>검색</button>
-                </div>
+                </div> */}
+                <Link to={`/triparealandmark/${cityId}/${regionId}`}>
+                    <button>검색</button>
+                </Link>
             </div>
 
             <div className="trip-area-list">

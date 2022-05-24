@@ -49,6 +49,7 @@ import AdminWorldCountryCityPage from './pages/world/AdminWorldCountryCityPage';
 import AdminWorldCountryCityRegionPage from './pages/world/AdminWorldCountryCityRegionPage';
 import LandmarkPage from './pages/landmark/LandmarkPage';
 import TripSpecialPage from './pages/trip/TripSpecialPage';
+import TripAreaLandmarkListPage from './pages/trip/TripAreaLandmarkListPage';
 
  
 
@@ -116,6 +117,7 @@ function App() {
         <Route path="/tripnature" element={<TripNatureListPage />} exact={true} />
         <Route path="/tripartificial" element={<TripArtificialListPage />} exact={true} />
         <Route path="/tripspecial" element={<TripSpecialPage />} exact={true} />
+        <Route path="triparealandmark/:cityId/:regionId" element={<TripAreaLandmarkListPage />} exact={true} />
         
         {/* Festival List */}
         <Route path="/festivalarea" element={<FestivalAreaListPage />} exact={true} />
