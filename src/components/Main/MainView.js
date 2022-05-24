@@ -54,14 +54,32 @@ const MainView = () => {
         })
     }, [cityId])
 
+    // Search Result
+    const [searchResult, setSearchResult] = useState(null)
+    
+    const setSearchResut = async () => {
+
+        const response = await axios.get("/api/mainSearchResult", {
+            params: {
+                searchWorld: inputValue,
+            }
+        })
+
+        setSearchResult(response.data.items)
+        console.log(response)
+    }
+
 
     // Search Result List
-    useEffect(() => {
+    useEffect( () => {
         var lang_ck = /[가-힣]/;
 
         if (lang_ck.test(inputValue)) {
             console.log("한글자 완성됨.")
         }
+
+        setSearchResut()
+
     }, [inputValue])
 
     return (
@@ -79,11 +97,21 @@ const MainView = () => {
                     />
                 </div>
                 {inputFocused || inputDivtFocus ?
-                <div className="input-div" onClick={onInputDivFocus} onFocus={onInputDivFocus} onBlur={onInputDivBlur}>
-                    <Link to="/f" className="input-content">
-                        <span className="input-content-name">부산</span>
-                        <span className="input-content-adress">대한민국 부산광역시</span>
-                    </Link>
+                <div>
+                    {searchResult != null ?
+                    <div className="input-div" onClick={onInputDivFocus} onFocus={onInputDivFocus} onBlur={onInputDivBlur}>
+                        {searchResult.map(result => (
+                            <Link to={`/triparealandmark/${result.cityId}/${result.regionId}`} className="input-content">
+                                <span className="input-content-name">{result.title}</span>
+                                <span className="input-content-adress">대한민국 {result.title}</span>
+                            </Link>
+                        ))}
+                    </div>
+                    :
+                    <div>
+                        test
+                    </div>
+                    }
                 </div>
                 :
                 <div></div>

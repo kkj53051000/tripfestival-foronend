@@ -1,88 +1,75 @@
 import React, { useEffect, useState } from "react";
-import { useParams, Link } from "react-router-dom";
-import "../../css/trip/TripAreaLandmarkList.css";
+import { Link, useLocation, useParams } from "react-router-dom";
+import "../../css/trip/TripArtificialLandmarkList.css";
 import axios from "axios";
 
-const TripAreaLandmarkList = () => {
+const TripArtificialLandmarkList = () => {
 
-
+    let { artificialTypeId } = useParams();
     let { cityId } = useParams();
     let { regionId } = useParams();
+
 
     const [landmarkList, setLandmarkList] = useState(null);
 
     const getLandamrkList = async () => {
         try {
-            const response = await axios.get("/api/landmarkList", {
+            const response = await axios.get("/api/hotspotList", {
                 params: {
-                    worldCountryCityRegionId: regionId,
-                    worldCountryCityId: cityId
+                    hotspotTypeId: artificialTypeId,
+                    worldCountryCityId: cityId,
+                    worldCountryCityRegionId: regionId
                 }
             })
 
             setLandmarkList(response.data.items)
+            console.log(response.data.items)
             
         } catch(e) {
             console.log(e);
         }
     }
 
-    const [cityName, setCityName] = useState(null);
-
-    const getCityName = async () => {
+    const [typeName, setTypeName] = useState(null);
+    const getArtificialTypeName = async () => {
         try {
-            const response = await axios.get("/api/worldCountryCityName/" + cityId)
+            const response = await axios.get("/api/hotspotTypeName/" + artificialTypeId)
 
-            setCityName(response.data.worldCountryCityName)
+            setTypeName(response.data.hotSpotTypeName)
             
         } catch(e) {
             console.log(e);
         }
     }
-
-    const [RegionName, setRegionName] = useState(null);
-
-    const getRegionName = async () => {
-        try {
-            const response = await axios.get("/api/worldCountryCityRegionName/" + regionId)
-
-            setRegionName(response.data.worldCountryCityRegionName)
-            
-        } catch(e) {
-            console.log(e);
-        }
-    }
+    
 
     useEffect(() => {
         getLandamrkList()
-        getCityName()
-        getRegionName()
+        getArtificialTypeName()
     }, [])
-
-    
 
     return (
         <div className="trip-area-landmark-list-wrap">
             <div className="header">
-                <h2>{cityName} &#62; {RegionName}</h2>
+                <h2>{typeName}</h2>
             </div>
             <div className="trip-area-list">
                 {landmarkList != null ?
                 <>
                     {landmarkList.map(landmark => (
                     <div className="trip-area">
-                        <img src={landmark.img} alt="img" />
+                        <img src={landmark.landmarkImg} alt="img" />
 
                         <div>
-                            <Link className="title" to={`/landmark/${landmark.id}`}>
-                                <span className="title">{landmark.name}</span>
+                            <Link className="title" to={`/landmark/${landmark.landmarkId}`}>
+                                <span className="title">{landmark.landmarkName}</span>
                             </Link>
         
-                            <div className="hashtag-wrap">
+                            {/* <div className="hashtag-wrap">
                                 {landmark.items.map(hashTag => (
                                     <span className="hashtag">#{hashTag.name}</span>
                                 ))}
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                     ))}
@@ -95,4 +82,4 @@ const TripAreaLandmarkList = () => {
     );
 };
 
-export default TripAreaLandmarkList;
+export default TripArtificialLandmarkList;

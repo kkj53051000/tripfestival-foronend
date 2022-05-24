@@ -45,7 +45,11 @@
     width: 100%;
     height: 70px;
 
-    border-bottom: 1px solid #F1F1F1;
+    text-decoration: none;
+    color: black;
+
+    border-bottom: 1px solid black;
+    
 }
 .main-view-input input {
     width: 600px;

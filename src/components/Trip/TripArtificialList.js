@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "../../css/trip/TripArtificialList.css";
 import axios from "axios";
 import useApiGet from "../../lib/useApiGet";
+import { Link } from "react-router-dom";
 
 const TripArtificialList = () => {
 
@@ -90,9 +91,12 @@ const TripArtificialList = () => {
                     </div>
                 </div>
 
-                <div className="btn">
+                {/* <div className="btn">
                     <button onClick={onClickBtn}>검색</button>
-                </div>
+                </div> */}
+                <Link to={`/tripartificiallandmark/${artificialTypeId}/${cityId}/${regionId}`}>
+                    <button onClick={onClickBtn}>검색</button>
+                </Link>
             </div>
 
             <div className="trip-artificial-list-area-search">
