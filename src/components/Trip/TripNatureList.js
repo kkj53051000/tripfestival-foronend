@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "../../css/trip/TripNatureList.css";
 import axios from "axios";
 import useApiGet from "../../lib/useApiGet";
+import { Link } from "react-router-dom";
 
 const TripNatureList = () => {
 
@@ -92,9 +93,12 @@ const TripNatureList = () => {
                     </div>
                 </div>
 
-                <div className="btn">
+                {/* <div className="btn">
                     <button onClick={onClickBtn}>검색</button>
-                </div>
+                </div> */}
+                <Link lassName="btn" to={`/tripnaturelandmark/${natureTypeId}/${cityId}/${regionId}`}>
+                    <button onClick={onClickBtn}>검색</button>
+                </Link>
             </div>
 
             <div className="trip-nature-list-area-search">
