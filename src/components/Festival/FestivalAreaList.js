@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "../../css/festival/FestivalAreaList.css";
 import axios from "axios";
 import useApiGet from "../../lib/useApiGet";
+import { Link } from "react-router-dom";
 
 const FestivalAreaList = () => {
 
@@ -102,9 +103,13 @@ const FestivalAreaList = () => {
                         </select>
                     </div>
                 </div>
-                <div className="btn">
+                {/* <div className="btn">
                     <button onClick={onClickBtn}>검색</button>
-                </div>
+                </div> */}
+
+                <Link to={`/festivalarealandmark/${cityId}/${regionId}`} className="btn">
+                    <button onClick={onClickBtn}>검색</button>
+                </Link>
             </div>
 
             <div className="festival-area-list">
