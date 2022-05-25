@@ -56,7 +56,7 @@ const FsetivalAreaLandmarkList = () => {
         getEventList()
         getCityName()
         getRegionName()
-    })
+    }, [])
 
     return (
         <div className="festival-area-landmark-list-wrap">

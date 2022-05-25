@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "../../css/festival/FestivalCategoryList.css";
 import useApiGet from "../../lib/useApiGet";
 
@@ -24,8 +25,6 @@ const FestivalCategoryList = () => {
     }
 
     const [landmarkList, setLandmarkList] = useState(null);
-
-
 
     // Axios Upload
     const onClickBtn = async () => {
@@ -92,9 +91,12 @@ const FestivalCategoryList = () => {
                     </div>
                 </div>
 
-                <div className="btn">
+                {/* <div className="btn">
                     <button onClick={onClickBtn}>검색</button>
-                </div>
+                </div> */}
+                <Link to={`/festivalcategorylandmark/${categoryId}/${cityId}/${regionId}`}>
+                    <button onClick={onClickBtn}>검색</button>
+                </Link>
             </div>
 
             <div className="festival-category-list-area-search">
@@ -141,30 +143,6 @@ const FestivalCategoryList = () => {
                 <div className="null">
                     
                 </div>
-            </div>
-
-            {/* Temp */}
-            <div className="festival-area-list">
-                {landmarkList != null ?
-                <>
-                    {landmarkList.map(landmark => (
-                        <div className="festival-area" key={landmark.id}>
-                            <img src={landmark.img} alt="test" />
-
-                            <div>
-                                <span className="title">{landmark.name}</span>
-                                <div className="hashtag-wrap">
-                                    {/* <span className="hashtag">#함평</span>
-                                    <span className="hashtag">#나비</span> */}
-                                </div>
-                            </div>
-                        </div>
-                    ))}
-                </>
-                :
-                <></>
-                }
-
             </div>
         </div>
     );
