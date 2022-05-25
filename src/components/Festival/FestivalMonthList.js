@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "../../css/festival/FestivalMonthList.css";
 import useApiGet from "../../lib/useApiGet";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const FestivalMonthList = () => {
 
@@ -92,9 +93,9 @@ const FestivalMonthList = () => {
                     </div>
                 </div>
 
-                <div className="btn">
+                <Link to={`/festivalmonthlandmark/${monthId}/${cityId}/${regionId}`} className="btn">
                     <button onClick={onClickBtn}>검색</button>
-                </div>
+                </Link>
             </div>
 
             <div className="festival-month-list-area-search">
