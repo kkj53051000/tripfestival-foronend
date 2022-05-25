@@ -109,7 +109,6 @@ const MainView = () => {
                     </div>
                     :
                     <div>
-                        test
                     </div>
                     }
                 </div>

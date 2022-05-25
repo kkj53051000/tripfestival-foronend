@@ -1,13 +1,13 @@
 import React from "react";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
-import TripSpecial from "../../components/trip/TripSprcial";
+import TripSpecialList from "../../components/trip/TripSprcialList";
 
 const TripSpecialPage = () => {
     return (
         <div>
             <Header />
-            <TripSpecial />
+            <TripSpecialList />
             <Footer />
         </div>
     );

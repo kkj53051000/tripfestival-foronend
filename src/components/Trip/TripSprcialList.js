@@ -2,16 +2,16 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "../../css/trip/TripSpecial.css";
 
-const TripSpecial = () => {
+const TripSpecialList = () => {
     return (
         <div className="main-special-wrap">
 
             <div className="main-special-item">
                 <img src="https://upload.wikimedia.org/wikipedia/ko/e/ee/%EB%AF%B8%EC%89%90%EB%A6%B0_%EA%B0%80%EC%9D%B4%EB%93%9C_%EC%84%9C%EC%9A%B8_%ED%91%9C%EC%A7%80.jpg" alt="test" />
 
-                <div className="title-wrap">
+                <Link className="title-wrap" to="/tripspecialmenu">
                     <span className="title">미슐랭 가이드</span>
-                </div>
+                </Link>
             </div>
 
             <div className="main-special-item">
@@ -34,4 +34,4 @@ const TripSpecial = () => {
     );
 };
 
-export default TripSpecial;
+export default TripSpecialList;
