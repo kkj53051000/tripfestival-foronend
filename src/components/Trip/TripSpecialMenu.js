@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import "../../css/trip/TripSpecialMenu.css";
 import useApiGet from "../../lib/useApiGet";
 import axios from "axios";
@@ -28,10 +28,10 @@ const TripSpecialMenu = () => {
                     {tripSpecialMenuList != null ?
                     <>
                         {tripSpecialMenuList.data.items.map(menu => (
-                            <div className="trip-special-menu" key={menu.id}>
+                            <Link to={`/tripspecialLandmark/${menu.id}`} className="trip-special-menu" key={menu.id}>
                                 <img src={menu.img} alt="img" />
                                 <span>{menu.name}</span>
-                            </div>
+                            </Link>
                         ))}
                     </>
                     :

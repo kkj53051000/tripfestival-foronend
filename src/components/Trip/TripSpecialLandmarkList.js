@@ -5,7 +5,7 @@ import axios from "axios";
 
 const TripSpecialLandmarkList = () => {
 
-    let { tripSpecialMenuId } = useParams();
+    let { id } = useParams();
 
     // Landmark List
     const [landmarkList, setLandmarkList] = useState(null);
@@ -14,9 +14,11 @@ const TripSpecialLandmarkList = () => {
         try {
             const response = await axios.get("/api/hotSightLandmarkList", {
                 params: {
-                    hotSightTwoId: tripSpecialMenuId
+                    hotSightTwoId: id
                 }
             })
+
+            console.log(response)
 
             setLandmarkList(response.data.items)
             
@@ -47,14 +49,14 @@ const TripSpecialLandmarkList = () => {
                         }
 
                         <div>
-                            <Link className="title" to={`/landmark/${landmark.id}`}>
+                            <Link className="title" to={`/landmark/${landmark.landmarkId}`}>
                                 <span className="title">{landmark.name}</span>
                             </Link>
         
                             <div className="hashtag-wrap">
-                                {landmark.items.map(hashTag => (
+                                {/* {landmark.items.map(hashTag => (
                                     <span className="hashtag">#{hashTag.name}</span>
-                                ))}
+                                ))} */}
                             </div>
                         </div>
                     </div>
