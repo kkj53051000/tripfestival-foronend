@@ -1,22 +1,20 @@
 import React, { useEffect, useState } from "react";
-import { useParams, Link } from "react-router-dom";
-import "../../css/trip/TripAreaLandmarkList.css";
+import { Link, useParams } from "react-router-dom";
+import "../../css/trip/TripSpecialLandmarkList.css";
 import axios from "axios";
 
-const TripAreaLandmarkList = () => {
+const TripSpecialLandmarkList = () => {
 
+    let { tripSpecialMenuId } = useParams();
 
-    let { cityId } = useParams();
-    let { regionId } = useParams();
-
+    // Landmark List
     const [landmarkList, setLandmarkList] = useState(null);
 
     const getLandamrkList = async () => {
         try {
-            const response = await axios.get("/api/landmarkList", {
+            const response = await axios.get("/api/hotSightLandmarkList", {
                 params: {
-                    worldCountryCityRegionId: regionId,
-                    worldCountryCityId: cityId
+                    hotSightTwoId: tripSpecialMenuId
                 }
             })
 
@@ -27,44 +25,15 @@ const TripAreaLandmarkList = () => {
         }
     }
 
-    const [cityName, setCityName] = useState(null);
-
-    const getCityName = async () => {
-        try {
-            const response = await axios.get("/api/worldCountryCityName/" + cityId)
-
-            setCityName(response.data.worldCountryCityName)
-            
-        } catch(e) {
-            console.log(e);
-        }
-    }
-
-    const [RegionName, setRegionName] = useState(null);
-
-    const getRegionName = async () => {
-        try {
-            const response = await axios.get("/api/worldCountryCityRegionName/" + regionId)
-
-            setRegionName(response.data.worldCountryCityRegionName)
-            
-        } catch(e) {
-            console.log(e);
-        }
-    }
 
     useEffect(() => {
         getLandamrkList()
-        getCityName()
-        getRegionName()
     }, [])
-
-    
 
     return (
         <div className="trip-area-landmark-list-wrap">
             <div className="header">
-                <h2>{cityName} &#62; {RegionName}</h2>
+                <h2>OO</h2>
             </div>
             <div className="trip-area-list">
                 {landmarkList != null ?
@@ -99,4 +68,4 @@ const TripAreaLandmarkList = () => {
     );
 };
 
-export default TripAreaLandmarkList;
+export default TripSpecialLandmarkList;

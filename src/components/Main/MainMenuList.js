@@ -42,17 +42,17 @@ const MainMenuList = ({value}) => {
         setIsSpecial(false);
     }
 
-    useEffect = () => {
-        if(value === "main") {
-            setIsMain(true)
+    // useEffect = () => {
+    //     if(value === "main") {
+    //         setIsMain(true)
 
-        }
-        if(value === "trip") {
-            setIsTrip(true)
-            isMain(false)
-        }
+    //     }
+    //     if(value === "trip") {
+    //         setIsTrip(true)
+    //         isMain(false)
+    //     }
 
-    }
+    // }
     
     return (
         <div className="main-select">

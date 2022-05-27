@@ -66,7 +66,11 @@ const FsetivalAreaLandmarkList = () => {
                 <>
                     {eventList.map(event => (
                         <div className="festival-area" key={event.id}>
+                            {event.img == null ?
+                            <></>
+                            :
                             <img src={event.img} alt="test" />
+                            }
 
                             <div>
                                 

@@ -45,7 +45,11 @@ const TripNatureLandmarkList = () => {
                 <>
                     {landmarkList.map(landmark => (
                     <div className="trip-area">
+                        {landmark.img == null ?
+                        <></>
+                        :
                         <img src={landmark.img} alt="img" />
+                        }
 
                         <div>
                             <Link className="title" to={`/landmark/${landmark.landmarkId}`}>

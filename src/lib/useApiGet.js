@@ -13,6 +13,8 @@ const useApiGet = (axiosResponse, deps) => {
                 const response = await axiosResponse();
                 setResponse(response);
 
+                console.log(response)
+
                 if(response.data.status === 'FAILURE') {
                     setResponse(null)
                 }

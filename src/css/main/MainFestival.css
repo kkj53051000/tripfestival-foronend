@@ -15,12 +15,12 @@
     align-items: center;
     justify-content: center;
     
-    width: 45%;
-    height: 200px;
+    width: 40%;
+    height: 300px;
 
     margin: 10px;
 
-    border: 3px solid black;
+    box-shadow: 4px 12px 40px 6px rgb(0 0 0 / 9%);
     border-radius: 35px;
     text-decoration: none;
 }
@@ -30,12 +30,12 @@
     align-items: center;
     justify-content: center;
     
-    width: 45%;
-    height: 200px;
+    width: 40%;
+    height: 300px;
 
-    margin: 10px;
+    margin: 25px;
 
-    border: 3px solid black;
+    box-shadow: 4px 12px 40px 6px rgb(0 0 0 / 9%);
     border-radius: 35px;
     text-decoration: none;
 }
@@ -45,12 +45,12 @@
     align-items: center;
     justify-content: center;
 
-    width: 94%;
+    width: 90%;
     height: 200px;
 
     margin: 10px;
 
-    border: 3px solid black;
+    box-shadow: 4px 12px 40px 6px rgb(0 0 0 / 9%);
     border-radius: 35px;
     text-decoration: none;
 }

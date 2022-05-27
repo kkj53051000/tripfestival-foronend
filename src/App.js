@@ -56,6 +56,7 @@ import TripSpecialMenuPage from './pages/trip/TripSpecialMenuPage';
 import FestivalAreaLandmarkListPage from './pages/festival/FsetivalAreaLandmarkListPage';
 import FestivalCategoryLandmarkListPage from './pages/festival/FestivalCategoryLandmarkListPage';
 import FestivalMonthListLandmarkPage from './pages/festival/FestivalMonthListLandmarkPage';
+import TripSpecialLandmarkListPage from './pages/trip/TripSpecialLandmarkListPage';
  
 
 function App() {
@@ -123,6 +124,7 @@ function App() {
         <Route path="/tripartificial" element={<TripArtificialListPage />} exact={true} />
         <Route path="/tripspecial" element={<TripSpecialPage />} exact={true} />
         <Route path="/tripspecialmenu" element={<TripSpecialMenuPage />} exact={true} />
+        <Route path="/tripspecialLandmark" element={<TripSpecialLandmarkListPage />} exact={true} />
         <Route path="/triparealandmark/:cityId/:regionId" element={<TripAreaLandmarkListPage />} exact={true} />
         <Route path="/tripnaturelandmark/:natureTypeId/:cityId/:regionId" element={<TripNatureLandmarkListPage />} exact={true} />
         <Route path="/tripartificiallandmark/:artificialTypeId/:cityId/:regionId" element={<TripArtificialLandmarkListPage />} exact={true} />
