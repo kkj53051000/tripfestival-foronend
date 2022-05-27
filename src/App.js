@@ -123,7 +123,7 @@ function App() {
         <Route path="/tripnature" element={<TripNatureListPage />} exact={true} />
         <Route path="/tripartificial" element={<TripArtificialListPage />} exact={true} />
         <Route path="/tripspecial" element={<TripSpecialPage />} exact={true} />
-        <Route path="/tripspecialmenu" element={<TripSpecialMenuPage />} exact={true} />
+        <Route path="/tripspecialmenu/:id" element={<TripSpecialMenuPage />} exact={true} />
         <Route path="/tripspecialLandmark" element={<TripSpecialLandmarkListPage />} exact={true} />
         <Route path="/triparealandmark/:cityId/:regionId" element={<TripAreaLandmarkListPage />} exact={true} />
         <Route path="/tripnaturelandmark/:natureTypeId/:cityId/:regionId" element={<TripNatureLandmarkListPage />} exact={true} />
