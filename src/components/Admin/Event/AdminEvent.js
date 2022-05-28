@@ -13,6 +13,18 @@ const AdminEvent = () => {
         setName(e.target.value);
     }
 
+    // StartDate
+    const [startDate, setStartDate] = useState(null);
+    const handleStartDate = e => {
+        setStartDate(e.target.value);
+    }
+
+    // EndDate
+    const [endDate, setEndDate] = useState(null);
+    const handleEndDate = e => {
+        setEndDate(e.target.value);
+    }
+
     // Description
     const [description, setDescription] = useState(null);
     const handleDiscription = e => {
@@ -68,6 +80,8 @@ const AdminEvent = () => {
 
     const value = {
         name: name,
+        startDate: startDate,
+        endDate: endDate,
         description: description,
         address: address,
         visitor: visitor,
@@ -127,6 +141,10 @@ const AdminEvent = () => {
             <div className="admin-event-upload">
                 <span>이름</span>
                 <input onChange={handleName} /><br/><br/>
+                <span>시작 날짜</span>
+                <input type="date" onChange={handleStartDate} /><br/><br/>
+                <span>마지막 날짜</span>
+                <input type="date" onChange={handleEndDate} /><br/><br/>
                 <span>설명</span>
                 <textarea onChange={handleDiscription} /><br/><br/>
                 <span>주소</span>

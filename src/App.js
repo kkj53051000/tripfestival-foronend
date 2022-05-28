@@ -6,7 +6,6 @@ import MainFestivalPage from './pages/main/MainFestivalPage';
 import TripAreaListPage from "./pages/trip/TripAreaListPage";
 import NatureHotspotPage from "./pages/NatureHotspotPage";
 import LoginPage from './pages/LoginPage';
-import SpecialListPage from './pages/SpecialListPage';
 import MainPage from './pages/main/MainPage';
 import MainSpecialPage from "./pages/main/MainSpecialPage";
 import TripNatureListPage from './pages/trip/TripNatureListPage';
@@ -57,6 +56,7 @@ import FestivalAreaLandmarkListPage from './pages/festival/FsetivalAreaLandmarkL
 import FestivalCategoryLandmarkListPage from './pages/festival/FestivalCategoryLandmarkListPage';
 import FestivalMonthListLandmarkPage from './pages/festival/FestivalMonthListLandmarkPage';
 import TripSpecialLandmarkListPage from './pages/trip/TripSpecialLandmarkListPage';
+import FestivalPage from './pages/festival/FestivalPage';
  
 
 function App() {
@@ -130,6 +130,7 @@ function App() {
         <Route path="/tripartificiallandmark/:artificialTypeId/:cityId/:regionId" element={<TripArtificialLandmarkListPage />} exact={true} />
         
         {/* Festival List */}
+        <Route path="/festival/:id" element={<FestivalPage />} exact={true} />
         <Route path="/festivalarea" element={<FestivalAreaListPage />} exact={true} />
         <Route path="/festivalarealandmark/:cityId/:regionId" element={<FestivalAreaLandmarkListPage />} exact={true} />
         <Route path="/festivalcategory" element={<FestivalCategoryListPage />} exact={true} />
@@ -142,7 +143,6 @@ function App() {
 
         <Route path="/nh" element={<NatureHotspotPage />} exact={true} />
         <Route path="/login" element={<LoginPage />} exact={true} />
-        <Route path="/topiclist" element={<SpecialListPage />} exact={true} />
       </Routes>
     </BrowserRouter>
   );

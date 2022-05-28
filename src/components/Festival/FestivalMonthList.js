@@ -144,7 +144,7 @@ const FestivalMonthList = () => {
             </div>
 
             {/* Temp */}
-            <div className="festival-month-list">
+            {/* <div className="festival-month-list">
                 {landmarkList != null ?
                 <>
                     {landmarkList.map(landmark => (
@@ -154,8 +154,8 @@ const FestivalMonthList = () => {
                             <div>
                                 <span className="title">{landmark.name}</span>
                                 <div className="hashtag-wrap">
-                                    {/* <span className="hashtag">#함평</span>
-                                    <span className="hashtag">#나비</span> */}
+                                    <span className="hashtag">#함평</span>
+                                    <span className="hashtag">#나비</span>
                                 </div>
                             </div>
                         </div>
@@ -165,7 +165,7 @@ const FestivalMonthList = () => {
                 <></>
                 }
 
-            </div>
+            </div> */}
         </div>
     );
 };

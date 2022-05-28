@@ -15,7 +15,7 @@
     min-width: 768px;
     height: 100px;
 
-    border: 1px solid black;
+    /* border: 1px solid black; */
 }
 .trip-artificial-list-search .title {
     display: flex;
@@ -49,6 +49,9 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
+
+    text-decoration: none;
+    color: black;
 
     flex: 1;
 }
@@ -91,7 +94,7 @@
     display: flex;
     flex-direction: row;
 
-    border: 1px solid black;
+    /* border: 1px solid black; */
 }
 .trip-artificial-list-area-search .title {
     display: flex;

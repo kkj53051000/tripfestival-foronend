@@ -111,7 +111,7 @@ const TripAreaList = () => {
                 </Link>
             </div>
 
-            <div className="trip-area-list">
+            {/* <div className="trip-area-list">
                 {landmarkList != null ?
                 <>
                     {landmarkList.map(landmark => (
@@ -135,25 +135,8 @@ const TripAreaList = () => {
                 :
                 <></>    
                 }
-                
 
-
-                {/* <div className="trip-area">
-                    <img src="http://tong.visitkorea.or.kr/cms/resource/31/1571031_image2_1.jpg" alt="" />
-
-                    <div>
-                        <span className="title">해동 용궁사(부산)</span>
-                        <div className="hashtag-wrap">
-                            <span className="hashtag">#부산</span>
-                            <span className="hashtag">#관광열차</span>
-                            <span className="hashtag">#유료주차</span>
-                            <span className="hashtag">#광안대교근처</span>
-                        </div>
-                    </div>
-                </div> */}
-
-
-            </div>
+            </div> */}
         </div>
     );
 };

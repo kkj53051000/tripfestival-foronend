@@ -3,3 +3,7 @@
     flex-direction: column;
     align-items: center;
 }
+.admin-main-wrap .new {
+    display: flex;
+    flex-direction: row;
+}

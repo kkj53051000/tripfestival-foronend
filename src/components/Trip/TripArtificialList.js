@@ -91,10 +91,7 @@ const TripArtificialList = () => {
                     </div>
                 </div>
 
-                {/* <div className="btn">
-                    <button onClick={onClickBtn}>검색</button>
-                </div> */}
-                <Link to={`/tripartificiallandmark/${artificialTypeId}/${cityId}/${regionId}`}>
+                <Link className="btn" to={`/tripartificiallandmark/${artificialTypeId}/${cityId}/${regionId}`}>
                     <button onClick={onClickBtn}>검색</button>
                 </Link>
             </div>

@@ -11,7 +11,7 @@ const TripSpecialMenu = () => {
 
     // Trip Special Menu List
     const [tripSpecialMenuListLoading, tripSpecialMenuList, tripSpecialMenuListError] = useApiGet(() => {
-        return axios.get("/api/hotSightOneAllList", {
+        return axios.get("/api/hotSightTwoList", {
             params: {
                 hotSightOneId: id
             }

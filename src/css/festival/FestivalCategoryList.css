@@ -60,6 +60,9 @@
     align-items: center;
     justify-content: center;
 
+    text-decoration: none;
+    color: black;
+
     flex: 1;
 }
 .festival-category-select button {

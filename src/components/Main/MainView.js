@@ -54,6 +54,10 @@ const MainView = () => {
         })
     }, [cityId])
 
+    const [landamrkAllCountLoading, landamrkAllCount, landamrkAllCountError] = useApiGet(() => {
+        return axios.get("/api/landmarkAllCount");
+    }, [])
+
     // Search Result
     const [searchResult, setSearchResult] = useState(null)
     
@@ -84,7 +88,11 @@ const MainView = () => {
 
     return (
         <div className="main-view-wrap">
-            <h1>11,730개 관광지</h1>
+            {!landamrkAllCountLoading && landamrkAllCount != null ?
+            <h1>{landamrkAllCount.data.landmarkAllCount}개 관광지</h1>
+            :
+            <></>
+            }
             <h1>16개의 축제가 진행중이에요.</h1>
             <div className="main-view-input">
                 <div className="input">

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import "../../css/festival/FsetivalAreaLandmarkList.css";
 import axios from "axios";
 
@@ -74,7 +74,9 @@ const FsetivalAreaLandmarkList = () => {
 
                             <div>
                                 
-                                <span className="title">{event.name}</span>
+                                <Link className="title" to={`/festival/${event.id}`}>
+                                    {event.name}
+                                </Link>
                                 
                                 <div className="hashtag-wrap">
                                     {event.items.map(hashTag => (

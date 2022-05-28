@@ -36,6 +36,9 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
+
+    text-decoration: none;
+    color: black;
 }
 .main-special-item .title {
     font-size: 48px;

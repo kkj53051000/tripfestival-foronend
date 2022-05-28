@@ -111,7 +111,7 @@ const FestivalAreaList = () => {
                     <button onClick={onClickBtn}>검색</button>
                 </Link>
             </div>
-
+{/* 
             <div className="festival-area-list">
                 
 
@@ -129,8 +129,8 @@ const FestivalAreaList = () => {
                                     {landmark.items.map(hashTag => (
                                         <span className="hashtag">#{hashTag.name}</span>
                                     ))}
-                                    {/* <span className="hashtag">#함평</span>
-                                    <span className="hashtag">#나비</span> */}
+                                    <span className="hashtag">#함평</span>
+                                    <span className="hashtag">#나비</span>
                                 </div>
                             </div>
                         </div>
@@ -140,7 +140,7 @@ const FestivalAreaList = () => {
                 <></>
                 }
 
-            </div>
+            </div> */}
         </div>
     );
 };

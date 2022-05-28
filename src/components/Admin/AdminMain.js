@@ -37,6 +37,14 @@ const AdminMain = () => {
             <Link to="/admin/hotsight">
                 <h1>Hotsight(스페셜)</h1>
             </Link>
+            <h1>최신화</h1>
+            <h4>회의 후 실행 할 것.</h4>
+            <div className="new">
+                <button style={{height: '50px', width: '120px'}}>City 최신화</button>
+                <button style={{height: '50px', width: '120px'}}>Region 최신화</button>
+                <button style={{height: '50px', width: '120px'}}>Landmark 최신화</button>
+                <button style={{height: '50px', width: '120px'}}>핵버튼</button>
+            </div>
         </div>
     );
 };

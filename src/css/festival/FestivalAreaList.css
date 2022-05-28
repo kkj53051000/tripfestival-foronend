@@ -60,6 +60,9 @@
     align-items: center;
     justify-content: center;
 
+    text-decoration: none;
+    color: black;
+
     flex: 1;
 }
 .festival-area-select button {
@@ -100,7 +103,7 @@
     min-width: 768px;
     height: auto;
 
-    border: 1px solid black;
+    /* border: 1px solid black; */
 }
 .festival-area{
     display: flex;
@@ -112,7 +115,7 @@
 
     margin: 2px;
 
-    border: 1px solid black;
+    /* border: 1px solid black; */
 }
 .festival-area img {
     height: 150px;

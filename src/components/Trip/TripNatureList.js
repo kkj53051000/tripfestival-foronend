@@ -147,7 +147,7 @@ const TripNatureList = () => {
             </div>
 
             {/* Temp */}
-            <div className="trip-area-list">
+            {/* <div className="trip-area-list">
      
                 {natureHotspotList != null ?
                 <>
@@ -167,7 +167,7 @@ const TripNatureList = () => {
                 :
                 <></>    
                 }
-            </div>
+            </div> */}
         </div>
     );
 };
