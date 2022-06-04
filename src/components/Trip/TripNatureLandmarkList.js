@@ -16,7 +16,7 @@ const TripNatureLandmarkList = () => {
         try {
             const sessionStorageName = `TripNatureLandmarkList${cityId}${regionId}${natureTypeId}`;
 
-            const sessionStorageData = JSON.parse(sessionStorage.getItem(sessionStorageName))
+            const sessionStorageData = JSON.parse(sessionStorage.getItem(sessionStorageName));
 
             if (sessionStorageData == null) {
                 const response = await axios.get("/api/natureHotspotList", {

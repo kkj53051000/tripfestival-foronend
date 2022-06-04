@@ -3,7 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import "../../css/festival/FsetivalAreaLandmarkList.css";
 import axios from "axios";
 
-const FsetivalAreaLandmarkList = () => {
+const FestivalAreaLandmarkList = () => {
 
     let { cityId } = useParams();
     let { regionId } = useParams();
@@ -12,14 +12,25 @@ const FsetivalAreaLandmarkList = () => {
 
     const getEventList = async () => {
         try {
-            const response = await axios.get("/api/eventList", {
-                params: {
-                    worldCountryCityId: cityId,
-                    worldCountryCityRegionId: regionId
-                }
-            })
+            const sessionStorageName = `FestivalAreaLandmarkList${cityId}${regionId}`;
 
-            setEventList(response.data.items)
+            const sessionStorageData = JSON.parse(sessionStorage.getItem(sessionStorageName));
+
+            if (sessionStorageData == null) {
+                const response = await axios.get("/api/eventList", {
+                    params: {
+                        worldCountryCityId: cityId,
+                        worldCountryCityRegionId: regionId
+                    }
+                });
+    
+                setEventList(response.data.items)
+                sessionStorage.setItem(sessionStorageName, JSON.stringify(response.data.items));
+            }else {
+                setEventList(sessionStorageData);
+            }
+
+            
             
         } catch(e) {
             console.log(e);
@@ -96,4 +107,4 @@ const FsetivalAreaLandmarkList = () => {
     );
 };
 
-export default FsetivalAreaLandmarkList;
+export default FestivalAreaLandmarkList;
