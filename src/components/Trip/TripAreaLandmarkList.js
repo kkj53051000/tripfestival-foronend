@@ -13,14 +13,23 @@ const TripAreaLandmarkList = () => {
 
     const getLandamrkList = async () => {
         try {
-            const response = await axios.get("/api/landmarkList", {
-                params: {
-                    worldCountryCityRegionId: regionId,
-                    worldCountryCityId: cityId
-                }
-            })
 
-            setLandmarkList(response.data.items)
+            const sessionStorageData = JSON.parse(sessionStorage.getItem(`TripAreaLandmarkList${cityId}${regionId}`))
+
+            if(sessionStorageData == null) {
+                const response = await axios.get("/api/landmarkList", {
+                    params: {
+                        worldCountryCityRegionId: regionId,
+                        worldCountryCityId: cityId
+                    }
+                });
+
+                setLandmarkList(response.data.items);
+                sessionStorage.setItem(`TripAreaLandmarkList${cityId}${regionId}`, JSON.stringify(response.data.items));
+            }else {
+                
+                setLandmarkList(sessionStorageData);
+            }
             
         } catch(e) {
             console.log(e);
