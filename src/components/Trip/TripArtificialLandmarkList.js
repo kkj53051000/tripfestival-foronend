@@ -5,16 +5,18 @@ import axios from "axios";
 
 const TripArtificialLandmarkList = () => {
 
-    let { artificialTypeId } = useParams();
     let { cityId } = useParams();
     let { regionId } = useParams();
+    let { artificialTypeId } = useParams();
 
 
     const [landmarkList, setLandmarkList] = useState(null);
 
     const getLandamrkList = async () => {
         try {
-            const sessionStorageData = JSON.parse(sessionStorage.getItem(`TripArtificialLandmarkList${cityId}${regionId}`))
+            const sessionStorageName = `TripArtificialLandmarkList${cityId}${regionId}${artificialTypeId}`;
+
+            const sessionStorageData = JSON.parse(sessionStorage.getItem(sessionStorageName))
 
             if(sessionStorageData == null) {
                 const response = await axios.get("/api/hotspotList", {
@@ -26,7 +28,7 @@ const TripArtificialLandmarkList = () => {
                 })
     
                 setLandmarkList(response.data.items)
-                sessionStorage.setItem(`TripArtificialLandmarkList${cityId}${regionId}`, JSON.stringify(response.data.items));
+                sessionStorage.setItem(sessionStorageName, JSON.stringify(response.data.items));
             }else {
                 setLandmarkList(sessionStorageData);
             }

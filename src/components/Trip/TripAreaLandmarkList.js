@@ -13,8 +13,9 @@ const TripAreaLandmarkList = () => {
 
     const getLandamrkList = async () => {
         try {
+            const sessionStorageName = `TripAreaLandmarkList${cityId}${regionId}`;
 
-            const sessionStorageData = JSON.parse(sessionStorage.getItem(`TripAreaLandmarkList${cityId}${regionId}`))
+            const sessionStorageData = JSON.parse(sessionStorage.getItem(sessionStorageName))
 
             if(sessionStorageData == null) {
                 const response = await axios.get("/api/landmarkList", {
@@ -25,7 +26,7 @@ const TripAreaLandmarkList = () => {
                 });
 
                 setLandmarkList(response.data.items);
-                sessionStorage.setItem(`TripAreaLandmarkList${cityId}${regionId}`, JSON.stringify(response.data.items));
+                sessionStorage.setItem(sessionStorageName, JSON.stringify(response.data.items));
             }else {
                 
                 setLandmarkList(sessionStorageData);

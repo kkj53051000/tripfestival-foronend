@@ -5,25 +5,34 @@ import axios from "axios";
 
 const TripNatureLandmarkList = () => {
 
-    let { natureTypeId } = useParams();
     let { cityId } = useParams();
     let { regionId } = useParams();
+    let { natureTypeId } = useParams();
 
 
     const [landmarkList, setLandmarkList] = useState(null);
 
     const getLandamrkList = async () => {
         try {
-            const response = await axios.get("/api/natureHotspotList", {
-                params: {
-                    natureHotspotTypeId: natureTypeId,
-                    worldCountryCityId: cityId,
-                    worldCountryCityRegionId: regionId
-                }
-            })
+            const sessionStorageName = `TripNatureLandmarkList${cityId}${regionId}${natureTypeId}`;
 
-            setLandmarkList(response.data.items)
-            console.log(response.data.items)
+            const sessionStorageData = JSON.parse(sessionStorage.getItem(sessionStorageName))
+
+            if (sessionStorageData == null) {
+                const response = await axios.get("/api/natureHotspotList", {
+                    params: {
+                        natureHotspotTypeId: natureTypeId,
+                        worldCountryCityId: cityId,
+                        worldCountryCityRegionId: regionId
+                    }
+                })
+    
+                setLandmarkList(response.data.items)
+                sessionStorage.setItem(sessionStorageName, JSON.stringify(response.data.items));
+            }else{
+                setLandmarkList(sessionStorageData);
+            }
+            
             
         } catch(e) {
             console.log(e);
