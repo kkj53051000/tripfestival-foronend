@@ -56,9 +56,6 @@ const Festival = () => {
                             </div>
                         ))} */}
                     </div>
-
-                    
-                    
                 </div>
 
                 <div className="festival-map">

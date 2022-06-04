@@ -1,8 +1,47 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "../../css/AdminMain.css";
+import axios from "axios";
 
 const AdminMain = () => {
+
+    const onClickCityNew = async ( e ) => {
+        try {
+            const response = await axios.get("/api/updateCountryCityKorea")
+
+            if(response.data.status === 'SUCCESS') {
+                alert("최신화 성공");
+            }
+        } catch(e) {
+            console.log(e);
+        }
+    }
+
+    const onClickRegionNew = async ( e ) => {
+        try {
+            const response = await axios.get("/api/updateCountryCityRegionKorea")
+
+            if(response.data.status === 'SUCCESS') {
+                alert("최신화 성공");
+            }
+        } catch(e) {
+            console.log(e);
+        }
+    }
+
+    const onClickLandmarkNew = async ( e ) => {
+        try {
+            const response = await axios.get("/api/updateLandmarkKorea")
+
+            if(response.data.status === 'SUCCESS') {
+                alert("최신화 성공");
+            }
+        } catch(e) {
+            console.log(e);
+        }
+    }
+
+
     return (
         <div className="admin-main-wrap">
             <h1>유저</h1>
@@ -40,10 +79,9 @@ const AdminMain = () => {
             <h1>최신화</h1>
             <h4>회의 후 실행 할 것.</h4>
             <div className="new">
-                <button style={{height: '50px', width: '120px'}}>City 최신화</button>
-                <button style={{height: '50px', width: '120px'}}>Region 최신화</button>
-                <button style={{height: '50px', width: '120px'}}>Landmark 최신화</button>
-                <button style={{height: '50px', width: '120px'}}>핵버튼</button>
+                <button style={{height: '50px', width: '120px'}} onClick={onClickCityNew}>City 최신화</button>
+                <button style={{height: '50px', width: '120px'}} onClick={onClickRegionNew}>Region 최신화</button>
+                <button style={{height: '50px', width: '120px'}} onClick={onClickLandmarkNew}>Landmark 최신화</button>
             </div>
         </div>
     );

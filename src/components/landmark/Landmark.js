@@ -37,40 +37,46 @@ const Landmark = () => {
     }, [])
 
 
+    const [description, setDescription] = useState(null);
+
     useEffect(()=>{
-        var container = document.getElementById('map');
-        var options = {
-          center: new kakao.maps.LatLng(37.365264512305174, 127.10676860117488),
-          level: 3
-        };
-        var map = new kakao.maps.Map(container, options);
 
-        var geocoder = new kakao.maps.services.Geocoder();
+        if (landmark != null) {
+            setDescription(landmark.data.description)
+        }
 
-        geocoder.addressSearch('제주특별자치도 제주시 첨단로 242', function(result, status) {
+        if(process.env.REACT_APP_ENV === "prod") {
+            if(landmark == null) {
+                return;
+            }
 
-            // 정상적으로 검색이 완료됐으면 
-             if (status === kakao.maps.services.Status.OK) {
+            var container = document.getElementById('map');
+            var options = {
+              center: new kakao.maps.LatLng(37.365264512305174, 127.10676860117488),
+              level: 3
+            };
+            var map = new kakao.maps.Map(container, options);
+    
+            var geocoder = new kakao.maps.services.Geocoder();
+    
+            geocoder.addressSearch(landmark.data.address, function(result, status) {
+    
+                // 정상적으로 검색이 완료됐으면 
+                 if (status === kakao.maps.services.Status.OK) {
+            
+                    var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
+            
+                    // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
+                    map.setCenter(coords);
+                } 
+            });
+        }
         
-                var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
-        
-                // 결과값으로 받은 위치를 마커로 표시합니다
-                var marker = new kakao.maps.Marker({
-                    map: map,
-                    position: coords
-                });
-        
-                // 인포윈도우로 장소에 대한 설명을 표시합니다
-                // var infowindow = new kakao.maps.InfoWindow({
-                //     content: null
-                // });
-                // infowindow.open(map, marker);
-        
-                // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
-                map.setCenter(coords);
-            } 
-        });   
-        }, [])
+    }, [landmark])
+
+    
+
+    
         
         
 
@@ -106,10 +112,16 @@ const Landmark = () => {
                 }
 
                 <div className="landmark-body">
-                    <div className="landmark-description">
-                    {/* 칠갑산(561m)은 크고 작은 봉우리와 계곡을 지닌 명산으로 자연 그대로의 울창한 숲을 지니고 있다. 1973년 3월 6일에 도립공원으로 지정되었고 면적은 32.542㎢으로 3개면에 걸쳐 있으며 주요 명소는 정상, 아흔 아홉골, 칠갑산장(최익현 동상, 칠갑산노래 조각품 등), 장승공원, 천장호, 장곡사, 정혜사, 자연휴양림, 도림사지, 두률성 등이 있다. 특히 칠갑산은 계절의 변화가 뚜렷하여 봄에는 산철쭉과 벚꽃으로 단장하여 우아한 자태를 자랑하고 여름에는 울창한 천연림이 현대인들의 심신을 안정시켜주며, 또한 가을에는 울긋불긋한 단풍으로 어우러지며, 겨울의 설경은 천상의 세계에 들어온 듯한 느낌으로 다가와 사시사철 등산객들에게 독특한 묘미를 전해주는 명산이다. 칠갑산은 7개의 등산로가 개발되어 있으며 각각 특성을 자랑하고 있어 각자에 맞게 등산코스를 선택할 수 있어 꾸준히 관광객이 늘고 있고, 대중가요 '칠갑산' 노래로 일반인들에게 친숙하다. */}
-                        설명
-                    </div>
+                    {landmark != null && !landmarkLoading ?
+                    <>
+                        <div className="landmark-description" dangerouslySetInnerHTML={ {__html: description}} >
+                            {/* {landmark.data.description} */}
+                        </div>
+                    </>
+                        :
+                    <></>
+                    }  
+                    
 
                     <div className="landmark-fee">
                         입장료

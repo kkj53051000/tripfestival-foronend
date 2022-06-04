@@ -61,7 +61,7 @@ const MainView = () => {
     // Search Result
     const [searchResult, setSearchResult] = useState(null)
     
-    const setSearchResut = async () => {
+    const getSearchResult = async () => {
 
         const response = await axios.get("/api/mainSearchResult", {
             params: {
@@ -75,15 +75,17 @@ const MainView = () => {
 
 
     // Search Result List
-    useEffect( () => {
+    useEffect(() => {
         var lang_ck = /[가-힣]/;
 
         if (lang_ck.test(inputValue)) {
             console.log("한글자 완성됨.")
+
+            const debounce = setTimeout(() => {
+                getSearchResult()
+            }, 300);
+            return () => clearTimeout(debounce);
         }
-
-        setSearchResut()
-
     }, [inputValue])
 
     return (
@@ -93,7 +95,7 @@ const MainView = () => {
             :
             <></>
             }
-            <h1>16개의 축제가 진행중이에요.</h1>
+            <h1>0개의 축제가 진행중이에요.</h1>
             <div className="main-view-input">
                 <div className="input">
                     <input
