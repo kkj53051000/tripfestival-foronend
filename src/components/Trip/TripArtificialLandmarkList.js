@@ -64,6 +64,7 @@ const TripArtificialLandmarkList = () => {
                 {landmarkList != null ?
                 <>
                     {landmarkList.map(landmark => (
+                    <div className="trip-area-wr">
                     <div className="trip-area">
                         {landmark.img == null ?
                         <></>
@@ -82,6 +83,7 @@ const TripArtificialLandmarkList = () => {
                                 ))}
                             </div> */}
                         </div>
+                    </div>
                     </div>
                     ))}
                 </>

@@ -105,15 +105,30 @@
 
     /* border: 1px solid black; */
 }
+
+.festival-area-wr {
+    background: rgb(231, 227, 235);
+    margin: 10px;
+    padding: 1px 1px 3px;
+
+    width: 100%;
+    height: 200px;
+
+    border-radius: 8px 8px 8px 36px;
+}
 .festival-area{
     display: flex;
     flex-direction: row;
     /* align-items: center; */
 
-    width: 100;
-    height: 200px;
+    width: 100%;
+    height: 100%;
 
     margin: 2px;
+
+    background-color: white;
+
+    border-radius: 8px 8px 8px 36px;
 
     /* border: 1px solid black; */
 }

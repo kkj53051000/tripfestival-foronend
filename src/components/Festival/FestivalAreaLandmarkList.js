@@ -76,7 +76,8 @@ const FestivalAreaLandmarkList = () => {
                 {eventList != null ?
                 <>
                     {eventList.map(event => (
-                        <div className="festival-area" key={event.id}>
+                        <div className="festival-area-wr" key={event.id}>
+                        <div className="festival-area">
                             {event.img == null ?
                             <></>
                             :
@@ -96,6 +97,7 @@ const FestivalAreaLandmarkList = () => {
                                 
                                 </div>
                             </div>
+                        </div>
                         </div>
                     ))}
                 </>

@@ -51,7 +51,8 @@ const FestivalCategoryLandmarkList = () => {
                 {landmarkList != null ?
                 <>
                     {landmarkList.map(landmark => (
-                        <div className="festival-area" key={landmark.id}>
+                        <div className="festival-area-wr" key={landmark.id}>
+                        <div className="festival-area">
                             {landmark.img == null ?
                             <></>
                             :
@@ -65,6 +66,7 @@ const FestivalCategoryLandmarkList = () => {
                                     <span className="hashtag">#나비</span> */}
                                 </div>
                             </div>
+                        </div>
                         </div>
                     ))}
                 </>

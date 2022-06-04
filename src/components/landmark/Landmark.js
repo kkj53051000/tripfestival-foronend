@@ -40,7 +40,7 @@ const Landmark = () => {
 
     const onClicklandmarkClear = async () => {
         try {
-            const response = await axios.get("/api/admin/landmarkClear/" + id);
+            const response = await axios.post("/api/admin/landmarkClear/" + id);
 
             if(response.data.status == "SUCCESS") {
                 alert("삭제완료");

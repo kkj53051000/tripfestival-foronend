@@ -53,6 +53,7 @@ const TripNatureLandmarkList = () => {
                 {landmarkList != null ?
                 <>
                     {landmarkList.map(landmark => (
+                    <div className="trip-area-wr">
                     <div className="trip-area">
                         {landmark.img == null ?
                         <></>
@@ -71,6 +72,7 @@ const TripNatureLandmarkList = () => {
                                 ))}
                             </div>
                         </div>
+                    </div>
                     </div>
                     ))}
                 </>
