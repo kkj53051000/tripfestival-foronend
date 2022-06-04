@@ -38,6 +38,20 @@ const Landmark = () => {
     }, []); 
 
 
+    const onClicklandmarkClear = async () => {
+        try {
+            const response = await axios.get("/api/admin/landmarkClear/" + id);
+
+            if(response.data.status == "SUCCESS") {
+                alert("삭제완료");
+            }
+
+        }catch(e) {
+
+        }
+        
+    }
+ 
     const [description, setDescription] = useState(null);
 
     useEffect(()=>{
@@ -47,9 +61,6 @@ const Landmark = () => {
 
             setLength(landmark.data.imgList.items.length)
         }
-
-       
-
 
         if(process.env.REACT_APP_ENV === "prod") {
             if(landmark == null) {
@@ -61,7 +72,11 @@ const Landmark = () => {
               center: new kakao.maps.LatLng(37.365264512305174, 127.10676860117488),
               level: 3
             };
+
             var map = new kakao.maps.Map(container, options);
+
+
+            
     
             var geocoder = new kakao.maps.services.Geocoder();
     
@@ -71,19 +86,22 @@ const Landmark = () => {
                  if (status === kakao.maps.services.Status.OK) {
             
                     var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
+
+                    // 결과값으로 받은 위치를 마커로 표시합니다
+                    var marker = new kakao.maps.Marker({
+                        map: map,
+                        position: coords
+                    });
             
                     // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
                     map.setCenter(coords);
+
+      
                 } 
             });
         }
         
     }, [landmark])
-
-    
-
-    
-        
         
 
     useEffect(() => {
@@ -98,6 +116,8 @@ const Landmark = () => {
 
     return (
         <div className="landmark-wrap">
+
+            <h1><button onClick={onClicklandmarkClear}>삭제</button></h1>
             
             <div className="landmark-screen">
                 {landmark != null && !landmarkLoading ?
