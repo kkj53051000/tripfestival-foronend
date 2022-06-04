@@ -18,14 +18,14 @@ const FestivalCategoryLandmarkList = () => {
 
             const sessionStorageData = JSON.parse(sessionStorage.getItem(sessionStorageName));
 
-            if(sessionStorageData == null) {
+            if (sessionStorageData == null) {
                 const response = await axios.get("/api/eventCategoryList", {
                     params: {
                         eventCategoryId: categoryId,
                         worldCountryCityId: cityId,
                         worldCountryCityRegionId: regionId   
                     }
-                })
+                });
     
                 setLandmarkList(response.data.items)
                 sessionStorage.setItem(sessionStorageName, JSON.stringify(response.data.items));

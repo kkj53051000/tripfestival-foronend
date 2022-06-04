@@ -6,25 +6,34 @@ import axios from "axios";
 
 const FestivalMonthLandmarkList = () => {
 
-    let { monthId } = useParams();
     let { cityId } = useParams();
     let { regionId } = useParams();
+    let { monthId } = useParams();
 
     const [landmarkList, setLandmarkList] = useState(null);
 
 
     const getLandmarkList = async () => {
         try {
+            const sessionStorageName = `FestivalMonthLandmarkList${cityId}${regionId}${monthId}`;
 
-            const response = await axios.get("/api/eventSeasonList", {
-                params: {
-                    eventSeasonId: monthId,
-                    worldCountryCityId: cityId,
-                    worldCountryCityRegionId: regionId   
-                }
-            })
+            const sessionStorageData = JSON.parse(sessionStorage.getItem(sessionStorageName));
 
-            setLandmarkList(response.data.items)
+            if (sessionStorageData == null) {
+                const response = await axios.get("/api/eventSeasonList", {
+                    params: {
+                        eventSeasonId: monthId,
+                        worldCountryCityId: cityId,
+                        worldCountryCityRegionId: regionId   
+                    }
+                });
+    
+                setLandmarkList(response.data.items);
+                sessionStorage.setItem(sessionStorageName, JSON.stringify(response.data.items));
+            }else {
+                setLandmarkList(sessionStorageData);
+            }
+            
 
         } catch(e) {
             console.log(e);
