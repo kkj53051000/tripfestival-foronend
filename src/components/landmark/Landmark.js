@@ -17,7 +17,8 @@ const Landmark = () => {
     ]
 
     const [current, setCurrent] = useState(0)
-    const length = imgList.length
+    // const length = imgList.length
+    const [length, setLength] = useState(null);
 
     const nextSlide = () => {
         setCurrent(current === length -1 ? 0 : current + 1)
@@ -34,7 +35,7 @@ const Landmark = () => {
                 landmarkId: id,
             }
         })
-    }, [])
+    }, []); 
 
 
     const [description, setDescription] = useState(null);
@@ -43,7 +44,12 @@ const Landmark = () => {
 
         if (landmark != null) {
             setDescription(landmark.data.description)
+
+            setLength(landmark.data.imgList.items.length)
         }
+
+       
+
 
         if(process.env.REACT_APP_ENV === "prod") {
             if(landmark == null) {
@@ -124,21 +130,26 @@ const Landmark = () => {
                     
 
                     <div className="landmark-fee">
-                        입장료
+                        {/* 입장료 */}
                     </div>
 
+
+                    {landmark !== null && !landmarkLoading ?
                     <div className="landmark-img-wrap">
-                        사진
-                        {/* <FaArrowAltCircleLeft className="left-arrow" onClick={prevSlide} />
+                        <FaArrowAltCircleLeft className="left-arrow" onClick={prevSlide} />
                         <FaArrowAltCircleRight className="right-arrow" onClick={nextSlide} />
-                        {imgList.map((img, index) => (
+                        {landmark.data.imgList.items.map((img, index) => (
                             <div className={index === current ? 'slide  active' : 'slide'}>
                                 {index === current && (
-                                    <img src={img} alt="img" className="image" />
+                                    <img src={img.img} alt="img" className="image" />
                                 )}
                             </div>
-                        ))} */}
+                        ))}
                     </div>
+                    :
+                    <></>
+                    }
+                    
 
                     
                     
