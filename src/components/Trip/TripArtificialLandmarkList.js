@@ -14,17 +14,22 @@ const TripArtificialLandmarkList = () => {
 
     const getLandamrkList = async () => {
         try {
-            const response = await axios.get("/api/hotspotList", {
-                params: {
-                    hotspotTypeId: artificialTypeId,
-                    worldCountryCityId: cityId,
-                    worldCountryCityRegionId: regionId
-                }
-            })
+            const sessionStorageData = JSON.parse(sessionStorage.getItem(`TripArtificialLandmarkList${cityId}${regionId}`))
 
-            setLandmarkList(response.data.items)
-            console.log(response.data.items)
-            
+            if(sessionStorageData == null) {
+                const response = await axios.get("/api/hotspotList", {
+                    params: {
+                        hotspotTypeId: artificialTypeId,
+                        worldCountryCityId: cityId,
+                        worldCountryCityRegionId: regionId
+                    }
+                })
+    
+                setLandmarkList(response.data.items)
+                sessionStorage.setItem(`TripArtificialLandmarkList${cityId}${regionId}`, JSON.stringify(response.data.items));
+            }else {
+                setLandmarkList(sessionStorageData);
+            }
         } catch(e) {
             console.log(e);
         }
