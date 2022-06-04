@@ -1,8 +1,35 @@
 .footer-wrap{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
     width: 100%;
-    height: 300px;
+    height: auto;
 
     border-top: 1px solid #e9ecef;
 
     margin-top: 50px;
+}
+.footer-content {
+    width: 50%;
+    min-width: 768px;
+
+    height: 500px;
+}
+.footer-logo-wrap {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 100px;
+
+}
+.footer-logo-wrap img {
+    height: 70%;
+    width: auto;
+
+    margin: 30px;
 }
