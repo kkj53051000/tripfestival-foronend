@@ -5,25 +5,35 @@ import axios from "axios";
 
 const FestivalCategoryLandmarkList = () => {
 
-    let { categoryId } = useParams();
     let { cityId } = useParams();
     let { regionId } = useParams();
+    let { categoryId } = useParams();
 
     const [landmarkList, setLandmarkList] = useState(null);
 
     // Axios Upload
     const getLandmarkList = async () => {
         try {
+            const sessionStorageName = `FestivalCategoryLandmarkList${cityId}${regionId}${categoryId}`;
 
-            const response = await axios.get("/api/eventCategoryList", {
-                params: {
-                    eventCategoryId: categoryId,
-                    worldCountryCityId: cityId,
-                    worldCountryCityRegionId: regionId   
-                }
-            })
+            const sessionStorageData = JSON.parse(sessionStorage.getItem(sessionStorageName));
 
-            setLandmarkList(response.data.items)
+            if(sessionStorageData == null) {
+                const response = await axios.get("/api/eventCategoryList", {
+                    params: {
+                        eventCategoryId: categoryId,
+                        worldCountryCityId: cityId,
+                        worldCountryCityRegionId: regionId   
+                    }
+                })
+    
+                setLandmarkList(response.data.items)
+                sessionStorage.setItem(sessionStorageName, JSON.stringify(response.data.items));
+            }else {
+                setLandmarkList(sessionStorageData);
+            }
+
+            
 
         } catch(e) {
             console.log(e);
