@@ -11,11 +11,6 @@ const Landmark = () => {
 
     const { id } = useParams();
 
-    const imgList = [
-        "http://tong.visitkorea.or.kr/cms/resource/19/2662619_image2_1.bmp",
-        "https://cdn.pixabay.com/photo/2018/08/14/13/23/ocean-3605547__340.jpg"
-    ]
-
     const [current, setCurrent] = useState(0)
     // const length = imgList.length
     const [length, setLength] = useState(null);
@@ -108,11 +103,6 @@ const Landmark = () => {
         window.scrollTo(0, 0)
     }, [])
 
-
-
-    if(!Array.isArray(imgList) || imgList.length <= 0) {
-        return null
-    }
 
     return (
         <div className="landmark-wrap">

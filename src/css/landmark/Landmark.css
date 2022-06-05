@@ -95,8 +95,9 @@
    align-items: center;
 }
 .landmark-img-wrap .image {
-    width: 700px;
-    height: auto;
+    
+    height: 500px;
+    width: auto;
     border-radius: 10px;
     object-fit: cover;
 }

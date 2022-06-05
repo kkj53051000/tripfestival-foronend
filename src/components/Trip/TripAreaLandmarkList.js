@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom";
 import "../../css/trip/TripAreaLandmarkList.css";
 import axios from "axios";
 
+
 const TripAreaLandmarkList = () => {
 
+    const navigate = useNavigate();
 
     let { cityId } = useParams();
     let { regionId } = useParams();
@@ -62,8 +64,30 @@ const TripAreaLandmarkList = () => {
             console.log(e);
         }
     }
+    
+    // 랜드마크 이동
+    const onClickLandmark = (e) => {
+        console.log(window.scrollY)
+        
+        const sessionStorageName = `TripAreaLandmarkList${cityId}${regionId}_scroll`;
+
+        sessionStorage.setItem(sessionStorageName, window.scrollY)
+
+        navigate("/landmark/" + e.target.value)
+    }
+
+    // 스크롤 위치 원위치
+    const moveLandmarkListScroll = () => {
+        const sessionStorageName = `TripAreaLandmarkList${cityId}${regionId}_scroll`;
+
+        if (sessionStorage.getItem(sessionStorageName) != null) {
+            window.scrollTo(0, sessionStorage.getItem(sessionStorageName))
+        }
+    }
+
 
     useEffect(() => {
+        moveLandmarkListScroll()
         getLandamrkList()
         getCityName()
         getRegionName()
@@ -89,9 +113,12 @@ const TripAreaLandmarkList = () => {
                         }
 
                         <div>
-                            <Link className="title" to={`/landmark/${landmark.id}`}>
+                            <button value={landmark.id} onClick={onClickLandmark}>
+                                test
+                            </button>
+                            <div className="title" value={landmark.id} onClick={onClickLandmark}>
                                 <span className="title">{landmark.name}</span>
-                            </Link>
+                            </div>
         
                             <div className="hashtag-wrap">
                                 {landmark.items.map(hashTag => (
