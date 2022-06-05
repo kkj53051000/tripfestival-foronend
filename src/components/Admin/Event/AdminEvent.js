@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "../../../css/event/AdminEvent.css";
 import axios from "axios";
 import useApiGet from "../../../lib/useApiGet";
+import { Link } from "react-router-dom";
 
 const AdminEvent = () => {
 
@@ -104,6 +105,20 @@ const AdminEvent = () => {
 
             if(response.data.status === 'SUCCESS') {
                 alert("업로드 성공");
+                window.location.replace(url)
+            }
+        } catch(e) {
+            console.log(e);
+        }
+    }
+
+    // Event Remove
+    const onClickRemove = async (e) => {
+        try {
+            const response = await axios.post("/api/admin/eventRemove/" + e.target.value);
+
+            if(response.data.status === 'SUCCESS') {
+                alert("삭제 성공");
                 window.location.replace(url)
             }
         } catch(e) {
@@ -231,7 +246,7 @@ const AdminEvent = () => {
 
                         <br/>
 
-                        이름 : <input className="name" placeholder={event.name} />
+                        {/* 이름 : <input className="name" placeholder={event.name} />
                         <br/><br/>
 
                         설명 : <textarea className="description" placeholder={event.description} />
@@ -250,15 +265,17 @@ const AdminEvent = () => {
                         <br/><br/>
 
                         eventCategoryId : <input className="eventCategoryId" placeholder={event.eventCategoryId} />
+
+                        
                         <br/><br/>
 
                         eventSeasonId : <input className="eventSeasonId" placeholder={event.eventSeasonId} />
-                        <br/><br/>
+                        <br/><br/> */}
 
                         <br/><br/>
 
-                        <button>삭제</button>
-                        <button>수정</button>
+                        <button value={event.id} onClick={onClickRemove}>삭제</button>
+                        <Link to={`/admin/event/event/modify/${event.id}`}>수정</Link>
                         <br/><br/>
                         </>
                     ))}

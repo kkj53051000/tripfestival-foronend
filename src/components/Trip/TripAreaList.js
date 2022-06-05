@@ -64,43 +64,45 @@ const TripAreaList = () => {
                     지역
                 </div>
 
-                {/* City */}
-                <div className="one">
-                    <div class="style">
-                        <select onChange={handleCityId}>
-                            <option value="0" disabled selected>선택하세요</option>
-                            {cityList != null && !cityListLoading ?
-                            <>
-                                {cityList.data.items.map(city => (
-                                    <option value={city.id} key={city.id}>
-                                        {city.name}
-                                    </option>
-                                ))}
-                            </>
-                            :
-                            <></>
-                            }
-                        </select>
+                <div className="input">
+                    {/* City */}
+                    <div className="one">
+                        <div class="style">
+                            <select onChange={handleCityId}>
+                                <option value="0" disabled selected>선택하세요</option>
+                                {cityList != null && !cityListLoading ?
+                                <>
+                                    {cityList.data.items.map(city => (
+                                        <option value={city.id} key={city.id}>
+                                            {city.name}
+                                        </option>
+                                    ))}
+                                </>
+                                :
+                                <></>
+                                }
+                            </select>
+                        </div>
                     </div>
-                </div>
 
-                {/* Region */}
-                <div className="two">
-                    <div class="style">
-                        <select onChange={handleRegionId}>
-                            <option value="0" selected>전체</option>
-                            {regionList != null && !regionListLoading ?
-                            <>
-                                {regionList.data.items.map(region => (
-                                    <option value={region.id} key={region.id}>
-                                        {region.name}
-                                    </option>
-                                ))}
-                            </>
-                            :
-                            <></>
-                            }
-                        </select>
+                    {/* Region */}
+                    <div className="two">
+                        <div class="style">
+                            <select onChange={handleRegionId}>
+                                <option value="0" selected>전체</option>
+                                {regionList != null && !regionListLoading ?
+                                <>
+                                    {regionList.data.items.map(region => (
+                                        <option value={region.id} key={region.id}>
+                                            {region.name}
+                                        </option>
+                                    ))}
+                                </>
+                                :
+                                <></>
+                                }
+                            </select>
+                        </div>
                     </div>
                 </div>
                 {/* <div className="btn">

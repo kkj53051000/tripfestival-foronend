@@ -1,71 +1,146 @@
-.main-festival-menu-list {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-
-    width: 50%;
-    min-width: 768px;
-    height: auto;
-}
-.main-category{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+@media ( min-width: 768px ) {
+    .main-festival-menu-list {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
     
-    width: 40%;
-    height: 300px;
-
-    margin: 10px;
-
-    box-shadow: 4px 12px 40px 6px rgb(0 0 0 / 9%);
-    border-radius: 35px;
-    text-decoration: none;
-}
-.main-area{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+        width: 50%;
+        min-width: 768px;
+        height: auto;
+    }
+    .main-category{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        
+        width: 40%;
+        height: 300px;
     
-    width: 40%;
-    height: 300px;
-
-    margin: 25px;
-
-    box-shadow: 4px 12px 40px 6px rgb(0 0 0 / 9%);
-    border-radius: 35px;
-    text-decoration: none;
+        margin: 10px;
+    
+        box-shadow: 4px 12px 40px 6px rgb(0 0 0 / 9%);
+        border-radius: 35px;
+        text-decoration: none;
+    }
+    .main-area{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        
+        width: 40%;
+        height: 300px;
+    
+        margin: 25px;
+    
+        box-shadow: 4px 12px 40px 6px rgb(0 0 0 / 9%);
+        border-radius: 35px;
+        text-decoration: none;
+    }
+    .main-month{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    
+        width: 90%;
+        height: 200px;
+    
+        margin: 10px;
+    
+        box-shadow: 4px 12px 40px 6px rgb(0 0 0 / 9%);
+        border-radius: 35px;
+        text-decoration: none;
+    }
+    .main-category-span{
+        color: #000;
+        font-size: 40px;
+        font-weight: bold;
+    }
+    .main-festival-area{
+        color: #000;
+        font-size: 40px;
+        font-weight: bold;
+    }
+    .main-month-month{
+        color: #000;
+        font-size: 40px;
+        font-weight: bold;
+    }
 }
-.main-month{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
 
-    width: 90%;
-    height: 200px;
-
-    margin: 10px;
-
-    box-shadow: 4px 12px 40px 6px rgb(0 0 0 / 9%);
-    border-radius: 35px;
-    text-decoration: none;
-}
-.main-category-span{
-    color: #000;
-    font-size: 40px;
-    font-weight: bold;
-}
-.main-festival-area{
-    color: #000;
-    font-size: 40px;
-    font-weight: bold;
-}
-.main-month-month{
-    color: #000;
-    font-size: 40px;
-    font-weight: bold;
+@media ( max-width: 768px ) {
+    .main-festival-menu-list {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+    
+        width: 95%;
+        height: auto;
+    }
+    .main-category{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        
+        width: 40%;
+        height: 200px;
+    
+        margin: 10px;
+    
+        box-shadow: 4px 12px 40px 6px rgb(0 0 0 / 9%);
+        border-radius: 35px;
+        text-decoration: none;
+    }
+    .main-area{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        
+        width: 40%;
+        height: 200px;
+    
+        margin: 25px;
+    
+        box-shadow: 4px 12px 40px 6px rgb(0 0 0 / 9%);
+        border-radius: 35px;
+        text-decoration: none;
+    }
+    .main-month{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    
+        width: 90%;
+        height: 180px;
+    
+        margin: 10px;
+    
+        box-shadow: 4px 12px 40px 6px rgb(0 0 0 / 9%);
+        border-radius: 35px;
+        text-decoration: none;
+    }
+    .main-category-span{
+        color: #000;
+        font-size: 30px;
+        font-weight: bold;
+    }
+    .main-festival-area{
+        color: #000;
+        font-size: 30px;
+        font-weight: bold;
+    }
+    .main-month-month{
+        color: #000;
+        font-size: 30px;
+        font-weight: bold;
+    }
 }

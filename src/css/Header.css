@@ -1,51 +1,113 @@
-.header-wrap{
-    width: 100%;
-    height: 100px;
-
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-
-    border-bottom: 1px solid gainsboro;
-    /* background-color: #60d2ff; */
-    background-color: #FBFBFD;
+@media ( min-width: 768px ) {
+    .header-wrap{
+        width: 100%;
+        height: 100px;
+    
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    
+        border-bottom: 1px solid gainsboro;
+        /* background-color: #60d2ff; */
+        background-color: #FBFBFD;
+    }
+    /* #41B7E5 */
+    .header-select-country{
+        /* width: 141px; */
+    }
+    .header-main-logo{
+        font-size: 50px;
+        font-weight: bold;
+    
+        text-decoration: none;
+    
+        /* color: #60d2ff; */
+        color: black;
+    }
+    .header-main-logo img{
+        height: 80px;
+    }
+    .header-login-join{
+        display: flex;
+        flex-direction: row;
+    
+        /* margin: 20px; */
+    
+    }
+    .header-login-btn{
+        color: #000;
+        font-size: 20px;
+        font-weight: bold;
+    
+        margin: 5px;
+    
+        text-decoration: none;
+    }
+    .header-join-btn{
+        color: gray;
+        font-size: 20px;
+        font-weight: bold;
+    
+        margin: 5px;
+    
+        text-decoration: none;
+    }
 }
-/* #41B7E5 */
-.header-select-country{
-    width: 141px;
-}
-.header-main-logo{
-    font-size: 50px;
-    font-weight: bold;
 
-    text-decoration: none;
-
-    /* color: #60d2ff; */
-    color: black;
-}
-.header-login-join{
-	display: flex;
-	flex-direction: row;
-
-    margin: 20px;
-
-}
-.header-login-btn{
-    color: #000;
-    font-size: 20px;
-    font-weight: bold;
-
-    margin: 5px;
-
-    text-decoration: none;
-}
-.header-join-btn{
-    color: gray;
-    font-size: 20px;
-    font-weight: bold;
-
-    margin: 5px;
-
-    text-decoration: none;
+@media ( max-width: 768px ) {
+    .header-wrap{
+        width: 100%;
+        height: 80px;
+    
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    
+        border-bottom: 1px solid gainsboro;
+        /* background-color: #60d2ff; */
+        background-color: #FBFBFD;
+    }
+    /* #41B7E5 */
+    .header-select-country{
+        /* width: 141px; */
+    }
+    .header-main-logo img{
+        height: 70px;
+    }
+    .header-main-logo{
+        font-size: 40px;
+        font-weight: bold;
+    
+        text-decoration: none;
+    
+        /* color: #60d2ff; */
+        color: black;
+    }
+    .header-login-join{
+        display: flex;
+        flex-direction: row;
+    
+        margin: 20px;
+    
+    }
+    .header-login-btn{
+        color: #000;
+        font-size: 20px;
+        font-weight: bold;
+    
+        margin: 5px;
+    
+        text-decoration: none;
+    }
+    .header-join-btn{
+        color: gray;
+        font-size: 20px;
+        font-weight: bold;
+    
+        margin: 5px;
+    
+        text-decoration: none;
+    }
 }

@@ -49,6 +49,7 @@ const Landmark = () => {
  
     const [description, setDescription] = useState(null);
 
+    // Kakao Map
     useEffect(()=>{
 
         if (landmark != null) {

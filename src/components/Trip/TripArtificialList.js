@@ -91,12 +91,59 @@ const TripArtificialList = () => {
                     </div>
                 </div>
 
+                <div className="trip-artificial-list-area-search">
+                    <div className="title">
+                        <span>지역 필터</span>
+                    </div>
+                    <div className="search-wrap">
+                        <div className="search-one">
+                            <div class="style">
+                                <select onChange={handleCityId}>
+                                    <option>전체</option>
+                                    {cityList != null && !cityListLoading ?
+                                    <>
+                                        {cityList.data.items.map(city => (
+                                            <option value={city.id} key={city.id}>
+                                                {city.name}
+                                            </option>
+                                        ))}
+                                    </>
+                                    :
+                                    <></>
+                                    }
+                                </select>
+                            </div>
+                        </div>
+                        <div className="search-two">
+                            <div class="style">
+                                <select onChange={handleRegionId}>
+                                    <option selected value="0">전체</option>
+                                    {regionList != null && !regionListLoading ?
+                                    <>
+                                        {regionList.data.items.map(region => (
+                                            <option value={region.id} key={region.id}>
+                                                {region.name}
+                                            </option>
+                                        ))}
+                                    </>
+                                    :
+                                    <></>
+                                    }
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="null">
+                        
+                    </div>
+                </div>
+
                 <Link className="btn" to={`/tripartificiallandmark/${artificialTypeId}/${cityId}/${regionId}`}>
                     <button onClick={onClickBtn}>검색</button>
                 </Link>
             </div>
 
-            <div className="trip-artificial-list-area-search">
+            {/* <div className="trip-artificial-list-area-search">
                 <div className="title">
                     <span>지역 필터</span>
                 </div>
@@ -139,7 +186,7 @@ const TripArtificialList = () => {
                 <div className="null">
                     
                 </div>
-            </div>
+            </div> */}
 
             {/* Temp */}
             <div className="trip-area-list">

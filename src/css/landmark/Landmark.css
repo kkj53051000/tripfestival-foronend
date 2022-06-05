@@ -1,236 +1,476 @@
-.landmark-wrap {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-}
-.landmark-screen {
-    width: 50%;
-    min-width: 768px;
-    height: auto;
-
-    border: 1px solid rgb(199, 196, 196);
-}
-.landmark-header {
-    display: flex;
-    flex-direction: row;
-
-    width: 100%;
-    height: 300px;
-
-    border-bottom: 1px solid rgb(199, 196, 196);
-}
-.landmark-header .img-area {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-
-    width: 50%;
-    height: 100%;
-
-    /* border: 1px solid rgb(199, 196, 196); */
-}
-.landmark-header .title-area {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
-    padding-left: 10px;
-
-    width: 50%;
-    height: 100%;
-
-    /* border: 1px solid rgb(199, 196, 196); */
-}
-.landmark-header .title-area .title {
-    font-size: 30px;
-    font-weight: bold;
-}
-.landmark-header .title-area .address {
-    margin-top: 10px;
-
-    font-size: 18px;
-    font-weight: 500;
-}
-.landmark-header img {
-    height: 80%;
-}
-/* BODY */
-.landmark-body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    width: 100%;
-    height: auto;
-}
-.landmark-description {
-    width: 90%;
-    height: auto;
-
-    margin: 10px;
-    margin-top: 50px;
-
-    font-size: 18px;
-    font-weight: 500;
-
-    /* border: 1px solid rgb(199, 196, 196); */
-}
-.landmark-fee {
-    width: 90%;
-    height: auto;
+@media ( min-width: 768px ) {
+    .landmark-wrap {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    .landmark-screen {
+        width: 50%;
+        min-width: 768px;
+        height: auto;
     
-    margin: 10px;
-    margin-top: 50px;
-
-    font-size: 18px;
-    font-weight: 500;
-}
-.landmark-img-wrap {
-   position: relative;
-   height: 80vh;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-}
-.landmark-img-wrap .image {
+        border: 1px solid rgb(199, 196, 196);
+    }
+    .landmark-header {
+        display: flex;
+        flex-direction: row;
     
-    height: 500px;
-    width: auto;
-    border-radius: 10px;
-    object-fit: cover;
-}
-.right-arrow {
-    position: absolute;
-    top: 50%;
-    right: 16px;
-    font-size: 2.5rem;
-    color: black;
-    z-index: 10;
-    cursor: pointer;
-    user-select: none;
-}
-.left-arrow {
-    position: absolute;
-    top: 50%;
-    left: 16px;
-    font-size: 2.5rem;
-    color: black;
-    z-index: 10;
-    cursor: pointer;
-    user-select: none;
-}
-.slide {
-    opacity: 0;
-    transition-duration: 1s ease;
-}
-.slide.active {
-    opacity: 1;
-    transition-duration: 1s;
-    transform: scale(1.08);
-}
-
-.landmark-map{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-
-    width: 100%;
-    height: auto;
-}
-.landmark-kakao-map {
-    margin: 30px;
-}
-.landmark-map .span {
-    display: flex;
-    flex-direction: column;
-}
-.landmark-map .address {
-    font-size: 20px;
-    font-weight: 700;
-
-    margin-bottom: 20px;
-    margin-top: 30px;
-}
-.landmark-map .ing-festival {
-    font-size: 24px;
-    font-weight: 600;
-}
-
-.landmark-review-wrap {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    height: 300px;
-
-    border: 1px solid black;
-}
-.landmark-review {
-    height: 100%;
-    width: auto;
-    flex: 1;
-    border: 1px solid black;
-    border-radius: 15px;
-
-    margin: 5px;
-}
-.landmark-review-more {
-    height: 100%;
-    width: auto;
-    flex: 1;
-    border: 1px solid black;
-
-    margin: 5px;
-}
-
-
-
-.landmark-img-list {
-    width: 100%;
-    height: 500px;
-
-    border: 1px solid black;
-}
-
-.landmark-img-list img {
-    width: auto;
-    height: 100%;
-}
-.landmark-img-list .modal { 
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    width: 100%;
-    height: 100%;
-    display: flex; 
-    justify-content: center;
-    align-items: center;
-}
-.landmark-img-list .hidden {
-    display: none;
-}
-.landmark-img-list .modal .modal_overlay {
-    background-color: rgba(0, 0, 0, 0.6);
-    width: 100%;
-    height: 100%;
-    position: absolute;
-}
-.landmark-img-list .modal .modal_content {
-    display: flex;
-    flex-direction: row;
+        width: 100%;
+        height: 300px;
     
-    width: auto;
-    text-align: center;
-    position: relative;
-    top: 0px;
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+        border-bottom: 1px solid rgb(199, 196, 196);
+    }
+    .landmark-header .img-area {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    
+        width: 50%;
+        height: 100%;
+    
+        /* border: 1px solid rgb(199, 196, 196); */
+    }
+    .landmark-header .title-area {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    
+        padding-left: 10px;
+    
+        width: 50%;
+        height: 100%;
+    
+        /* border: 1px solid rgb(199, 196, 196); */
+    }
+    .landmark-header .title-area .title {
+        font-size: 30px;
+        font-weight: bold;
+    }
+    .landmark-header .title-area .address {
+        margin-top: 10px;
+    
+        font-size: 18px;
+        font-weight: 500;
+    }
+    .landmark-header img {
+        height: 80%;
+    }
+    /* BODY */
+    .landmark-body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    
+        width: 100%;
+        height: auto;
+    }
+    .landmark-description {
+        width: 90%;
+        height: auto;
+    
+        margin: 10px;
+        margin-top: 50px;
+    
+        font-size: 18px;
+        font-weight: 500;
+    
+        /* border: 1px solid rgb(199, 196, 196); */
+    }
+    .landmark-fee {
+        width: 90%;
+        height: auto;
+        
+        margin: 10px;
+        margin-top: 50px;
+    
+        font-size: 18px;
+        font-weight: 500;
+    }
+    .landmark-img-wrap {
+       position: relative;
+       height: 80vh;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+    }
+    .landmark-img-wrap .image {
+        
+        height: 400px;
+        width: auto;
+        border-radius: 10px;
+        object-fit: cover;
+    }
+    .right-arrow {
+        position: absolute;
+        top: 50%;
+        right: 16px;
+        font-size: 2.5rem;
+        color: black;
+        z-index: 10;
+        cursor: pointer;
+        user-select: none;
+    }
+    .left-arrow {
+        position: absolute;
+        top: 50%;
+        left: 16px;
+        font-size: 2.5rem;
+        color: black;
+        z-index: 10;
+        cursor: pointer;
+        user-select: none;
+    }
+    .slide {
+        opacity: 0;
+        transition-duration: 1s ease;
+    }
+    .slide.active {
+        opacity: 1;
+        transition-duration: 1s;
+        transform: scale(1.08);
+    }
+    
+    .landmark-map{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    
+        width: 100%;
+        height: auto;
+    }
+    .landmark-kakao-map {
+        margin: 30px;
+    }
+    .landmark-map .span {
+        display: flex;
+        flex-direction: column;
+    }
+    .landmark-map .address {
+        font-size: 20px;
+        font-weight: 700;
+    
+        margin-bottom: 20px;
+        margin-top: 30px;
+    }
+    .landmark-map .ing-festival {
+        font-size: 24px;
+        font-weight: 600;
+    }
+    
+    .landmark-review-wrap {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: 300px;
+    
+        border: 1px solid black;
+    }
+    .landmark-review {
+        height: 100%;
+        width: auto;
+        flex: 1;
+        border: 1px solid black;
+        border-radius: 15px;
+    
+        margin: 5px;
+    }
+    .landmark-review-more {
+        height: 100%;
+        width: auto;
+        flex: 1;
+        border: 1px solid black;
+    
+        margin: 5px;
+    }
+    
+    
+    
+    .landmark-img-list {
+        width: 100%;
+        height: 500px;
+    
+        border: 1px solid black;
+    }
+    
+    .landmark-img-list img {
+        width: auto;
+        height: 100%;
+    }
+    .landmark-img-list .modal { 
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        display: flex; 
+        justify-content: center;
+        align-items: center;
+    }
+    .landmark-img-list .hidden {
+        display: none;
+    }
+    .landmark-img-list .modal .modal_overlay {
+        background-color: rgba(0, 0, 0, 0.6);
+        width: 100%;
+        height: 100%;
+        position: absolute;
+    }
+    .landmark-img-list .modal .modal_content {
+        display: flex;
+        flex-direction: row;
+        
+        width: auto;
+        text-align: center;
+        position: relative;
+        top: 0px;
+        box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    }
+    .landmark-img-list .modal .modal_content .img {
+        width: 1156px;
+    }
+    .landmark-img-list .modal .modal_content img {
+        width: 700px;
+        height: auto;
+    }
 }
-.landmark-img-list .modal .modal_content .img {
-    width: 1156px;
-}
-.landmark-img-list .modal .modal_content img {
-    width: 700px;
-    height: auto;
+
+@media ( max-width: 768px ) {
+    .landmark-wrap {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    .landmark-screen {
+        width: 95%;
+        height: auto;
+    
+        border: 1px solid rgb(199, 196, 196);
+    }
+    .landmark-header {
+        display: flex;
+        flex-direction: column;
+    
+        width: 100%;
+        height: auto;
+    
+        border-bottom: 1px solid rgb(199, 196, 196);
+    }
+    .landmark-header .img-area {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    
+        width: 100%;
+        height: 300px;
+    
+        /* border: 1px solid rgb(199, 196, 196); */
+    }
+    .landmark-header .title-area {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    
+        padding-left: 10px;
+    
+        width: 100%;
+        height: 100%;
+    
+        /* border: 1px solid rgb(199, 196, 196); */
+    }
+    .landmark-header .title-area .title {
+        font-size: 30px;
+        font-weight: bold;
+    }
+    .landmark-header .title-area .address {
+        margin-top: 10px;
+    
+        font-size: 18px;
+        font-weight: 500;
+    }
+    .landmark-header img {
+        height: 80%;
+    }
+    /* BODY */
+    .landmark-body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    
+        width: 100%;
+        height: auto;
+    }
+    .landmark-description {
+        width: 90%;
+        height: auto;
+    
+        margin: 10px;
+        margin-top: 50px;
+    
+        font-size: 18px;
+        font-weight: 500;
+    
+        /* border: 1px solid rgb(199, 196, 196); */
+    }
+    .landmark-fee {
+        width: 90%;
+        height: auto;
+        
+        margin: 10px;
+        margin-top: 50px;
+    
+        font-size: 18px;
+        font-weight: 500;
+    }
+    .landmark-img-wrap {
+       position: relative;
+       height: 80vh;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+    }
+    .landmark-img-wrap .image {
+        
+        height: 250px;
+        width: auto;
+        border-radius: 10px;
+        object-fit: cover;
+    }
+    .right-arrow {
+        position: absolute;
+        top: 50%;
+        right: 16px;
+        font-size: 2.5rem;
+        color: black;
+        z-index: 10;
+        cursor: pointer;
+        user-select: none;
+    }
+    .left-arrow {
+        position: absolute;
+        top: 50%;
+        left: 16px;
+        font-size: 2.5rem;
+        color: black;
+        z-index: 10;
+        cursor: pointer;
+        user-select: none;
+    }
+    .slide {
+        opacity: 0;
+        transition-duration: 1s ease;
+    }
+    .slide.active {
+        opacity: 1;
+        transition-duration: 1s;
+        transform: scale(1.08);
+    }
+    
+    .landmark-map{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    
+        width: 100%;
+        height: auto;
+    }
+    .landmark-kakao-map {
+        margin: 30px;
+    }
+    .landmark-map .span {
+        display: flex;
+        flex-direction: column;
+    }
+    .landmark-map .address {
+        font-size: 20px;
+        font-weight: 700;
+    
+        margin-bottom: 20px;
+        margin-top: 30px;
+    }
+    .landmark-map .ing-festival {
+        font-size: 24px;
+        font-weight: 600;
+    }
+    
+    .landmark-review-wrap {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: 300px;
+    
+        border: 1px solid black;
+    }
+    .landmark-review {
+        height: 100%;
+        width: auto;
+        flex: 1;
+        border: 1px solid black;
+        border-radius: 15px;
+    
+        margin: 5px;
+    }
+    .landmark-review-more {
+        height: 100%;
+        width: auto;
+        flex: 1;
+        border: 1px solid black;
+    
+        margin: 5px;
+    }
+    
+    
+    
+    .landmark-img-list {
+        width: 100%;
+        height: 500px;
+    
+        border: 1px solid black;
+    }
+    
+    .landmark-img-list img {
+        width: auto;
+        height: 100%;
+    }
+    .landmark-img-list .modal { 
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        display: flex; 
+        justify-content: center;
+        align-items: center;
+    }
+    .landmark-img-list .hidden {
+        display: none;
+    }
+    .landmark-img-list .modal .modal_overlay {
+        background-color: rgba(0, 0, 0, 0.6);
+        width: 100%;
+        height: 100%;
+        position: absolute;
+    }
+    .landmark-img-list .modal .modal_content {
+        display: flex;
+        flex-direction: row;
+        
+        width: auto;
+        text-align: center;
+        position: relative;
+        top: 0px;
+        box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    }
+    .landmark-img-list .modal .modal_content .img {
+        width: 1156px;
+    }
+    .landmark-img-list .modal .modal_content img {
+        width: 700px;
+        height: auto;
+    }
 }

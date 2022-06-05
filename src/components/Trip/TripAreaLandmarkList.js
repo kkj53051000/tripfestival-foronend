@@ -113,12 +113,12 @@ const TripAreaLandmarkList = () => {
                         }
 
                         <div>
-                            <button value={landmark.id} onClick={onClickLandmark}>
+                            {/* <button value={landmark.id} onClick={onClickLandmark}>
                                 test
-                            </button>
-                            <div className="title" value={landmark.id} onClick={onClickLandmark}>
+                            </button> */}
+                            <Link className="title" to={`/landmark/${landmark.id}`}>
                                 <span className="title">{landmark.name}</span>
-                            </div>
+                            </Link>
         
                             <div className="hashtag-wrap">
                                 {landmark.items.map(hashTag => (
