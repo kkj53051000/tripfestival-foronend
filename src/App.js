@@ -58,6 +58,7 @@ import FestivalMonthListLandmarkPage from './pages/festival/FestivalMonthListLan
 import TripSpecialLandmarkListPage from './pages/trip/TripSpecialLandmarkListPage';
 import FestivalPage from './pages/festival/FestivalPage';
 import AdminEventModifyPage from './pages/event/AdminEventModifyPage';
+import AdminLandmarkModifyPage from './pages/landmark/AdminLandmarkModifyPage';
  
 
 function App() {
@@ -90,6 +91,7 @@ function App() {
         <Route path="/admin/landmark/hashtag" element={<AdminLandmarkHashTagPage />} exact={true} />
         <Route path="/admin/landmark/review" element={<AdminLandmarkReviewPage />} exact={true} />
         <Route path="/admin/landmark/time" element={<AdminLandmarkTimePage />} exact={true} />
+        <Route path="/admin/landmark/landmark/modify/:id" element={<AdminLandmarkModifyPage />} exact={true} />
 
         {/* Admin Event */}
         <Route path="/admin/event" element={<AdminEventMainPage />} exact={true} />

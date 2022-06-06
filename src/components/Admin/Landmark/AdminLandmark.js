@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "../../../css/landmark/AdminLandmark.css";
 import axios from "axios";
 import useApiGet from "../../../lib/useApiGet";
+import { Link } from "react-router-dom";
 
 const AdminLandmark = () => {
 
@@ -80,7 +81,7 @@ const AdminLandmark = () => {
         return axios.get("/api/worldCountryCityRegionList");
     }, []);
 
-    // Landmark List
+    // Landmark All List
     const [landmarkListLoading, landmarkList, landmarkListError] = useApiGet(() => {
         return axios.get("/api/landmarkAllList");
     }, [])
@@ -126,7 +127,7 @@ const AdminLandmark = () => {
                 <button onClick={onClickUpload}>업로드</button>
             </div>
 
-            <h2>랜드마크 리스트</h2>
+            <h2>랜드마크(관광지) 리스트</h2>
 
             <div className="admin-landmark-list">
                 {landmarkList != null && !landmarkListLoading ?
@@ -137,19 +138,10 @@ const AdminLandmark = () => {
 
                             <br/>
 
-                            <input className="name" placeholder={landmark.name} />
-
-                            <textarea className="description" placeholder={landmark.description} />
-
-                            <input className="adress" placeholder={landmark.address} />
-
-                            <input className="homepage" placeholder={landmark.homepage} />
-
-                            <input className="worldcountrycityregion" placeholder={landmark.worldCountryCityRegionId} />
-
-                            <br/><br/>
-
-                            <button>수정</button>
+                            
+                            <button>삭제</button>
+                            <Link to={`/admin/landmark/landmark/modify/${landmark.id}`}>수정</Link>
+                            <hr/>
                         </div>
                     ))}
                 </>
