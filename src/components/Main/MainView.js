@@ -59,7 +59,7 @@ const MainView = () => {
         return axios.get("/api/landmarkAllCount");
     }, [])
 
-    // Landmark All Count
+    // Event All Count
     const [eventAllCountLoading, eventAllCount, eventAllCountError] = useApiGet(() => {
         return axios.get("/api/eventAllCount");
     }, [])

@@ -32,7 +32,7 @@
     }
     .trip-artificial-list-area-search .search-wrap {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
 
         margin: 20px;
     }
@@ -93,14 +93,11 @@
     }
     .trip-artificial-list-area-search {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
     
         width: 50%;
         min-width: 768px;
-        height: 70px;
-    
-        display: flex;
-        flex-direction: row;
+
     
         /* border: 1px solid black; */
     }
@@ -234,7 +231,9 @@
     }
     .trip-artificial-list-area-search .search-wrap {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
+
+        
 
         margin: 20px;
     }

@@ -36,7 +36,7 @@
     }
     .trip-area-select .input {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
 
         margin: 20px;
     }
@@ -47,9 +47,8 @@
         justify-content: center;
 
         flex: 1;
-        /* height: 70%; */
-    
-        /* border: 1px solid black; */
+
+        margin: 20px;
     }
     .trip-area-select .two {
         display: flex;
@@ -141,7 +140,7 @@
     }
     .trip-area-select .input {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
 
         margin: 20px;
     }
@@ -164,10 +163,8 @@
         justify-content: center;
         
         flex: 1;
-        /* height: 70%; */
         
-    
-        /* border: 1px solid black; */
+        margin: 20px;
     }
     .trip-area-select .btn {
         display: flex;
