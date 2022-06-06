@@ -65,6 +65,18 @@ const AdminMain = () => {
         }
     }
 
+    const onClickEventListNew = async ( e ) => {
+        try {
+            const response = await axios.get("/api/updateEventListKorea")
+
+            if(response.data.status === 'SUCCESS') {
+                alert("최신화 성공");
+            }
+        } catch(e) {
+            console.log(e);
+        }
+    }
+
 
     return (
         <div className="admin-main-wrap">
@@ -108,6 +120,7 @@ const AdminMain = () => {
                 <button style={{height: '50px', width: '120px'}} onClick={onClickLandmarkNew}>Landmark 최신화</button>
                 <button style={{height: '50px', width: '120px'}} onClick={onClickLandmarkDescriptionNew}>Landmark Description 최신화 (1회 2000개)</button>
                 <button style={{height: '50px', width: '120px'}} onClick={onClickLandmarkImgNew}>Landmark img 최신화</button>
+                <button style={{height: '50px', width: '120px'}} onClick={onClickEventListNew}>축제 최신화</button>
             </div>
         </div>
     );

@@ -116,8 +116,8 @@
         align-items: center;
         justify-content: center;
         
-        width: 45%;
-        height: 200px;
+        width: 40%;
+        height: 150px;
     
         margin: 10px;
     
@@ -178,23 +178,19 @@
     }
     .main-region-span{
         color: #000;
-        font-size: 30px;
+        font-size: 26px;
         font-weight: bold;
-    
-        margin: 30px;
+
     }
     .main-nature-hotspot-span{
         color: #000;
-        font-size: 30px;
+        font-size: 26px;
         font-weight: bold;
-    
-        margin: 30px;
     }
     .main-hotspot-span{
         color: #000;
-        font-size: 30px;
+        font-size: 26px;
         font-weight: bold;
-    
-        margin: 30px;
+
     }
 }

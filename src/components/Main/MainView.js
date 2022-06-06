@@ -54,8 +54,14 @@ const MainView = () => {
         })
     }, [cityId])
 
+    // Landmark All Count
     const [landamrkAllCountLoading, landamrkAllCount, landamrkAllCountError] = useApiGet(() => {
         return axios.get("/api/landmarkAllCount");
+    }, [])
+
+    // Landmark All Count
+    const [eventAllCountLoading, eventAllCount, eventAllCountError] = useApiGet(() => {
+        return axios.get("/api/eventAllCount");
     }, [])
 
     // Search Result
@@ -91,11 +97,15 @@ const MainView = () => {
     return (
         <div className="main-view-wrap">
             {!landamrkAllCountLoading && landamrkAllCount != null ?
-            <h1>{landamrkAllCount.data.landmarkAllCount}개 관광지</h1>
+            <h2>{landamrkAllCount.data.landmarkAllCount}개 관광지</h2>
             :
             <></>
             }
-            <h1>0개의 축제가 진행중이에요.</h1>
+            {!eventAllCountLoading && eventAllCount != null ?
+            <h2>{eventAllCount.data.count}개 축제</h2>
+            :
+            <></>
+            }
             <div className="main-view-input">
                 <div className="input">
                     <input
@@ -126,20 +136,6 @@ const MainView = () => {
                 <div></div>
                 }
             </div>
-
-            {/* <div className="main-view-select">
-                <div className="select-wrap">
-                    <select>
-                        <option>선택하시오</option>
-                    </select>
-                    <select>
-                        <option>선택하시오</option>
-                    </select>
-
-                    <button>검색</button>
-                </div>
-            </div> */}
-        
         </div>
     );
 };
