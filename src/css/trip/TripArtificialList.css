@@ -30,12 +30,7 @@
         font-size: 38px;
         font-weight: bold;
     }
-    .trip-artificial-list-area-search .search-wrap {
-        display: flex;
-        flex-direction: column;
 
-        margin: 20px;
-    }
     .trip-artificial-list-search .search-one {
         display: flex;
         flex-direction: row;
@@ -95,11 +90,17 @@
         display: flex;
         flex-direction: column;
     
-        width: 50%;
+        width: 100%;
         min-width: 768px;
 
     
         /* border: 1px solid black; */
+    }
+    .trip-artificial-list-area-search .search-wrap {
+        display: flex;
+        flex-direction: column;
+
+        margin: 20px;
     }
     .trip-artificial-list-area-search .title {
         display: flex;

@@ -66,7 +66,7 @@ const TripArtificialLandmarkList = () => {
                     {landmarkList.map(landmark => (
                     <div className="trip-area-wr">
                     <div className="trip-area">
-                        {landmark.img == null ?
+                        {landmark.img == "" ?
                         <></>
                         :
                         <img src={landmark.img} alt="img" />

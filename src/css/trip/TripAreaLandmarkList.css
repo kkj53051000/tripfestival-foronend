@@ -147,6 +147,7 @@
     .trip-area img {
         height: 130px;
         width: auto;
+        max-width: 200px;
     
         margin-left: 20px;
         margin-top: 25px;

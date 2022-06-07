@@ -27,6 +27,8 @@ const TripAreaLandmarkList = () => {
                     }
                 });
 
+                console.log(response.data.items);
+
                 setLandmarkList(response.data.items);
                 sessionStorage.setItem(sessionStorageName, JSON.stringify(response.data.items));
             }else {
@@ -106,7 +108,7 @@ const TripAreaLandmarkList = () => {
                     {landmarkList.map(landmark => (
                     <div className="trip-area-wr">
                     <div className="trip-area">
-                        {landmark.img == null ?
+                        {landmark.img == "" ?
                         <></>
                         :
                         <img src={landmark.img} alt="img" />
