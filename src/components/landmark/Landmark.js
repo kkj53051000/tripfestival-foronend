@@ -108,7 +108,7 @@ const Landmark = () => {
     return (
         <div className="landmark-wrap">
 
-            <h1><button onClick={onClicklandmarkClear}>삭제</button></h1>
+            {/* <h1><button onClick={onClicklandmarkClear}>삭제</button></h1> */}
             
             <div className="landmark-screen">
                 {landmark != null && !landmarkLoading ?
