@@ -89,15 +89,12 @@
     }
     .trip-nature-list-area-search {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
     
         width: 50%;
         min-width: 768px;
-    
-        display: flex;
-        flex-direction: row;
 
-        border-top: 3px solid black;
+
     }
     .trip-nature-list-area-search .title {
         display: flex;
